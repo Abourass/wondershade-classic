@@ -1,0 +1,21 @@
+- const toUpperCase = (str) => str.toUpperCase();
+
+mixin stat(shortName, longName)
+  .statblock.section
+    label.label.fcol.aligncenter
+      .frow.aligncenter
+        span #{toUpperCase(shortName)}
+        button.rollbutton(
+          type='roll'
+          name=`roll_${shortName}`
+          value='&{template:skillzRoll} '
+          + '{{name=@{character_name}}} '
+          + `{{skillvalue=[[(@{${longName}})]]}} `
+          + `{{fumble=[[ceil(95+([[(@{${longName}})]])/20))]]}} `
+          + `{{crit=[[ceil(([[(@{${longName}})]])/20)+1]]}} `
+          + `{{special=[[ceil(([[(@{${longName}})]])/5)+1]]}} `
+          + `{{success=[[(@{${longName}})]]}} `
+          + '{{roll=[[1d100]]}} '
+          + `{{skillname=${longName}}}`
+        )
+      input.input.mininumber.centertext(type='number' name=`attr_${longName}` value='0')

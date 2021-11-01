@@ -1,0 +1,70 @@
+rolltemplate.sheet-rolltemplate-coc-attack-1
+  table
+    caption {{name}}
+    tr
+      td.template_label(data-i18n='value') Value:
+      td.template_value {{success}}/{{hard}}/{{extreme}}
+    |         {{#malf}}
+    tr
+      td.template_label(data-i18n='malf') Malf:
+      td.template_value {{malf}}
+    |         {{/malf}}
+    tr
+      td.template_label(data-i18n='rolled') Rolled:
+      td.template_value {{roll1}}
+    tr(style='background:#BEBEBE;')
+      td.template_label(data-i18n='result') Result:
+      // 01 is always Critical
+      | {{#rollTotal() roll1 1}} 
+      td.template_value(style='background:Lime;')
+        b(data-i18n='critical') Critical
+      |                 {{/rollTotal() roll1 1}}
+      // Is Success
+      | {{#rollBetween() roll1 2 success}}
+      // Is Standard
+      | {{#rollGreater() roll1 hard}}
+      td.template_value(style='background:DarkGreen;' data-i18n='success') Success
+      |                   {{/rollGreater() roll1 hard}}
+      // Is Hard or Extreme
+      | {{#rollBetween() roll1 2 hard}}
+      // Is Hard
+      | {{#rollGreater() roll1 extreme}}
+      td.template_value(style='background:Green;' data-i18n='hard') Hard
+      |                     {{/rollGreater() roll1 extreme}}
+      // Is Extreme
+      | {{#rollBetween() roll1 2 extreme}}
+      td.template_value(style='background:LightGreen;')
+        b(data-i18n='extreme') Extreme
+      |                     {{/rollBetween() roll1 2 extreme}}
+      |                   {{/rollBetween() roll1 2 hard}}
+      |                 {{/rollBetween() roll1 2 success}}
+      // Is Not Success
+      | {{#rollGreater() roll1 success}}
+      // Is skill >= 50
+      | {{#rollGreater() success 49}}
+      // Is Fumble
+      | {{#rollTotal() roll1 100}} 
+      td.template_value(style='background:Red;')
+        b(data-i18n='fumble') Fumble
+      |                     {{/rollTotal() roll1 100}}
+      // Is Fail
+      | {{#rollLess() roll1 100}}
+      td.template_value(style='background:Crimson;' data-i18n='fail') Fail
+      |                     {{/rollLess() roll1 100}}
+      |                   {{/rollGreater() success 49}}
+      // Is skill < 50
+      | {{#rollLess() success 50}}
+      // Is Fumble
+      | {{#rollGreater() roll1 95}}
+      td.template_value(style='background:Red;')
+        b(data-i18n='fumble') Fumble
+      |                     {{/rollGreater() roll1 95}}
+      // Is Fail
+      | {{#rollLess() roll1 96}}
+      td.template_value(style='background:Crimson;' data-i18n='fail') Fail
+      |                     {{/rollLess() roll1 96}}
+      |                   {{/rollLess() success 50}}
+      |                 {{/rollGreater() roll1 success}}
+    tr
+      td.template_label(data-i18n='dam') Dam:
+      td.template_value {{damage}}
