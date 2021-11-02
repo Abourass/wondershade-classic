@@ -419,11 +419,11 @@ input.toggle-show:not(:checked) ~ .checkMinus {
 
 .sheet-rolltemplate-skillzRoll .sheet-rollContainer {
     background-image: 
-    url(https://s3.sheet-amazonaws.sheet-com/files.sheet-d20.sheet-io/images/97938169/2H_jIrRYHQLhEIW3TlZYow/max.sheet-png?1574800581),
-    url(https://s3.sheet-amazonaws.sheet-com/files.sheet-d20.sheet-io/images/97938213/qxfGqZZDIGms6oySxMyPtA/max.sheet-png?1574800622),
-    url(https://s3.sheet-amazonaws.sheet-com/files.sheet-d20.sheet-io/images/97938159/DQvw7NbZMn_E52h6RW8DUA/max.sheet-png?1574800572),
-    url(https://s3.sheet-amazonaws.sheet-com/files.sheet-d20.sheet-io/images/97938152/iX1L3c8KUcynHfqZz1Qwgw/max.sheet-png?1574800563),
-    url(https://cdn.sheet-pixabay.sheet-com/photo/2015/09/29/15/12/stars-964022_960_720.sheet-png);
+    url(https://s3.amazonaws.com/files.d20.io/images/97938169/2H_jIrRYHQLhEIW3TlZYow/max.png?1574800581),
+    url(https://s3.amazonaws.com/files.d20.io/images/97938213/qxfGqZZDIGms6oySxMyPtA/max.png?1574800622),
+    url(https://s3.amazonaws.com/files.d20.io/images/97938159/DQvw7NbZMn_E52h6RW8DUA/max.png?1574800572),
+    url(https://s3.amazonaws.com/files.d20.io/images/97938152/iX1L3c8KUcynHfqZz1Qwgw/max.png?1574800563),
+    url(https://cdn.pixabay.com/photo/2015/09/29/15/12/stars-964022_960_720.png);
     background-position: left top, right top, right bottom, left bottom, center center;
     background-repeat: no-repeat;
     background-size: auto;
@@ -520,18 +520,13 @@ input.toggle-show:not(:checked) ~ .checkMinus {
 }
 
 /*Configure the tab buttons*/
-.skills,
-.combat,
-.magic,
-.items {
-	display: none;
-}
+.skills, .combat, .magic, .items { display: none; }
 
 /* show the selected tab */
-.tabstoggle[value="skills"] ~ div.skills,
-.tabstoggle[value="combat"] ~ div.combat,
-.tabstoggle[value="magic"] ~ div.magic,
-.tabstoggle[value="items"] ~ div.items {
+.sheet-tabstoggle[value="skills"] ~ div.skills,
+.sheet-tabstoggle[value="combat"] ~ div.combat,
+.sheet-tabstoggle[value="magic"] ~ div.magic,
+.sheet-tabstoggle[value="items"] ~ div.items {
 	display: block;
 }
 

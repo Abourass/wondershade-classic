@@ -6,68 +6,16 @@ include abstracts/mixins
   .base
     .frow
       .section.column
-        .form
-          label.label
-            | Name:
-            input.input(type='text' name='attr_character_name')
+        +txtInput('character_name', 'Name:')
         .frow
-          .form
-            label.label
-              | Age:
-              input.input.mininumber(type='number' name='attr_age' style='margin-right: 0.6rem;')
-          .form.fitcontent
-            label.label
-              | Gender:
-              input.input.mininput(type='text' name='attr_gender')
-        .form
-          label.label
-            | Profession:
-            input.input(type='text' name='attr_profession')
-        .frow
-          .form.fitcontent
-            label.label
-              | Residence:
-              input.input.mininput(type='text' name='attr_residence')
-          .form.fitcontent
-            label.label
-              | Birthplace:
-              input.input.mininput(type='text' name='attr_birthplace')
+          +miniNumInput('age')(style='margin-right: 0.6rem;')
+          +miniTxtInput('gender')
+        +txtInput('profession')
       .column.pt0
         .statblocks.column
           .frow.justifyevenly
             each stat in stats
               +stat(stat.shortTxt, stat.fullTxt)
-          .frow.justifyevenly.mt5
-            .statblock.section
-              label.label.fcol.aligncenter
-                .frow.aligncenter
-                  span COMP
-                  button.rollbutton(type='roll' name='roll_Comp' value='&{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Composure})]]}} {{fumble=[[ceil(95+([[(@{Composure})]])/20))]]}} {{crit=[[ceil(([[(@{Composure})]])/20)+1]]}} {{special=[[ceil(([[(@{Composure})]])/5)+1]]}}         {{success=[[(@{Composure})]]}} {{roll=[[1d100]]}} {{skillname=Composure}}')
-                input.input.mininumber.centertext(type='number' name='attr_Composure' value='0')
-            .statblock.section
-              label.label.fcol.aligncenter
-                .frow.aligncenter
-                  span SIZE
-                  button.rollbutton(type='roll' name='roll_Size' value='&{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Size})]]}} {{fumble=[[ceil(95+([[(@{Size})]])/20))]]}} {{crit=[[ceil(([[(@{Size})]])/20)+1]]}} {{special=[[ceil(([[(@{Size})]])/5)+1]]}}         {{success=[[(@{Size})]]}} {{roll=[[1d100]]}} {{skillname=Size}}')
-                input.input.mininumber.centertext(type='number' name='attr_Size' value='0')
-            .statblock.section
-              label.label.fcol.aligncenter
-                .frow.aligncenter
-                  span EDU
-                  button.rollbutton(type='roll' name='roll_Edu' value='&{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Education})]]}} {{fumble=[[ceil(95+([[(@{Education})]])/20))]]}} {{crit=[[ceil(([[(@{Education})]])/20)+1]]}} {{special=[[ceil(([[(@{Education})]])/5)+1]]}}         {{success=[[(@{Education})]]}} {{roll=[[1d100]]}} {{skillname=Education}}')
-                input.input.mininumber.centertext(type='number' name='attr_Education' value='0')
-            .statblock.section
-              label.label.fcol.aligncenter
-                .frow.aligncenter
-                  span LUCK
-                  button.rollbutton(type='roll' name='roll_Luck' value='&{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Luck})]]}} {{fumble=[[ceil(95+([[(@{Luck})]])/20))]]}} {{crit=[[ceil(([[(@{Luck})]])/20)+1]]}} {{special=[[ceil(([[(@{Luck})]])/5)+1]]}}         {{success=[[(@{Luck})]]}} {{roll=[[1d100]]}} {{skillname=Luck}}')
-                input.input.mininumber.centertext(type='number' name='attr_Luck' value='0')
-            .statblock.section
-              label.label.fcol.aligncenter
-                .frow.aligncenter
-                  span I.LUCK
-                  button.rollbutton(type='roll' name='roll_iLuck' value='&{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{InnateLuck})]]}} {{fumble=[[ceil(95+([[(@{InnateLuck})]])/20))]]}} {{crit=[[ceil(([[(@{InnateLuck})]])/20)+1]]}} {{special=[[ceil(([[(@{InnateLuck})]])/5)+1]]}}         {{success=[[(@{InnateLuck})]]}} {{roll=[[1d100]]}} {{skillname=InnateLuck}}')
-                input.input.mininumber.centertext(type='number' name='attr_InnateLuck' value='0')
         .column.mt5
           .frow
             .section.column

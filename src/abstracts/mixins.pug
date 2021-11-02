@@ -1,4 +1,23 @@
 - const toUpperCase = (str) => str.toUpperCase();
+- const capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1);
+
+mixin txtInput(name, label = null)
+  .form
+    label.label
+      | #{label || `${capitalize(name)}:`}
+      input.input(type='text' name=`attr_${name}`)&attributes(attributes)
+
+mixin miniTxtInput(name, label = null)
+  .form.fitcontent
+    label.label
+      | #{label || `${capitalize(name)}:`}
+      input.input.mininput(type='text' name=`attr_${name}`)&attributes(attributes)
+
+mixin miniNumInput(name, label = null)
+  .form
+    label.label
+      | #{label || `${capitalize(name)}:`}
+      input.input.mininumber(type='number' name=`attr_${name}`)&attributes(attributes)
 
 mixin stat(shortName, longName)
   .statblock.section
@@ -16,6 +35,5 @@ mixin stat(shortName, longName)
           + `{{special=[[ceil(([[(@{${longName}})]])/5)+1]]}} `
           + `{{success=[[(@{${longName}})]]}} `
           + '{{roll=[[1d100]]}} '
-          + `{{skillname=${longName}}}`
-        )
+          + `{{skillname=${longName}}}`)
       input.input.mininumber.centertext(type='number' name=`attr_${longName}` value='0')
