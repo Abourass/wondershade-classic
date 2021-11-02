@@ -1,4 +1,7 @@
 .stat-blocks.column
   .flex-row.justify-evenly
-    each stat in stats
+    each stat in stats.top
+      +stat(stat.shortTxt, stat.fullTxt)
+  .flex-row.justify-evenly
+    each stat in stats.bottom
       +stat(stat.shortTxt, stat.fullTxt)

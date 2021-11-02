@@ -33,7 +33,7 @@
 }
 
 .pt0 {
-  padding-top: 0;
+  padding-top: 0 !important;
 }
 
 .pt1 {
@@ -311,11 +311,16 @@ input.toggle-show:not(:checked) ~ .checkMinus {
   font-family: "Lucida Bright", "Cambria", serif;
   font-size: 0.7em;
 }
-.sheet-rolltemplate-skillzRoll .sheet-rollContainer .sheet-inlinerollresult {
+.sheet-rolltemplate-skillzRoll .sheet-rollContainer .inlinerollresult {
   padding: 0;
   border: unset;
   background: unset;
   font-family: inherit;
+}
+
+.inlinerollresult {
+  background-color: transparent;
+  border: none;
 }
 
 .stat-blocks {

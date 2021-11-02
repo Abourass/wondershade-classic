@@ -85,10 +85,15 @@
     font-size: 0.7em;
   }
 
-  .sheet-rollContainer .sheet-inlinerollresult {
+  .sheet-rollContainer .inlinerollresult {
     padding: 0;
     border: unset;
     background: unset;
     font-family: inherit;
   }
+}
+
+.inlinerollresult {
+  background-color: transparent;
+  border: none;
 }

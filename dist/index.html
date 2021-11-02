@@ -5,7 +5,7 @@
   </div>
   <div class="base">
     <div class="flex-row">
-      <div class="section column">
+      <div class="section column pt0">
         <div class="form">
           <label class="label">Name:
             <input class="input" type="text" name="attr_character_name"/>
@@ -18,120 +18,117 @@
             </label>
           </div>
           <div class="form fit-size">
-            <label class="label">Gender:
-              <input class="input min-input" type="text" name="attr_gender"/>
+            <label class="label">Profession:
+              <input class="input min-input" type="text" name="attr_profession"/>
             </label>
           </div>
         </div>
-        <div class="form">
-          <label class="label">Profession:
-            <input class="input" type="text" name="attr_profession"/>
-          </label>
-        </div>
       </div>
-      <div class="column pt0">
-        <div class="stat-blocks column">
-          <div class="flex-row justify-evenly">
-            <div class="stat-block section">
-              <label class="label flex-col align-center">
-                <div class="flex-row align-center"><span>STR</span>
-                  <button class="rollbutton" type="roll" name="roll_Str" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Strength})]]}} {{fumble=[[ceil(95+([[(@{Strength})]])/20))]]}} {{crit=[[ceil(([[(@{Strength})]])/20)+1]]}} {{special=[[ceil(([[(@{Strength})]])/5)+1]]}} {{success=[[(@{Strength})]]}} {{roll=[[1d100]]}} {{skillname=Strength}}"></button>
-                </div>
-                <input class="input mini-number center-txt" type="number" name="attr_Strength" value="0"/>
-              </label>
-            </div>
-            <div class="stat-block section">
-              <label class="label flex-col align-center">
-                <div class="flex-row align-center"><span>INT</span>
-                  <button class="rollbutton" type="roll" name="roll_Int" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Intelligence})]]}} {{fumble=[[ceil(95+([[(@{Intelligence})]])/20))]]}} {{crit=[[ceil(([[(@{Intelligence})]])/20)+1]]}} {{special=[[ceil(([[(@{Intelligence})]])/5)+1]]}} {{success=[[(@{Intelligence})]]}} {{roll=[[1d100]]}} {{skillname=Intelligence}}"></button>
-                </div>
-                <input class="input mini-number center-txt" type="number" name="attr_Intelligence" value="0"/>
-              </label>
-            </div>
-            <div class="stat-block section">
-              <label class="label flex-col align-center">
-                <div class="flex-row align-center"><span>DEX</span>
-                  <button class="rollbutton" type="roll" name="roll_Dex" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Dexterity})]]}} {{fumble=[[ceil(95+([[(@{Dexterity})]])/20))]]}} {{crit=[[ceil(([[(@{Dexterity})]])/20)+1]]}} {{special=[[ceil(([[(@{Dexterity})]])/5)+1]]}} {{success=[[(@{Dexterity})]]}} {{roll=[[1d100]]}} {{skillname=Dexterity}}"></button>
-                </div>
-                <input class="input mini-number center-txt" type="number" name="attr_Dexterity" value="0"/>
-              </label>
-            </div>
-            <div class="stat-block section">
-              <label class="label flex-col align-center">
-                <div class="flex-row align-center"><span>CON</span>
-                  <button class="rollbutton" type="roll" name="roll_Con" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Constitution})]]}} {{fumble=[[ceil(95+([[(@{Constitution})]])/20))]]}} {{crit=[[ceil(([[(@{Constitution})]])/20)+1]]}} {{special=[[ceil(([[(@{Constitution})]])/5)+1]]}} {{success=[[(@{Constitution})]]}} {{roll=[[1d100]]}} {{skillname=Constitution}}"></button>
-                </div>
-                <input class="input mini-number center-txt" type="number" name="attr_Constitution" value="0"/>
-              </label>
-            </div>
-            <div class="stat-block section">
-              <label class="label flex-col align-center">
-                <div class="flex-row align-center"><span>POW</span>
-                  <button class="rollbutton" type="roll" name="roll_Pow" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Power})]]}} {{fumble=[[ceil(95+([[(@{Power})]])/20))]]}} {{crit=[[ceil(([[(@{Power})]])/20)+1]]}} {{special=[[ceil(([[(@{Power})]])/5)+1]]}} {{success=[[(@{Power})]]}} {{roll=[[1d100]]}} {{skillname=Power}}"></button>
-                </div>
-                <input class="input mini-number center-txt" type="number" name="attr_Power" value="0"/>
-              </label>
-            </div>
-            <div class="stat-block section">
-              <label class="label flex-col align-center">
-                <div class="flex-row align-center"><span>LUCK</span>
-                  <button class="rollbutton" type="roll" name="roll_Luck" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Luck})]]}} {{fumble=[[ceil(95+([[(@{Luck})]])/20))]]}} {{crit=[[ceil(([[(@{Luck})]])/20)+1]]}} {{special=[[ceil(([[(@{Luck})]])/5)+1]]}} {{success=[[(@{Luck})]]}} {{roll=[[1d100]]}} {{skillname=Luck}}"></button>
-                </div>
-                <input class="input mini-number center-txt" type="number" name="attr_Luck" value="0"/>
-              </label>
-            </div>
+      <div class="stat-blocks column">
+        <div class="flex-row justify-evenly">
+          <div class="stat-block section">
+            <label class="label flex-col align-center">
+              <div class="flex-row align-center"><span>STR</span>
+                <button class="rollbutton" type="roll" name="roll_Str" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Strength})]]}} {{fumble=[[ceil(95+([[(@{Strength})]])/20))]]}} {{crit=[[ceil(([[(@{Strength})]])/20)+1]]}} {{special=[[ceil(([[(@{Strength})]])/5)+1]]}} {{success=[[(@{Strength})]]}} {{roll=[[1d100]]}} {{skillname=Strength}}"></button>
+              </div>
+              <input class="input mini-number center-txt" type="number" name="attr_Strength" value="0"/>
+            </label>
+          </div>
+          <div class="stat-block section">
+            <label class="label flex-col align-center">
+              <div class="flex-row align-center"><span>INT</span>
+                <button class="rollbutton" type="roll" name="roll_Int" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Intelligence})]]}} {{fumble=[[ceil(95+([[(@{Intelligence})]])/20))]]}} {{crit=[[ceil(([[(@{Intelligence})]])/20)+1]]}} {{special=[[ceil(([[(@{Intelligence})]])/5)+1]]}} {{success=[[(@{Intelligence})]]}} {{roll=[[1d100]]}} {{skillname=Intelligence}}"></button>
+              </div>
+              <input class="input mini-number center-txt" type="number" name="attr_Intelligence" value="0"/>
+            </label>
+          </div>
+          <div class="stat-block section">
+            <label class="label flex-col align-center">
+              <div class="flex-row align-center"><span>DEX</span>
+                <button class="rollbutton" type="roll" name="roll_Dex" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Dexterity})]]}} {{fumble=[[ceil(95+([[(@{Dexterity})]])/20))]]}} {{crit=[[ceil(([[(@{Dexterity})]])/20)+1]]}} {{special=[[ceil(([[(@{Dexterity})]])/5)+1]]}} {{success=[[(@{Dexterity})]]}} {{roll=[[1d100]]}} {{skillname=Dexterity}}"></button>
+              </div>
+              <input class="input mini-number center-txt" type="number" name="attr_Dexterity" value="0"/>
+            </label>
           </div>
         </div>
-        <div class="column mt5">
-          <div class="flex-row">
-            <div class="section column">
-              <div class="stat-blocks column">
-                <div class="flex-row justify-evenly">
-                  <div class="stat-block section">
-                    <label class="label flex-col align-center">
-                      <div class="flex-row align-center"><span class="doubleLabel">SANITY</span>
-                        <button class="rollbutton" type="roll" name="roll_San" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Sanity})]]}} {{fumble=[[ceil(95+([[(@{Sanity})]])/20))]]}} {{crit=[[ceil(([[(@{Sanity})]])/20)+1]]}} {{special=[[ceil(([[(@{Sanity})]])/5)+1]]}}         {{success=[[(@{Sanity})]]}} {{roll=[[1d100]]}} {{skillname=Sanity}}"></button>
-                      </div>
-                      <div class="flex-row align-center">
-                        <input class="input mini-number center-txt" type="number" name="attr_Sanity" value="0"/><span class="vs">/</span>
-                        <input class="input mini-number center-txt" type="number" name="attr_MaxSanity" value="0"/>
-                      </div>
-                    </label>
-                  </div>
+        <div class="flex-row justify-evenly">
+          <div class="stat-block section">
+            <label class="label flex-col align-center">
+              <div class="flex-row align-center"><span>CON</span>
+                <button class="rollbutton" type="roll" name="roll_Con" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Constitution})]]}} {{fumble=[[ceil(95+([[(@{Constitution})]])/20))]]}} {{crit=[[ceil(([[(@{Constitution})]])/20)+1]]}} {{special=[[ceil(([[(@{Constitution})]])/5)+1]]}} {{success=[[(@{Constitution})]]}} {{roll=[[1d100]]}} {{skillname=Constitution}}"></button>
+              </div>
+              <input class="input mini-number center-txt" type="number" name="attr_Constitution" value="0"/>
+            </label>
+          </div>
+          <div class="stat-block section">
+            <label class="label flex-col align-center">
+              <div class="flex-row align-center"><span>POW</span>
+                <button class="rollbutton" type="roll" name="roll_Pow" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Power})]]}} {{fumble=[[ceil(95+([[(@{Power})]])/20))]]}} {{crit=[[ceil(([[(@{Power})]])/20)+1]]}} {{special=[[ceil(([[(@{Power})]])/5)+1]]}} {{success=[[(@{Power})]]}} {{roll=[[1d100]]}} {{skillname=Power}}"></button>
+              </div>
+              <input class="input mini-number center-txt" type="number" name="attr_Power" value="0"/>
+            </label>
+          </div>
+          <div class="stat-block section">
+            <label class="label flex-col align-center">
+              <div class="flex-row align-center"><span>LUCK</span>
+                <button class="rollbutton" type="roll" name="roll_Luck" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Luck})]]}} {{fumble=[[ceil(95+([[(@{Luck})]])/20))]]}} {{crit=[[ceil(([[(@{Luck})]])/20)+1]]}} {{special=[[ceil(([[(@{Luck})]])/5)+1]]}} {{success=[[(@{Luck})]]}} {{roll=[[1d100]]}} {{skillname=Luck}}"></button>
+              </div>
+              <input class="input mini-number center-txt" type="number" name="attr_Luck" value="0"/>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flex-row">   
+      <div class="column mt5">
+        <div class="flex-row">
+          <div class="section column">
+            <div class="stat-blocks column">
+              <div class="flex-row justify-evenly">
+                <div class="stat-block section">
+                  <label class="label flex-col align-center">
+                    <div class="flex-row align-center"><span class="doubleLabel">SANITY</span>
+                      <button class="rollbutton" type="roll" name="roll_San" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Sanity})]]}} {{fumble=[[ceil(95+([[(@{Sanity})]])/20))]]}} {{crit=[[ceil(([[(@{Sanity})]])/20)+1]]}} {{special=[[ceil(([[(@{Sanity})]])/5)+1]]}}         {{success=[[(@{Sanity})]]}} {{roll=[[1d100]]}} {{skillname=Sanity}}"></button>
+                    </div>
+                    <div class="flex-row align-center">
+                      <input class="input mini-number center-txt" type="number" name="attr_Sanity" value="0"/><span class="vs">/</span>
+                      <input class="input mini-number center-txt" type="number" name="attr_MaxSanity" value="0"/>
+                    </div>
+                  </label>
                 </div>
               </div>
             </div>
-            <div class="section column">
-              <div class="stat-blocks column">
-                <div class="flex-row justify-evenly">
-                  <div class="stat-block section">
-                    <label class="label flex-col align-center">
-                      <div class="flex-row align-center"><span class="doubleLabel">COMPOSURE</span>
-                        <button class="rollbutton" type="roll" name="roll_Comp" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Composure})]]}} {{fumble=[[ceil(95+([[(@{Composure})]])/20))]]}} {{crit=[[ceil(([[(@{Composure})]])/20)+1]]}} {{special=[[ceil(([[(@{Composure})]])/5)+1]]}}         {{success=[[(@{Composure})]]}} {{roll=[[1d100]]}} {{skillname=Composure}}"></button>
-                      </div>
-                      <div class="flex-row align-center">
-                        <input class="input mini-number center-txt" type="number" name="attr_Composure" value="0"/><span class="vs">/</span>
-                        <input class="input mini-number center-txt" type="number" name="attr_MaxComposure" value="0"/>
-                      </div>
-                    </label>
-                  </div>
+          </div>
+          <div class="section column">
+            <div class="stat-blocks column">
+              <div class="flex-row justify-evenly">
+                <div class="stat-block section">
+                  <label class="label flex-col align-center">
+                    <div class="flex-row align-center"><span class="doubleLabel">COMPOSURE</span>
+                      <button class="rollbutton" type="roll" name="roll_Comp" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Composure})]]}} {{fumble=[[ceil(95+([[(@{Composure})]])/20))]]}} {{crit=[[ceil(([[(@{Composure})]])/20)+1]]}} {{special=[[ceil(([[(@{Composure})]])/5)+1]]}}         {{success=[[(@{Composure})]]}} {{roll=[[1d100]]}} {{skillname=Composure}}"></button>
+                    </div>
+                    <div class="flex-row align-center">
+                      <input class="input mini-number center-txt" type="number" name="attr_Composure" value="0"/><span class="vs">/</span>
+                      <input class="input mini-number center-txt" type="number" name="attr_MaxComposure" value="0"/>
+                    </div>
+                  </label>
                 </div>
               </div>
             </div>
-            <div class="section column">
-              <div class="stat-blocks column">
-                <div class="flex-row justify-evenly">
-                  <div class="stat-block section">
-                    <label class="label flex-col align-center">
-                      <div class="flex-row align-center"><span class="doubleLabel">HEALTH</span>
-                        <button class="rollbutton" type="roll" name="roll_Health" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Health})]]}} {{fumble=[[ceil(95+([[(@{Health})]])/20))]]}} {{crit=[[ceil(([[(@{Health})]])/20)+1]]}} {{special=[[ceil(([[(@{Health})]])/5)+1]]}}         {{success=[[(@{Health})]]}} {{roll=[[1d100]]}} {{skillname=Health}}"></button>
-                      </div>
-                      <div class="flex-row align-center">
-                        <input class="input mini-number center-txt" type="number" name="attr_Health" value="0"/><span class="vs">/</span>
-                        <input class="input mini-number center-txt" type="number" name="attr_MaxHealth" value="0"/>
-                      </div>
-                    </label>
-                  </div>
+          </div>
+          <div class="section column">
+            <div class="stat-blocks column">
+              <div class="flex-row justify-evenly">
+                <div class="stat-block section">
+                  <label class="label flex-col align-center">
+                    <div class="flex-row align-center"><span class="doubleLabel">HEALTH</span>
+                      <button class="rollbutton" type="roll" name="roll_Health" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Health})]]}} {{fumble=[[ceil(95+([[(@{Health})]])/20))]]}} {{crit=[[ceil(([[(@{Health})]])/20)+1]]}} {{special=[[ceil(([[(@{Health})]])/5)+1]]}}         {{success=[[(@{Health})]]}} {{roll=[[1d100]]}} {{skillname=Health}}"></button>
+                    </div>
+                    <div class="flex-row align-center">
+                      <input class="input mini-number center-txt" type="number" name="attr_Health" value="0"/><span class="vs">/</span>
+                      <input class="input mini-number center-txt" type="number" name="attr_MaxHealth" value="0"/>
+                    </div>
+                  </label>
                 </div>
               </div>
             </div>
