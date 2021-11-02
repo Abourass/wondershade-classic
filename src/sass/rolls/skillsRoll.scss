@@ -1,0 +1,94 @@
+.sheet-rolltemplate-skillzRoll {
+  .sheet-rollContainer {
+    background-image: url(https://s3.amazonaws.com/files.d20.io/images/97938169/2H_jIrRYHQLhEIW3TlZYow/max.png?1574800581), url(https://s3.amazonaws.com/files.d20.io/images/97938213/qxfGqZZDIGms6oySxMyPtA/max.png?1574800622), url(https://s3.amazonaws.com/files.d20.io/images/97938159/DQvw7NbZMn_E52h6RW8DUA/max.png?1574800572), url(https://s3.amazonaws.com/files.d20.io/images/97938152/iX1L3c8KUcynHfqZz1Qwgw/max.png?1574800563), url(https://github.com/Abourass/wondershade-classic/blob/main/dist/stars-964022_960_720.png?raw=true);
+    background-position: left top, right top, right bottom, left bottom, center center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    border: 1px solid #e5d280;
+    color: #f2f2f2;
+    padding: 0.5rem;
+    background-color: black;
+    font-family: "Lucida Bright", "Cambria", serif;
+
+    h1 {
+      font-size: 1.8em;
+      color: #e5d280;
+    }
+
+    h2 {
+      font-weight: 400;
+      font-size: 2rem;
+      color: #f2f2f2;
+      font-family: 'Mountains of Christmas';
+    }
+
+    h3 {
+      font-size: 1.1em;
+      color: #f2f2f2;
+    }
+
+    h1, h2, h3 {
+      display: block;
+      text-align: center;
+      text-transform: capitalize;
+      margin: 0.25rem;
+      padding: 0;
+      line-height: 1;
+    }
+  }
+
+  .sheet-rollWrapper {
+    padding: 0.5rem;
+    font-family: "Helvetica", "Verdana", sans;
+  }
+
+  .sheet-rollSuccess { background: #396713; }
+  .sheet-rollFailure { background: #a80b0b; }
+
+  .sheet-rollSuccess, .sheet-rollFailure {
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    color: #f2f2f2;
+    font-family: "Lucida Bright", "Cambria", serif;
+    font-size: 1.2em;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .sheet-rollResult {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+    margin: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: 1.75em;
+  }
+
+  .sheet-roll {
+    padding: 0.5rem;
+    font-family: "Lucida Bright", "Cambria", serif;
+    font-size: 1.2em;
+    text-align: center;
+    font-family: "Lucida Bright", "Cambria", serif;
+  }
+
+  .sheet-bonus {
+    font-family: "Lucida Bright", "Cambria", serif;
+  }
+
+  .sheet-vs {
+    font-family: "Lucida Bright", "Cambria", serif;
+    font-size: 0.7em;
+  }
+
+  .sheet-rollContainer .sheet-inlinerollresult {
+    padding: 0;
+    border: unset;
+    background: unset;
+    font-family: inherit;
+  }
+}

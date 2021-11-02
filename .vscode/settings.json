@@ -10,5 +10,9 @@
     "**/*.js": false,
     "**/*.js.map": true
   },
-  "explorerExclude.backup": null
+  "explorerExclude.backup": null,
+  "cSpell.words": [
+    "Magick",
+    "skillz"
+  ]
 }

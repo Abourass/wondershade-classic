@@ -6,349 +6,30 @@
   min-height: 100%;
 }
 
-/*Configure the tab buttons*/
-.skills, .combat, .magic, .items {
-  display: none;
-}
-
-/* show the selected tab */
-.sheet-tabstoggle[value=skills] ~ div.skills, .sheet-tabstoggle[value=combat] ~ div.combat, .sheet-tabstoggle[value=magic] ~ div.magic, .sheet-tabstoggle[value=items] ~ div.items {
-  display: block;
-}
-
-.statblocks {
-  border-radius: 10px;
-  background: #151617;
-}
-
-.spell_button {
-  background: transparent;
-  color: aqua;
-  outline: none;
-  border: none;
-  font-size: 3.2rem !important;
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-}
-
-.fitSize {
+.fit-size {
   max-width: fit-content;
 }
 
-.fitWidth {
+.fit-width {
   width: -webkit-fill-available;
 }
 
-.removeSides {
-  padding: 0px !important;
-  margin: 2px !important;
+.min-input {
+  max-width: 16rem;
 }
 
-.shaddedInput {
-  background: #222428c4 !important;
-  text-align: center;
-}
-
-input.toggle-show:not(:checked) ~ div.hiddenSection {
-  display: none;
-}
-input.toggle-show:checked ~ .checkMinus {
-  display: inline !important;
-}
-input.toggle-show:checked ~ .checkPlus {
-  display: none !important;
-}
-input.toggle-show:not(:checked) ~ .checkMinus {
-  display: none !important;
-}
-
-.checklabel {
-  cursor: pointer;
-}
-
-.togglebox {
-  display: none;
-}
-
-.centerText {
-  text-align: center;
-}
-
-.checkPlus {
-  font-family: "Pictos";
-  padding: 2px;
-  background-color: #3AC5C9;
-  line-height: 16px;
-  border-radius: 4px;
-  position: relative;
-  left: 4px;
-  top: -23px;
-}
-
-.checkMinus {
-  font-family: "Pictos";
-  padding: 2px;
-  background-color: #E85764;
-  line-height: 16px;
-  border-radius: 4px;
-  position: relative;
-  left: 4px;
-  top: -23px;
-}
-
-.skillHeading {
-  margin: 2rem 0;
-  font-size: 2em;
-  letter-spacing: 5px;
-  display: flex;
-  align-items: center;
-  width: 100%;
-  color: #88738a;
-  font-family: "Mountains of Christmas";
-  margin-bottom: 0.5rem;
-}
-
-.lora {
-  font-family: "Lora" !important;
-  font-size: 1.9rem !important;
-}
-
-.fullHeight {
-  height: 100% !important;
-}
-
-.skillHeading:before, .skillHeading:after {
-  flex: 1;
-  display: block;
-  content: "";
-  height: 0;
-  margin: 1rem;
-  border-bottom: 3px solid #88738a;
-}
-
-.negativeBottomMargin {
-  margin-bottom: -1.5rem;
-}
-
-.skillCol {
-  padding: 0 0.1666666667rem;
-}
-
-.skillDisplay {
-  grid-template-columns: 2.5em 1fr;
-  border: 1px solid #88738a;
-  display: grid;
-  align-items: stretch;
-  margin-bottom: 0.5rem;
-}
-
-.checkmark {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-}
-.checkmark input[type=checkbox] {
-  position: absolute;
-  left: -999999px;
-  display: unset;
-  width: unset;
-  height: unset;
-  padding: unset;
-  margin-bottom: unset;
-  font-family: unset;
-  font-size: unset;
-  font-weight: unset;
-  line-height: unset;
-  color: unset;
-  border: unset;
-  border-radius: unset;
-  background: unset;
-  background-color: unset;
-  box-shadow: unset;
-}
-.checkmark input[type=checkbox] + span {
-  background-color: unset;
-  border: 1px solid #88738a;
-  display: block;
-  height: 1em;
-  width: 1em;
-  align-self: center;
-  border-radius: 50%;
-  word-break: break-word;
-}
-.checkmark input[type=checkbox]:checked + span {
-  background-color: #873b8e;
-  border: 1px solid #873b8e;
-}
-
-.skillLabelCol {
-  grid-column: 2;
-  background: rgba(0, 0, 0, 0.6);
-  position: relative;
-  display: grid;
-  align-items: center;
-  grid-gap: 0.5rem;
-  grid-template-columns: 1fr 3em;
-  min-height: 36px;
-  padding: 0;
-  padding-left: 0.2rem;
-}
-
-.displayTitle {
-  font-size: 2.4rem;
-  font-family: "Mountains of Christmas";
-  font-weight: 400;
-  color: #e6e6e6;
-  line-height: 3.2rem;
-  margin-top: auto;
-  margin-bottom: auto;
-  padding-top: 0.4rem;
-  margin-left: 0.2rem;
-}
-
-.header {
-  margin-top: -1rem;
-  margin-bottom: -0.2rem;
-}
-
-.title {
-  font-family: "Mountains of Christmas";
-  font-weight: 400;
-  text-align: center;
-  font-size: 4.5em;
-  color: #eeeef7;
-  line-height: 1.5;
-}
-
-.doubleLabel {
-  font-size: 2.3rem;
-  font-family: "Mountains of Christmas";
-}
-
-.base {
-  background: rgba(52, 56, 62, 0.65);
-  border-radius: 5px;
-  padding: 20px;
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.section {
-  background: #151617;
-  padding: 5px 10px !important;
-  border-radius: 10px;
-}
-
-.label {
-  color: #f5f5f5c2;
-  padding-right: 0.2rem;
-  font-size: 1.5rem;
-  font-family: "Lora", serif;
-  font-weight: 400;
-  margin-bottom: 0;
-}
-
-.tabButton {
-  background: transparent;
-  font-size: 2.8rem;
-  font-family: "Mountains of Christmas";
-  border: none;
-  padding: 0.4rem 0.2rem;
-  margin: 0.5rem;
-}
-
-.input {
-  background: #151617;
-  color: #d6d2d2;
-  font-size: 2rem;
-  border-radius: 0.2rem;
-  border-color: transparent;
-  padding-left: 0.2rem;
-  overflow: hidden;
-  font-family: "Mountains of Christmas", serif;
-}
-.input::-webkit-outer-spin-button, .input::-webkit-inner-spin-button {
-  display: none;
-}
-
-.mininumber {
+.mini-number {
   font-size: xx-large;
   height: 2.8rem !important;
   width: 3.5rem !important;
 }
 
-.mininput {
-  max-width: 16rem;
-}
-
-.fitcontent {
-  max-width: fit-content;
-}
-
-.form {
-  margin: 0.2rem 0;
-  display: flex;
-  align-items: center;
-}
-
-.frow {
-  display: flex;
-  flex-direction: row;
-}
-
-.skillSection {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 0.5rem;
-  box-sizing: border-box;
-  height: auto;
-  max-height: 100%;
-  width: 100%;
-  padding: 0 0.25rem;
-}
-
-.fcol {
-  display: flex;
-  flex-direction: column;
-}
-
-.column {
-  display: block;
-  flex-basis: 0;
-  flex-grow: 1;
-  flex-shrink: 1;
-  padding: 0.75rem;
-  margin: 0 0.25rem;
-}
-
-.aligncenter {
-  align-items: center;
-}
-
-.justifyCenter {
-  justify-content: center;
-}
-
-.justifybetween {
-  justify-content: space-between;
-}
-
-.justifyevenly {
-  justify-content: space-evenly;
-}
-
-.statblock {
-  display: flex;
-  align-items: center;
-  margin: 0 0.5rem;
-  min-width: 4rem;
-  width: 4rem;
-}
-
-.centertext {
+.center-txt {
   text-align: center;
+}
+
+.full-height {
+  height: 100% !important;
 }
 
 .pt0 {
@@ -403,21 +84,153 @@ input.toggle-show:not(:checked) ~ .checkMinus {
   margin-bottom: 0;
 }
 
-.rollbutton {
-  background: transparent;
-  border-radius: 0.5rem;
-  color: aqua;
-  font-size: 1.5em;
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.column {
+  display: block;
+  flex-basis: 0;
+  flex-grow: 1;
+  flex-shrink: 1;
+  padding: 0.75rem;
+  margin: 0 0.25rem;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-evenly {
+  justify-content: space-evenly;
+}
+
+.label {
+  color: #f5f5f5c2;
+  padding-right: 0.2rem;
+  font-size: 1.5rem;
+  font-family: "Lora", serif;
+  font-weight: 400;
+  margin-bottom: 0;
+}
+
+.input {
+  background: #151617;
+  color: #d6d2d2;
+  font-size: 2rem;
+  border-radius: 0.2rem;
   border-color: transparent;
+  padding-left: 0.2rem;
+  overflow: hidden;
+  font-family: "Mountains of Christmas", serif;
+}
+.input::-webkit-outer-spin-button, .input::-webkit-inner-spin-button {
   display: none;
 }
 
-.charsheet {
-  background-image: url(https://github.com/Abourass/wondershade-classic/blob/main/dist/stars-964022_960_720.png?raw=true);
-  /*black space with tiny white stars*/
-  background-color: black;
-  background-repeat: repeat;
-  color: white;
+input.toggle-show:not(:checked) ~ div.hiddenSection {
+  display: none;
+}
+input.toggle-show:checked ~ .checkMinus {
+  display: inline !important;
+}
+input.toggle-show:checked ~ .checkPlus {
+  display: none !important;
+}
+input.toggle-show:not(:checked) ~ .checkMinus {
+  display: none !important;
+}
+
+.checkPlus {
+  font-family: "Pictos";
+  padding: 2px;
+  background-color: #3AC5C9;
+  line-height: 16px;
+  border-radius: 4px;
+  position: relative;
+  left: 4px;
+  top: -23px;
+}
+
+.checkMinus {
+  font-family: "Pictos";
+  padding: 2px;
+  background-color: #E85764;
+  line-height: 16px;
+  border-radius: 4px;
+  position: relative;
+  left: 4px;
+  top: -23px;
+}
+
+.checkmark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.checkmark input[type=checkbox] {
+  position: absolute;
+  left: -999999px;
+  display: unset;
+  width: unset;
+  height: unset;
+  padding: unset;
+  margin-bottom: unset;
+  font-family: unset;
+  font-size: unset;
+  font-weight: unset;
+  line-height: unset;
+  color: unset;
+  border: unset;
+  border-radius: unset;
+  background: unset;
+  background-color: unset;
+  box-shadow: unset;
+}
+.checkmark input[type=checkbox] + span {
+  background-color: unset;
+  border: 1px solid #88738a;
+  display: block;
+  height: 1em;
+  width: 1em;
+  align-self: center;
+  border-radius: 50%;
+  word-break: break-word;
+}
+.checkmark input[type=checkbox]:checked + span {
+  background-color: #873b8e;
+  border: 1px solid #873b8e;
+}
+
+.form {
+  margin: 0.2rem 0;
+  display: flex;
+  align-items: center;
+}
+
+/*Configure the tab buttons*/
+.skills, .combat, .magic, .items {
+  display: none;
+}
+
+/* show the selected tab */
+.sheet-tabstoggle[value=skills] ~ div.skills, .sheet-tabstoggle[value=combat] ~ div.combat, .sheet-tabstoggle[value=magic] ~ div.magic, .sheet-tabstoggle[value=items] ~ div.items {
+  display: block;
 }
 
 .sheet-rolltemplate-skillzRoll .sheet-rollContainer {
@@ -503,6 +316,185 @@ input.toggle-show:not(:checked) ~ .checkMinus {
   border: unset;
   background: unset;
   font-family: inherit;
+}
+
+.stat-blocks {
+  border-radius: 10px;
+  background: #151617;
+}
+
+.spell_button {
+  background: transparent;
+  color: aqua;
+  outline: none;
+  border: none;
+  font-size: 3.2rem !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.removeSides {
+  padding: 0px !important;
+  margin: 2px !important;
+}
+
+.shaded-input {
+  background: #222428c4 !important;
+  text-align: center;
+}
+
+.checklabel {
+  cursor: pointer;
+}
+
+.togglebox {
+  display: none;
+}
+
+.skillHeading {
+  margin: 2rem 0;
+  font-size: 2em;
+  letter-spacing: 5px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  color: #88738a;
+  font-family: "Mountains of Christmas";
+  margin-bottom: 0.5rem;
+}
+
+.lora {
+  font-family: "Lora" !important;
+  font-size: 1.9rem !important;
+}
+
+.skillHeading:before, .skillHeading:after {
+  flex: 1;
+  display: block;
+  content: "";
+  height: 0;
+  margin: 1rem;
+  border-bottom: 3px solid #88738a;
+}
+
+.negativeBottomMargin {
+  margin-bottom: -1.5rem;
+}
+
+.skillCol {
+  padding: 0 0.1666666667rem;
+}
+
+.skillDisplay {
+  grid-template-columns: 2.5em 1fr;
+  border: 1px solid #88738a;
+  display: grid;
+  align-items: stretch;
+  margin-bottom: 0.5rem;
+}
+
+.skillLabelCol {
+  grid-column: 2;
+  background: rgba(0, 0, 0, 0.6);
+  position: relative;
+  display: grid;
+  align-items: center;
+  grid-gap: 0.5rem;
+  grid-template-columns: 1fr 3em;
+  min-height: 36px;
+  padding: 0;
+  padding-left: 0.2rem;
+}
+
+.displayTitle {
+  font-size: 2.4rem;
+  font-family: "Mountains of Christmas";
+  font-weight: 400;
+  color: #e6e6e6;
+  line-height: 3.2rem;
+  margin-top: auto;
+  margin-bottom: auto;
+  padding-top: 0.4rem;
+  margin-left: 0.2rem;
+}
+
+.header {
+  margin-top: -1rem;
+  margin-bottom: -0.2rem;
+}
+
+.title {
+  font-family: "Mountains of Christmas";
+  font-weight: 400;
+  text-align: center;
+  font-size: 4.5em;
+  color: #eeeef7;
+  line-height: 1.5;
+}
+
+.doubleLabel {
+  font-size: 2.3rem;
+  font-family: "Mountains of Christmas";
+}
+
+.base {
+  background: rgba(52, 56, 62, 0.65);
+  border-radius: 5px;
+  padding: 20px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section {
+  background: #151617;
+  padding: 5px 10px !important;
+  border-radius: 10px;
+}
+
+.tabButton {
+  background: transparent;
+  font-size: 2.8rem;
+  font-family: "Mountains of Christmas";
+  border: none;
+  padding: 0.4rem 0.2rem;
+  margin: 0.5rem;
+}
+
+.skillSection {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 0.5rem;
+  box-sizing: border-box;
+  height: auto;
+  max-height: 100%;
+  width: 100%;
+  padding: 0 0.25rem;
+}
+
+.stat-block {
+  display: flex;
+  align-items: center;
+  margin: 0 0.5rem;
+  min-width: 4rem;
+  width: 4rem;
+}
+
+.rollbutton {
+  background: transparent;
+  border-radius: 0.5rem;
+  color: aqua;
+  font-size: 1.5em;
+  border-color: transparent;
+  display: none;
+}
+
+.charsheet {
+  background-image: url(https://github.com/Abourass/wondershade-classic/blob/main/dist/stars-964022_960_720.png?raw=true);
+  /*black space with tiny white stars*/
+  background-color: black;
+  background-repeat: repeat;
+  color: white;
 }
 
 .skillInput {

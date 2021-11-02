@@ -1,0 +1,19 @@
+.items
+  h1.skillHeading Items
+  fieldset.repeating_items(style='margin-left: 0.8rem; margin-right: 1.6rem;')
+    .flex-row(style='margin-left: 2.5rem')
+      .column.removeSides
+        .label
+          input.input.shaded-input.fit-width(type='text' name='attr_itemName')
+      .column.removeSides(style='max-width: 30.8%;')
+        .label
+          input.input.shaded-input(type='text' name='attr_itemType')
+    div(style='margin-top: -1rem;')
+      label.checklabel
+        input.togglebox.sheet-toggle-show(type='checkbox' name='a')
+        span.checkPlus &amp;
+        span.checkMinus _
+        .hiddenSection.flex-row
+          .column.removeSides
+            .label
+              textarea.input.shaded-input(name='attr_itemDesc' style="text-align: left; font-family: 'Lora'; font-size: 1.5rem; margin-bottom: 0")

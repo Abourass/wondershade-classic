@@ -8,21 +8,39 @@ mixin txtInput(name, label = null)
       input.input(type='text' name=`attr_${name}`)&attributes(attributes)
 
 mixin miniTxtInput(name, label = null)
-  .form.fitcontent
+  .form.fit-size
     label.label
       | #{label || `${capitalize(name)}:`}
-      input.input.mininput(type='text' name=`attr_${name}`)&attributes(attributes)
+      input.input.min-input(type='text' name=`attr_${name}`)&attributes(attributes)
 
 mixin miniNumInput(name, label = null)
   .form
     label.label
       | #{label || `${capitalize(name)}:`}
-      input.input.mininumber(type='number' name=`attr_${name}`)&attributes(attributes)
+      input.input.mini-number(type='number' name=`attr_${name}`)&attributes(attributes)
+
+mixin force(name, rollAbbreviation = name)
+  .section.column
+    .stat-blocks.column
+      .flex-row.justify-evenly
+        .stat-block.section
+          label.label.flex-col.align-center
+            .flex-row.align-center
+              span.doubleLabel #{toUpperCase(name)}
+              button.rollbutton(
+                type='roll'
+                name=`roll_${rollAbbreviation}`
+                value=`&{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{${name}})]]}} {{fumble=[[ceil(95+([[(@{${name}})]])/20))]]}} {{crit=[[ceil(([[(@{${name}})]])/20)+1]]}} {{special=[[ceil(([[(@{${name}})]])/5)+1]]}}         {{success=[[(@{${name}})]]}} {{roll=[[1d100]]}} {{skillname=${name}}}`
+                )
+            .flex-row.align-center
+              input.input.mini-number.center-txt(type='number' name=`attr_${name}` value='0')
+              span.vs /
+              input.input.mini-number.center-txt(type='number' name=`attr_Max${name}` value='0')
 
 mixin stat(shortName, longName)
-  .statblock.section
-    label.label.fcol.aligncenter
-      .frow.aligncenter
+  .stat-block.section
+    label.label.flex-col.align-center
+      .flex-row.align-center
         span #{toUpperCase(shortName)}
         button.rollbutton(
           type='roll'
@@ -36,4 +54,4 @@ mixin stat(shortName, longName)
           + `{{success=[[(@{${longName}})]]}} `
           + '{{roll=[[1d100]]}} '
           + `{{skillname=${longName}}}`)
-      input.input.mininumber.centertext(type='number' name=`attr_${longName}` value='0')
+      input.input.mini-number.center-txt(type='number' name=`attr_${longName}` value='0')
