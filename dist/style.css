@@ -1,10 +1,19 @@
-@import url('https://fonts.googleapis.com/css?family=Mountains+of+Christmas:wght@700|Lora');
-
+@import url("https://fonts.googleapis.com/css?family=Mountains+of+Christmas:wght@700|Lora");
 .body {
   padding: 10px 0;
-  font-family: 'Lora', serif;
+  font-family: "Lora", serif;
   line-height: 1.7;
   min-height: 100%;
+}
+
+/*Configure the tab buttons*/
+.skills, .combat, .magic, .items {
+  display: none;
+}
+
+/* show the selected tab */
+.sheet-tabstoggle[value=skills] ~ div.skills, .sheet-tabstoggle[value=combat] ~ div.combat, .sheet-tabstoggle[value=magic] ~ div.magic, .sheet-tabstoggle[value=items] ~ div.items {
+  display: block;
 }
 
 .statblocks {
@@ -13,42 +22,42 @@
 }
 
 .spell_button {
-    background: transparent;
-    color: aqua;
-    outline: none;
-    border: none;
-    font-size: 3.2rem !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+  background: transparent;
+  color: aqua;
+  outline: none;
+  border: none;
+  font-size: 3.2rem !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
 
 .fitSize {
-    max-width: fit-content;
+  max-width: fit-content;
 }
 
 .fitWidth {
-    width: -webkit-fill-available;
+  width: -webkit-fill-available;
 }
 
 .removeSides {
-    padding: 0px !important;
-    margin: 2px !important;
+  padding: 0px !important;
+  margin: 2px !important;
 }
 
 .shaddedInput {
-    background: #222428c4 !important;
-    text-align: center;
+  background: #222428c4 !important;
+  text-align: center;
 }
 
 input.toggle-show:not(:checked) ~ div.hiddenSection {
-    display: none;
+  display: none;
 }
-
 input.toggle-show:checked ~ .checkMinus {
-  display: inline !important; 
+  display: inline !important;
 }
-
-input.toggle-show:checked ~ .checkPlus,
+input.toggle-show:checked ~ .checkPlus {
+  display: none !important;
+}
 input.toggle-show:not(:checked) ~ .checkMinus {
   display: none !important;
 }
@@ -62,153 +71,149 @@ input.toggle-show:not(:checked) ~ .checkMinus {
 }
 
 .centerText {
-    text-align: center;
+  text-align: center;
 }
 
 .checkPlus {
-    font-family: 'Pictos';
-    padding: 2px;
-    background-color: #3AC5C9;
-    line-height: 16px;
-    border-radius: 4px;
-    position: relative;
-    left: 4px;
-    top: -23px;
+  font-family: "Pictos";
+  padding: 2px;
+  background-color: #3AC5C9;
+  line-height: 16px;
+  border-radius: 4px;
+  position: relative;
+  left: 4px;
+  top: -23px;
 }
 
 .checkMinus {
-    font-family: 'Pictos';
-    padding: 2px;
-    background-color: #E85764;
-    line-height: 16px;
-    border-radius: 4px;
-    position: relative;
-    left: 4px;
-    top: -23px;
+  font-family: "Pictos";
+  padding: 2px;
+  background-color: #E85764;
+  line-height: 16px;
+  border-radius: 4px;
+  position: relative;
+  left: 4px;
+  top: -23px;
 }
 
 .skillHeading {
-    margin: 2rem 0;
-    font-size: 2em;
-    letter-spacing: 5px;
-    display: flex;
-    align-items: center;
-    width: 100%;
-    color: #88738a;
-    font-family: 'Mountains of Christmas';
-    margin-bottom: .5rem;
+  margin: 2rem 0;
+  font-size: 2em;
+  letter-spacing: 5px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  color: #88738a;
+  font-family: "Mountains of Christmas";
+  margin-bottom: 0.5rem;
 }
 
 .lora {
-    font-family: 'Lora' !important;
-    font-size: 1.9rem !important;
+  font-family: "Lora" !important;
+  font-size: 1.9rem !important;
 }
 
 .fullHeight {
-    height: 100% !important;
+  height: 100% !important;
 }
 
-.skillHeading:before,
-.skillHeading:after {
-    flex: 1;
-    display: block;
-    content: "";
-    height: 0;
-    margin: 1rem;
-    border-bottom: 3px solid #88738a;
+.skillHeading:before, .skillHeading:after {
+  flex: 1;
+  display: block;
+  content: "";
+  height: 0;
+  margin: 1rem;
+  border-bottom: 3px solid #88738a;
 }
 
 .negativeBottomMargin {
-    margin-bottom: -1.5rem;
+  margin-bottom: -1.5rem;
 }
 
 .skillCol {
-    padding: 0 0.1666666667rem;
+  padding: 0 0.1666666667rem;
 }
 
 .skillDisplay {
-    grid-template-columns: 2.5em 1fr;
-    border: 1px solid #88738a;
-    display: grid;
-    align-items: stretch;
-    margin-bottom: 0.5rem;
+  grid-template-columns: 2.5em 1fr;
+  border: 1px solid #88738a;
+  display: grid;
+  align-items: stretch;
+  margin-bottom: 0.5rem;
 }
 
 .checkmark {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
-
 .checkmark input[type=checkbox] {
-    position: absolute;
-    left: -999999px;
-    display: unset;
-    width: unset;
-    height: unset;
-    padding: unset;
-    margin-bottom: unset;
-    font-family: unset;
-    font-size: unset;
-    font-weight: unset;
-    line-height: unset;
-    color: unset;
-    border: unset;
-    border-radius: unset;
-    background: unset;
-    background-color: unset;
-    box-shadow: unset;
+  position: absolute;
+  left: -999999px;
+  display: unset;
+  width: unset;
+  height: unset;
+  padding: unset;
+  margin-bottom: unset;
+  font-family: unset;
+  font-size: unset;
+  font-weight: unset;
+  line-height: unset;
+  color: unset;
+  border: unset;
+  border-radius: unset;
+  background: unset;
+  background-color: unset;
+  box-shadow: unset;
 }
-
 .checkmark input[type=checkbox] + span {
-    background-color: unset;
-    border: 1px solid #88738a;
-    display: block;
-    height: 1em;
-    width: 1em;
-    align-self: center;
-    border-radius: 50%;
-    word-break: break-word;
+  background-color: unset;
+  border: 1px solid #88738a;
+  display: block;
+  height: 1em;
+  width: 1em;
+  align-self: center;
+  border-radius: 50%;
+  word-break: break-word;
 }
-
 .checkmark input[type=checkbox]:checked + span {
-    background-color: #873b8e;
-    border: 1px solid #873b8e;
+  background-color: #873b8e;
+  border: 1px solid #873b8e;
 }
 
 .skillLabelCol {
-    grid-column: 2;
-    background: rgba(0, 0, 0, 0.6);
-    position: relative;
-    display: grid;
-    align-items: center;
-    grid-gap: 0.5rem;
-    grid-template-columns: 1fr 3em;
-    min-height: 36px;
-    padding: 0;
-    padding-left: .2rem;
+  grid-column: 2;
+  background: rgba(0, 0, 0, 0.6);
+  position: relative;
+  display: grid;
+  align-items: center;
+  grid-gap: 0.5rem;
+  grid-template-columns: 1fr 3em;
+  min-height: 36px;
+  padding: 0;
+  padding-left: 0.2rem;
 }
 
 .displayTitle {
-    font-size: 2.4rem;
-    font-family: 'Mountains of Christmas';
-    font-weight: 400;
-    color: #e6e6e6;
-    line-height: 3.2rem;
-    margin-top: auto;
-    margin-bottom: auto;
-    padding-top: 0.4rem;
-    margin-left: 0.2rem;
+  font-size: 2.4rem;
+  font-family: "Mountains of Christmas";
+  font-weight: 400;
+  color: #e6e6e6;
+  line-height: 3.2rem;
+  margin-top: auto;
+  margin-bottom: auto;
+  padding-top: 0.4rem;
+  margin-left: 0.2rem;
 }
 
 .header {
   margin-top: -1rem;
-  margin-bottom: -.2rem;
+  margin-bottom: -0.2rem;
 }
 
 .title {
-  font-family: 'Mountains of Christmas';
+  font-family: "Mountains of Christmas";
   font-weight: 400;
   text-align: center;
   font-size: 4.5em;
@@ -217,12 +222,12 @@ input.toggle-show:not(:checked) ~ .checkMinus {
 }
 
 .doubleLabel {
-    font-size: 2.3rem;
-    font-family: 'Mountains of Christmas';
+  font-size: 2.3rem;
+  font-family: "Mountains of Christmas";
 }
 
 .base {
-  background: rgb(52 56 62 / 65%);
+  background: rgba(52, 56, 62, 0.65);
   border-radius: 5px;
   padding: 20px;
   width: 90%;
@@ -231,42 +236,40 @@ input.toggle-show:not(:checked) ~ .checkMinus {
 }
 
 .section {
-  background: rgb(21 22 23);
+  background: #151617;
   padding: 5px 10px !important;
   border-radius: 10px;
 }
 
 .label {
   color: #f5f5f5c2;
-  padding-right: .2rem;
+  padding-right: 0.2rem;
   font-size: 1.5rem;
-  font-family: 'Lora', serif;
+  font-family: "Lora", serif;
   font-weight: 400;
   margin-bottom: 0;
 }
 
 .tabButton {
-    background: transparent;
-    font-size: 2.8rem;
-    font-family: 'Mountains of Christmas';
-    border: none;
-    padding: .4rem 0.2rem;
-    margin: .5rem;
+  background: transparent;
+  font-size: 2.8rem;
+  font-family: "Mountains of Christmas";
+  border: none;
+  padding: 0.4rem 0.2rem;
+  margin: 0.5rem;
 }
 
 .input {
   background: #151617;
   color: #d6d2d2;
   font-size: 2rem;
-  border-radius: .2rem;
+  border-radius: 0.2rem;
   border-color: transparent;
-  padding-left: .2rem;
+  padding-left: 0.2rem;
   overflow: hidden;
-  font-family: 'Mountains of Christmas', serif;
+  font-family: "Mountains of Christmas", serif;
 }
-
-.input::-webkit-outer-spin-button,
-.input::-webkit-inner-spin-button {
+.input::-webkit-outer-spin-button, .input::-webkit-inner-spin-button {
   display: none;
 }
 
@@ -296,14 +299,14 @@ input.toggle-show:not(:checked) ~ .checkMinus {
 }
 
 .skillSection {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 0.5rem;
-    box-sizing: border-box;
-    height: auto;
-    max-height: 100%;
-    width: 100%;
-    padding: 0 0.25rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 0.5rem;
+  box-sizing: border-box;
+  height: auto;
+  max-height: 100%;
+  width: 100%;
+  padding: 0 0.25rem;
 }
 
 .fcol {
@@ -317,7 +320,7 @@ input.toggle-show:not(:checked) ~ .checkMinus {
   flex-grow: 1;
   flex-shrink: 1;
   padding: 0.75rem;
-  margin: 0 .25rem;
+  margin: 0 0.25rem;
 }
 
 .aligncenter {
@@ -339,7 +342,7 @@ input.toggle-show:not(:checked) ~ .checkMinus {
 .statblock {
   display: flex;
   align-items: center;
-  margin: 0 .5rem;
+  margin: 0 0.5rem;
   min-width: 4rem;
   width: 4rem;
 }
@@ -353,19 +356,19 @@ input.toggle-show:not(:checked) ~ .checkMinus {
 }
 
 .pt1 {
-  padding-top: .1rem;
+  padding-top: 0.1rem;
 }
 
 .pt2 {
-  padding-top: .2rem;
+  padding-top: 0.2rem;
 }
 
 .pt3 {
-  padding-top: .3rem;
+  padding-top: 0.3rem;
 }
 
 .pr0 {
-    padding-right: 0;
+  padding-right: 0;
 }
 
 .mt0 {
@@ -373,23 +376,23 @@ input.toggle-show:not(:checked) ~ .checkMinus {
 }
 
 .mt1 {
-  margin-top: .1rem;
+  margin-top: 0.1rem;
 }
 
 .mt2 {
-  margin-top: .2rem;
+  margin-top: 0.2rem;
 }
 
 .mt3 {
-  margin-top: .3rem;
+  margin-top: 0.3rem;
 }
 
 .mt4 {
-  margin-top: .4rem;
+  margin-top: 0.4rem;
 }
 
 .mt5 {
-  margin-top: .5rem;
+  margin-top: 0.5rem;
 }
 
 .mt10 {
@@ -397,12 +400,12 @@ input.toggle-show:not(:checked) ~ .checkMinus {
 }
 
 .mb0 {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 .rollbutton {
   background: transparent;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   color: aqua;
   font-size: 1.5em;
   border-color: transparent;
@@ -410,7 +413,7 @@ input.toggle-show:not(:checked) ~ .checkMinus {
 }
 
 .charsheet {
-  background-image: url(https://cdn.pixabay.com/photo/2015/09/29/15/12/stars-964022_960_720.png);
+  background-image: url(https://github.com/Abourass/wondershade-classic/blob/main/dist/stars-964022_960_720.png?raw=true);
   /*black space with tiny white stars*/
   background-color: black;
   background-repeat: repeat;
@@ -418,124 +421,98 @@ input.toggle-show:not(:checked) ~ .checkMinus {
 }
 
 .sheet-rolltemplate-skillzRoll .sheet-rollContainer {
-    background-image: 
-    url(https://s3.amazonaws.com/files.d20.io/images/97938169/2H_jIrRYHQLhEIW3TlZYow/max.png?1574800581),
-    url(https://s3.amazonaws.com/files.d20.io/images/97938213/qxfGqZZDIGms6oySxMyPtA/max.png?1574800622),
-    url(https://s3.amazonaws.com/files.d20.io/images/97938159/DQvw7NbZMn_E52h6RW8DUA/max.png?1574800572),
-    url(https://s3.amazonaws.com/files.d20.io/images/97938152/iX1L3c8KUcynHfqZz1Qwgw/max.png?1574800563),
-    url(https://cdn.pixabay.com/photo/2015/09/29/15/12/stars-964022_960_720.png);
-    background-position: left top, right top, right bottom, left bottom, center center;
-    background-repeat: no-repeat;
-    background-size: auto;
-    border: 1px solid #e5d280;
-    color: #f2f2f2;
-    padding: 0.sheet-5rem;
-    background-color: black;
-    font-family: "Lucida Bright", "Cambria", serif;   
+  background-image: url(https://s3.amazonaws.com/files.d20.io/images/97938169/2H_jIrRYHQLhEIW3TlZYow/max.png?1574800581), url(https://s3.amazonaws.com/files.d20.io/images/97938213/qxfGqZZDIGms6oySxMyPtA/max.png?1574800622), url(https://s3.amazonaws.com/files.d20.io/images/97938159/DQvw7NbZMn_E52h6RW8DUA/max.png?1574800572), url(https://s3.amazonaws.com/files.d20.io/images/97938152/iX1L3c8KUcynHfqZz1Qwgw/max.png?1574800563), url(https://github.com/Abourass/wondershade-classic/blob/main/dist/stars-964022_960_720.png?raw=true);
+  background-position: left top, right top, right bottom, left bottom, center center;
+  background-repeat: no-repeat;
+  background-size: auto;
+  border: 1px solid #e5d280;
+  color: #f2f2f2;
+  padding: 0.5rem;
+  background-color: black;
+  font-family: "Lucida Bright", "Cambria", serif;
 }
-
 .sheet-rolltemplate-skillzRoll .sheet-rollContainer h1 {
-    font-size: 1.sheet-8em;
-    color: #e5d280;
+  font-size: 1.8em;
+  color: #e5d280;
 }
-
 .sheet-rolltemplate-skillzRoll .sheet-rollContainer h2 {
-    font-weight: 400;
-    font-size: 2rem;
-    color: #f2f2f2;
-    font-family: 'Mountains of Christmas';
+  font-weight: 400;
+  font-size: 2rem;
+  color: #f2f2f2;
+  font-family: "Mountains of Christmas";
 }
-
 .sheet-rolltemplate-skillzRoll .sheet-rollContainer h3 {
-    font-size: 1.sheet-1em;
-    color: #f2f2f2;
+  font-size: 1.1em;
+  color: #f2f2f2;
 }
-
 .sheet-rolltemplate-skillzRoll .sheet-rollContainer h1, .sheet-rolltemplate-skillzRoll .sheet-rollContainer h2, .sheet-rolltemplate-skillzRoll .sheet-rollContainer h3 {
-    display: block;
-    text-align: center;
-    text-transform: capitalize;
-    margin: 0.sheet-25rem;
-    padding: 0;
-    line-height: 1;
+  display: block;
+  text-align: center;
+  text-transform: capitalize;
+  margin: 0.25rem;
+  padding: 0;
+  line-height: 1;
 }
-
 .sheet-rolltemplate-skillzRoll .sheet-rollWrapper {
-    padding: 0.sheet-5rem;
-    font-family: "Helvetica", "Verdana", sans;
+  padding: 0.5rem;
+  font-family: "Helvetica", "Verdana", sans;
 }
-
 .sheet-rolltemplate-skillzRoll .sheet-rollSuccess {
-    background: #396713;
+  background: #396713;
 }
-
 .sheet-rolltemplate-skillzRoll .sheet-rollFailure {
-    background: #a80b0b;
+  background: #a80b0b;
 }
-
 .sheet-rolltemplate-skillzRoll .sheet-rollSuccess, .sheet-rolltemplate-skillzRoll .sheet-rollFailure {
-    padding: 0.sheet-5rem;
-    margin-bottom: 0.sheet-5rem;
-    color: #f2f2f2;
-    font-family: "Lucida Bright", "Cambria", serif;
-    font-size: 1.sheet-2em;
-    font-weight: bold;
-    letter-spacing: 0.sheet-1em;
-    text-align: center;
-    text-transform: uppercase;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  color: #f2f2f2;
+  font-family: "Lucida Bright", "Cambria", serif;
+  font-size: 1.2em;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  text-align: center;
+  text-transform: uppercase;
 }
-
 .sheet-rolltemplate-skillzRoll .sheet-rollResult {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 70%;
-    margin: auto;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    font-size: 1.sheet-75em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 70%;
+  margin: auto;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: 1.75em;
 }
-
 .sheet-rolltemplate-skillzRoll .sheet-roll {
-    padding: 0.sheet-5rem;
-    font-family: "Lucida Bright", "Cambria", serif;
-    font-size: 1.sheet-2em;
-    text-align: center;
+  padding: 0.5rem;
+  font-family: "Lucida Bright", "Cambria", serif;
+  font-size: 1.2em;
+  text-align: center;
+  font-family: "Lucida Bright", "Cambria", serif;
 }
-
-.sheet-rolltemplate-skillzRoll .sheet-roll, .sheet-rolltemplate-skillzRoll .sheet-bonus {
-    font-family: "Lucida Bright", "Cambria", serif;
+.sheet-rolltemplate-skillzRoll .sheet-bonus {
+  font-family: "Lucida Bright", "Cambria", serif;
 }
-
 .sheet-rolltemplate-skillzRoll .sheet-vs {
-    font-family: "Lucida Bright", "Cambria", serif;
-    font-size: 0.sheet-7em;
+  font-family: "Lucida Bright", "Cambria", serif;
+  font-size: 0.7em;
 }
-
-.sheet-rolltemplate-skillzRoll .sheet-rollContainer .sheet-inlinerollresult{
-    padding: 0;
-    border: unset;
-    background: unset;
-    font-family: inherit;
-}
-
-/*Configure the tab buttons*/
-.skills, .combat, .magic, .items { display: none; }
-
-/* show the selected tab */
-.sheet-tabstoggle[value="skills"] ~ div.skills,
-.sheet-tabstoggle[value="combat"] ~ div.combat,
-.sheet-tabstoggle[value="magic"] ~ div.magic,
-.sheet-tabstoggle[value="items"] ~ div.items {
-	display: block;
+.sheet-rolltemplate-skillzRoll .sheet-rollContainer .sheet-inlinerollresult {
+  padding: 0;
+  border: unset;
+  background: unset;
+  font-family: inherit;
 }
 
 .skillInput {
-    font-size: 2rem;
-    font-weight: bold;
-    text-align: center;
-    height: 36px;
-    width: 100% !important;
-    background: #33383e61;
-    padding-top: 0;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  height: 36px;
+  width: 100% !important;
+  background: #33383e61;
+  padding-top: 0;
 }
+
+/*# sourceMappingURL=style.css.map */

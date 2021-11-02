@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "watch": "pug -w ./src/index.pug -o ./dist -P -O ./data/vars.js"
+    "watch": "pug -w ./src/html/index.pug -o ./dist -P -O ./data/vars.js",
+    "build-sass": "sass ./src/sass/index.scss ./dist/style.css"
   },
   "dependencies": {
     "pug": "^3.0.2",

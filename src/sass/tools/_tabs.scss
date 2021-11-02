@@ -1,0 +1,9 @@
+/*Configure the tab buttons*/
+.skills, .combat, .magic, .items { display: none; }
+
+/* show the selected tab */
+.sheet-tabstoggle {
+  &[value="skills"] ~ div.skills, &[value="combat"] ~ div.combat, &[value="magic"] ~ div.magic, &[value="items"] ~ div.items {
+    display: block;
+  }
+}

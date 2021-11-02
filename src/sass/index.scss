@@ -1,0 +1,530 @@
+@use 'layout/base';
+@use 'tools/tabs';
+
+.statblocks {
+  border-radius: 10px;
+  background: #151617;
+}
+
+.spell_button {
+  background: transparent;
+  color: aqua;
+  outline: none;
+  border: none;
+  font-size: 3.2rem !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.fitSize {
+  max-width: fit-content;
+}
+
+.fitWidth {
+  width: -webkit-fill-available;
+}
+
+.removeSides {
+  padding: 0px !important;
+  margin: 2px !important;
+}
+
+.shaddedInput {
+  background: #222428c4 !important;
+  text-align: center;
+}
+
+input.toggle-show {
+  &:not(:checked) ~ div.hiddenSection {
+    display: none;
+  }
+
+  &:checked ~ {
+    .checkMinus {
+      display: inline !important;
+    }
+
+    .checkPlus {
+      display: none !important;
+    }
+  }
+
+  &:not(:checked) ~ .checkMinus {
+    display: none !important;
+  }
+}
+
+.checklabel {
+  cursor: pointer;
+}
+
+.togglebox {
+  display: none;
+}
+
+.centerText {
+  text-align: center;
+}
+
+.checkPlus {
+  font-family: 'Pictos';
+  padding: 2px;
+  background-color: #3AC5C9;
+  line-height: 16px;
+  border-radius: 4px;
+  position: relative;
+  left: 4px;
+  top: -23px;
+}
+
+.checkMinus {
+  font-family: 'Pictos';
+  padding: 2px;
+  background-color: #E85764;
+  line-height: 16px;
+  border-radius: 4px;
+  position: relative;
+  left: 4px;
+  top: -23px;
+}
+
+.skillHeading {
+  margin: 2rem 0;
+  font-size: 2em;
+  letter-spacing: 5px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  color: #88738a;
+  font-family: 'Mountains of Christmas';
+  margin-bottom: .5rem;
+}
+
+.lora {
+  font-family: 'Lora' !important;
+  font-size: 1.9rem !important;
+}
+
+.fullHeight {
+  height: 100% !important;
+}
+
+.skillHeading {
+  &:before, &:after {
+    flex: 1;
+    display: block;
+    content: "";
+    height: 0;
+    margin: 1rem;
+    border-bottom: 3px solid #88738a;
+  }
+}
+
+.negativeBottomMargin {
+  margin-bottom: -1.5rem;
+}
+
+.skillCol {
+  padding: 0 0.1666666667rem;
+}
+
+.skillDisplay {
+  grid-template-columns: 2.5em 1fr;
+  border: 1px solid #88738a;
+  display: grid;
+  align-items: stretch;
+  margin-bottom: 0.5rem;
+}
+
+.checkmark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  input[type=checkbox] {
+    position: absolute;
+    left: -999999px;
+    display: unset;
+    width: unset;
+    height: unset;
+    padding: unset;
+    margin-bottom: unset;
+    font-family: unset;
+    font-size: unset;
+    font-weight: unset;
+    line-height: unset;
+    color: unset;
+    border: unset;
+    border-radius: unset;
+    background: unset;
+    background-color: unset;
+    box-shadow: unset;
+
+    + span {
+      background-color: unset;
+      border: 1px solid #88738a;
+      display: block;
+      height: 1em;
+      width: 1em;
+      align-self: center;
+      border-radius: 50%;
+      word-break: break-word;
+    }
+
+    &:checked + span {
+      background-color: #873b8e;
+      border: 1px solid #873b8e;
+    }
+  }
+}
+
+.skillLabelCol {
+  grid-column: 2;
+  background: rgba(0, 0, 0, 0.6);
+  position: relative;
+  display: grid;
+  align-items: center;
+  grid-gap: 0.5rem;
+  grid-template-columns: 1fr 3em;
+  min-height: 36px;
+  padding: 0;
+  padding-left: .2rem;
+}
+
+.displayTitle {
+  font-size: 2.4rem;
+  font-family: 'Mountains of Christmas';
+  font-weight: 400;
+  color: #e6e6e6;
+  line-height: 3.2rem;
+  margin-top: auto;
+  margin-bottom: auto;
+  padding-top: 0.4rem;
+  margin-left: 0.2rem;
+}
+
+.header {
+  margin-top: -1rem;
+  margin-bottom: -.2rem;
+}
+
+.title {
+  font-family: 'Mountains of Christmas';
+  font-weight: 400;
+  text-align: center;
+  font-size: 4.5em;
+  color: #eeeef7;
+  line-height: 1.5;
+}
+
+.doubleLabel {
+  font-size: 2.3rem;
+  font-family: 'Mountains of Christmas';
+}
+
+.base {
+  background: rgb(52 56 62 / 65%);
+  border-radius: 5px;
+  padding: 20px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section {
+  background: rgb(21 22 23);
+  padding: 5px 10px !important;
+  border-radius: 10px;
+}
+
+.label {
+  color: #f5f5f5c2;
+  padding-right: .2rem;
+  font-size: 1.5rem;
+  font-family: 'Lora', serif;
+  font-weight: 400;
+  margin-bottom: 0;
+}
+
+.tabButton {
+  background: transparent;
+  font-size: 2.8rem;
+  font-family: 'Mountains of Christmas';
+  border: none;
+  padding: .4rem 0.2rem;
+  margin: .5rem;
+}
+
+.input {
+  background: #151617;
+  color: #d6d2d2;
+  font-size: 2rem;
+  border-radius: .2rem;
+  border-color: transparent;
+  padding-left: .2rem;
+  overflow: hidden;
+  font-family: 'Mountains of Christmas', serif;
+
+  &::-webkit-outer-spin-button, &::-webkit-inner-spin-button {
+    display: none;
+  }
+}
+
+.mininumber {
+  font-size: xx-large;
+  height: 2.8rem !important;
+  width: 3.5rem !important;
+}
+
+.mininput {
+  max-width: 16rem;
+}
+
+.fitcontent {
+  max-width: fit-content;
+}
+
+.form {
+  margin: 0.2rem 0;
+  display: flex;
+  align-items: center;
+}
+
+.frow {
+  display: flex;
+  flex-direction: row;
+}
+
+.skillSection {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 0.5rem;
+  box-sizing: border-box;
+  height: auto;
+  max-height: 100%;
+  width: 100%;
+  padding: 0 0.25rem;
+}
+
+.fcol {
+  display: flex;
+  flex-direction: column;
+}
+
+.column {
+  display: block;
+  flex-basis: 0;
+  flex-grow: 1;
+  flex-shrink: 1;
+  padding: 0.75rem;
+  margin: 0 .25rem;
+}
+
+.aligncenter {
+  align-items: center;
+}
+
+.justifyCenter {
+  justify-content: center;
+}
+
+.justifybetween {
+  justify-content: space-between;
+}
+
+.justifyevenly {
+  justify-content: space-evenly;
+}
+
+.statblock {
+  display: flex;
+  align-items: center;
+  margin: 0 .5rem;
+  min-width: 4rem;
+  width: 4rem;
+}
+
+.centertext {
+  text-align: center;
+}
+
+.pt0 {
+  padding-top: 0;
+}
+
+.pt1 {
+  padding-top: .1rem;
+}
+
+.pt2 {
+  padding-top: .2rem;
+}
+
+.pt3 {
+  padding-top: .3rem;
+}
+
+.pr0 {
+  padding-right: 0;
+}
+
+.mt0 {
+  margin-top: 0;
+}
+
+.mt1 {
+  margin-top: .1rem;
+}
+
+.mt2 {
+  margin-top: .2rem;
+}
+
+.mt3 {
+  margin-top: .3rem;
+}
+
+.mt4 {
+  margin-top: .4rem;
+}
+
+.mt5 {
+  margin-top: .5rem;
+}
+
+.mt10 {
+  margin-top: 1rem;
+}
+
+.mb0 {
+  margin-bottom: 0;
+}
+
+.rollbutton {
+  background: transparent;
+  border-radius: .5rem;
+  color: aqua;
+  font-size: 1.5em;
+  border-color: transparent;
+  display: none;
+}
+
+.charsheet {
+  background-image: url(https://github.com/Abourass/wondershade-classic/blob/main/dist/stars-964022_960_720.png?raw=true);
+
+  /*black space with tiny white stars*/
+  background-color: black;
+  background-repeat: repeat;
+  color: white;
+}
+
+.sheet-rolltemplate-skillzRoll {
+  .sheet-rollContainer {
+    background-image: url(https://s3.amazonaws.com/files.d20.io/images/97938169/2H_jIrRYHQLhEIW3TlZYow/max.png?1574800581), url(https://s3.amazonaws.com/files.d20.io/images/97938213/qxfGqZZDIGms6oySxMyPtA/max.png?1574800622), url(https://s3.amazonaws.com/files.d20.io/images/97938159/DQvw7NbZMn_E52h6RW8DUA/max.png?1574800572), url(https://s3.amazonaws.com/files.d20.io/images/97938152/iX1L3c8KUcynHfqZz1Qwgw/max.png?1574800563), url(https://github.com/Abourass/wondershade-classic/blob/main/dist/stars-964022_960_720.png?raw=true);
+    background-position: left top, right top, right bottom, left bottom, center center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    border: 1px solid #e5d280;
+    color: #f2f2f2;
+    padding: 0.5rem;
+    background-color: black;
+    font-family: "Lucida Bright", "Cambria", serif;
+
+    h1 {
+      font-size: 1.8em;
+      color: #e5d280;
+    }
+
+    h2 {
+      font-weight: 400;
+      font-size: 2rem;
+      color: #f2f2f2;
+      font-family: 'Mountains of Christmas';
+    }
+
+    h3 {
+      font-size: 1.1em;
+      color: #f2f2f2;
+    }
+
+    h1, h2, h3 {
+      display: block;
+      text-align: center;
+      text-transform: capitalize;
+      margin: 0.25rem;
+      padding: 0;
+      line-height: 1;
+    }
+  }
+
+  .sheet-rollWrapper {
+    padding: 0.5rem;
+    font-family: "Helvetica", "Verdana", sans;
+  }
+
+  .sheet-rollSuccess {
+    background: #396713;
+  }
+
+  .sheet-rollFailure {
+    background: #a80b0b;
+  }
+
+  .sheet-rollSuccess, .sheet-rollFailure {
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    color: #f2f2f2;
+    font-family: "Lucida Bright", "Cambria", serif;
+    font-size: 1.2em;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .sheet-rollResult {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+    margin: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: 1.75em;
+  }
+
+  .sheet-roll {
+    padding: 0.5rem;
+    font-family: "Lucida Bright", "Cambria", serif;
+    font-size: 1.2em;
+    text-align: center;
+    font-family: "Lucida Bright", "Cambria", serif;
+  }
+
+  .sheet-bonus {
+    font-family: "Lucida Bright", "Cambria", serif;
+  }
+
+  .sheet-vs {
+    font-family: "Lucida Bright", "Cambria", serif;
+    font-size: 0.7em;
+  }
+
+  .sheet-rollContainer .sheet-inlinerollresult {
+    padding: 0;
+    border: unset;
+    background: unset;
+    font-family: inherit;
+  }
+}
+
+.skillInput {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  height: 36px;
+  width: 100% !important;
+  background: #33383e61;
+  padding-top: 0;
+}
