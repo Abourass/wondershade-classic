@@ -1,4 +1,4 @@
-
+.flex { display: flex !important; }
 .flex-col {
   display: flex;
   flex-direction: column;
@@ -7,6 +7,12 @@
 .flex-row {
   display: flex;
   flex-direction: row;
+}
+
+.even-spaced-col {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
 .column {

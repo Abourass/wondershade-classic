@@ -37,6 +37,26 @@ mixin force(name, rollAbbreviation = name)
               span.vs /
               input.input.mini-number.center-txt(type='number' name=`attr_Max${name}` value='0')
 
+mixin skill(name, value)
+  .skillDisplay
+    label.checkmark.mb0.flex
+      input(name=`attr_${name.toLowerCase()}_check` type='checkbox')
+      span
+    .skillLabelCol.pr0
+      label.mb0
+        strong.displayTitle #{name}
+        button.rollbutton(
+          type='roll'
+          name=`roll_${name}`
+          value=`&{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{${name}})]]}} {{fumble=[[ceil(95+([[(@{${name}})]])/20))]]}} {{crit=[[ceil(([[(@{${name}})]])/20)+1]]}} {{special=[[ceil(([[(@{${name}})]])/5)+1]]}}         {{success=[[(@{${name}})]]}} {{roll=[[1d100]]}} {{skillname=${name}}}`
+        )
+      label.mb0.pr0.full-height
+        input.input.skillInput.lora.full-height(
+          type='number'
+          name=`attr_${name}`
+          value= value
+        )
+
 mixin stat(shortName, longName)
   .stat-block.section
     label.label.flex-col.align-center

@@ -1,3 +1,18 @@
+function dynamicSort(property) {
+  var sortOrder = 1;
+  if(property[0] === "-") {
+      sortOrder = -1;
+      property = property.substr(1);
+  }
+  return function (a,b) {
+      /* next line works with strings and numbers, 
+       * and you may want to customize it to your needs
+       */
+      var result = (a[property] < b[property]) ? -1 : (a[property] > b[property]) ? 1 : 0;
+      return result * sortOrder;
+  }
+}
+
 module.exports = {
   attackTypes: ['Physical', 'Magical', 'Other'],
   stats: {
@@ -12,4 +27,39 @@ module.exports = {
       {shortTxt: 'Luck', fullTxt: 'Luck'},
     ]
   },
+  skills: {
+    left: [
+      { name: 'Alertness', value: 20 },
+      { name: 'Animal Handling', value: 5},
+      { name: 'Athletics', value: 10 },
+      { name: 'Art', value: 0 },
+      { name: 'Barter', value: 5 },
+      { name: 'Bureaucracy', value: 5 },
+      { name: 'Craft', value: 0 },
+      { name: 'Deception', value: 10 },
+      { name: 'Disguise', value: 5 },
+    ].sort(dynamicSort('name')),
+    middle: [
+      { name: 'Dodge', value: 20 },
+      { name: 'Drive / Pilot', value: 20 },
+      { name: 'History', value: 10 },
+      { name: 'Intimidation', value: 5 },
+      { name: 'Medicine', value: 1 },
+      { name: 'Nature', value: 5 },
+      { name: 'Navigate', value: 15 },
+      { name: 'Occult', value: 0 },
+      { name: 'Portal Sense', value: 0 },
+    ].sort(dynamicSort('name')),
+    right: [
+      { name: 'Performance', value: 5},
+      { name: 'Persuade', value: 10},
+      { name: 'Repair', value: 5 },
+      { name: 'Science', value: 15 },
+      { name: 'Sleight of Hand', value: 5},
+      { name: 'Stealth', value: 10},
+      { name: 'Survival', value: 10},
+      { name: 'Unsanity', value: 0},
+      { name: 'Vibe Check', value: 15},
+    ].sort(dynamicSort('name')),
+  }
 }

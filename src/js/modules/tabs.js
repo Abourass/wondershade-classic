@@ -1,5 +1,5 @@
 
-["skills", "combat", "magic", "items"].forEach(button => {
+["skills", "combat", "magick", "items"].forEach(button => {
   on(`clicked:${button}`, function() {
     setAttrs({ sheetTab: button });
   });

@@ -7,6 +7,13 @@
   margin-bottom: 0;
 }
 
+label {
+  margin-bottom: 0 !important;
+  font-family: 'Lora', serif;
+  font-weight: 400 !important;
+  margin-bottom: 0 !important;
+}
+
 .input {
   background: #151617;
   color: #d6d2d2;
@@ -102,7 +109,7 @@ input.toggle-show {
 }
 
 .form {
-  margin: 0.2rem 0;
+  margin: 0;
   display: flex;
   align-items: center;
 }

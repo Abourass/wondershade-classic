@@ -1,6 +1,12 @@
 .skills
   h1.skillHeading Skills
   .skillSection
-    include ../skills/leftCol
-    include ../skills/middleCol
-    include ../skills/rightCol
+    .skillCol
+      each skill in skills.left
+        +skill(skill.name, skill.value)
+    .skillCol
+      each skill in skills.middle
+        +skill(skill.name, skill.value)
+    .skillCol
+      each skill in skills.right
+        +skill(skill.name, skill.value)

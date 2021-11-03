@@ -84,6 +84,10 @@
   margin-bottom: 0;
 }
 
+.flex {
+  display: flex !important;
+}
+
 .flex-col {
   display: flex;
   flex-direction: column;
@@ -92,6 +96,12 @@
 .flex-row {
   display: flex;
   flex-direction: row;
+}
+
+.even-spaced-col {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
 .column {
@@ -126,6 +136,13 @@
   font-family: "Lora", serif;
   font-weight: 400;
   margin-bottom: 0;
+}
+
+label {
+  margin-bottom: 0 !important;
+  font-family: "Lora", serif;
+  font-weight: 400 !important;
+  margin-bottom: 0 !important;
 }
 
 .input {
@@ -218,18 +235,18 @@ input.toggle-show:not(:checked) ~ .checkMinus {
 }
 
 .form {
-  margin: 0.2rem 0;
+  margin: 0;
   display: flex;
   align-items: center;
 }
 
 /*Configure the tab buttons*/
-.skills, .combat, .magic, .items {
+.skills, .combat, .magick, .items {
   display: none;
 }
 
 /* show the selected tab */
-.sheet-tabstoggle[value=skills] ~ div.skills, .sheet-tabstoggle[value=combat] ~ div.combat, .sheet-tabstoggle[value=magic] ~ div.magic, .sheet-tabstoggle[value=items] ~ div.items {
+.sheet-tabstoggle[value=skills] ~ div.skills, .sheet-tabstoggle[value=combat] ~ div.combat, .sheet-tabstoggle[value=magick] ~ div.magick, .sheet-tabstoggle[value=items] ~ div.items {
   display: block;
 }
 
