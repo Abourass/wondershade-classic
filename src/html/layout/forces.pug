@@ -1,5 +1,4 @@
 .column.mt5
   .flex-row
-    +force('Sanity', 'San')
-    +force('Composure', 'Comp')
-    +force('Health')
+    each force in forces
+      +force(force)

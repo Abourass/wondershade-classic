@@ -15,6 +15,11 @@
   justify-content: space-evenly;
 }
 
+.justify-center {
+  display: flex!important;
+  justify-content: center;
+}
+
 .column {
   display: block;
   flex-basis: 0;

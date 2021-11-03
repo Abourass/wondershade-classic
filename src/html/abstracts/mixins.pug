@@ -23,8 +23,8 @@ mixin force(name, rollAbbreviation = name)
   .section.column
     .stat-blocks.column
       .flex-row.justify-evenly
-        .stat-block.section
-          label.label.flex-col.align-center
+        .stat-block
+          label.label.flex-col.align-center.justify-center
             .flex-row.align-center
               span.doubleLabel #{toUpperCase(name)}
               button.rollbutton(
@@ -58,9 +58,9 @@ mixin skill(name, value)
         )
 
 mixin stat(shortName, longName)
-  .stat-block.section
+  .stat-block
     label.label.flex-col.align-center
-      .flex-row.align-center
+      .flex-row.align-center.justify-center
         span #{toUpperCase(shortName)}
         button.rollbutton(
           type='roll'
