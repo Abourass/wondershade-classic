@@ -12,6 +12,7 @@
 
 .fit-width {
   width: -webkit-fill-available;
+  width: -moz-available;
 }
 
 .min-input {
@@ -21,7 +22,7 @@
 .mini-number {
   font-size: xx-large;
   height: 2.8rem !important;
-  width: 3.5rem !important;
+  width: 4.5rem !important;
 }
 
 .center-txt {
@@ -84,6 +85,10 @@
   margin-bottom: 0;
 }
 
+.font-2 {
+  font-size: 2rem !important;
+}
+
 .flex {
   display: flex !important;
 }
@@ -143,6 +148,10 @@
   margin-bottom: 0;
 }
 
+.clickable-label {
+  cursor: pointer;
+}
+
 label {
   margin-bottom: 0 !important;
   font-family: "Lora", serif;
@@ -157,7 +166,7 @@ label strong {
 .input {
   background: #151617;
   color: #d6d2d2;
-  font-size: 2rem;
+  font-size: 3rem;
   border-radius: 0.2rem;
   border-color: transparent;
   padding-left: 0.2rem;
@@ -207,7 +216,6 @@ input.toggle-show:not(:checked) ~ .checkMinus {
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
 }
 .checkmark input[type=checkbox] {
   position: absolute;
@@ -237,6 +245,7 @@ input.toggle-show:not(:checked) ~ .checkMinus {
   align-self: center;
   border-radius: 50%;
   word-break: break-word;
+  cursor: pointer;
 }
 .checkmark input[type=checkbox]:checked + span {
   background-color: #873b8e;
@@ -349,6 +358,10 @@ input.toggle-show:not(:checked) ~ .checkMinus {
   border: none;
 }
 
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 .stat-blocks {
   border-radius: 10px;
   background: #151617;
@@ -374,12 +387,12 @@ input.toggle-show:not(:checked) ~ .checkMinus {
   text-align: center;
 }
 
-.checklabel {
+.check-label {
   cursor: pointer;
 }
 
-.togglebox {
-  display: none;
+.toggle-box {
+  display: none !important;
 }
 
 .skillHeading {
@@ -511,7 +524,7 @@ input.toggle-show:not(:checked) ~ .checkMinus {
   width: 4rem;
 }
 
-.rollbutton {
+.rollButton {
   background: transparent;
   border-radius: 0.5rem;
   color: aqua;
@@ -536,6 +549,11 @@ input.toggle-show:not(:checked) ~ .checkMinus {
   width: 100% !important;
   background: #33383e61;
   padding-top: 0;
+}
+
+.btn:hover {
+  background: transparent !important;
+  color: #d840cb !important;
 }
 
 /*# sourceMappingURL=style.css.map */

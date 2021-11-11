@@ -18,11 +18,13 @@ module.exports = {
       {shortTxt: 'Str', fullTxt: 'Strength'},
       {shortTxt: 'Int', fullTxt: 'Intelligence'},
       {shortTxt: 'Dex', fullTxt: 'Dexterity'},
+      {shortTxt: 'Cha', fullTxt: 'Charisma'},
     ],
     bottom: [
       {shortTxt: 'Con', fullTxt: 'Constitution'},
       {shortTxt: 'Pow', fullTxt: 'Power'},
       {shortTxt: 'Luck', fullTxt: 'Luck'},
+      {shortTxt: 'I. Luck', fullTxt: 'Innate Luck'},
     ]
   },
   skills: {

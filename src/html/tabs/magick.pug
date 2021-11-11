@@ -1,29 +1,18 @@
 .magick
   h1.skillHeading Magick
-  .flex-row
-    .column.fit-size
-      h3.center-txt Roll
-    .column.removeSides
-      h3.center-txt Spell Name
-    .column.removeSides
-      h3.center-txt Cost
-    .column.removeSides
-      h3.center-txt Type
-    .column.removeSides
-      h3.center-txt Damage
   fieldset.repeating_spell-level1
     .flex-row
       .column.fit-size
         button.spell_button(type='roll' name='roll_spell' value='&{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Unsanity})]]}} {{fumble=[[ceil(95+([[(@{Unsanity})]])/20))]]}} {{crit=[[ceil(([[(@{Unsanity})]])/20)+1]]}} {{special=[[ceil(([[(@{Unsanity})]])/5)+1]]}}         {{success=[[(@{Unsanity})]]}} {{roll=[[1d100]]}} {{skillname=@{spellname}}}')
       .column.removeSides
         .label
-          input.input.min-input.shaded-input(type='text' name='attr_spellname')
+          input.input.min-input.shaded-input.font-2(type='text' name='attr_spellname' placeholder='Spell Name')
       .column.removeSides
         .label
-          input.input.min-input.shaded-input(type='text' name='attr_spellcost')
+          input.input.min-input.shaded-input.font-2(type='text' name='attr_spellcost' placeholder='Cost')
       .column.removeSides
         .label
-          input.input.min-input.shaded-input(type='text' name='attr_spelltype')
+          input.input.min-input.shaded-input.font-2(type='text' name='attr_spelltype' placeholder='Type')
       .column.removeSides
         .label
-          input.input.min-input.shaded-input(type='text' name='attr_spelldamage')
+          input.input.min-input.shaded-input.font-2(type='text' name='attr_spelldamage' placeholder='Damage')

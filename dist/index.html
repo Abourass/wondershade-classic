@@ -7,19 +7,19 @@
     <div class="flex-row">
       <div class="section column pt0 even-spaced-col">
         <div class="form">
-          <label class="label">Name:
-            <input class="input" type="text" name="attr_character_name"/>
+          <label class="label clickable-label">Name:
+            <input class="input" type="text" name="attr_character_name" style="font-size: 2.2rem;"/>
           </label>
         </div>
         <div class="flex-row">
           <div class="form">
-            <label class="label">Age:
+            <label class="label clickable-label">Age:
               <input class="input mini-number" type="number" name="attr_age" style="margin-right: 0.6rem;"/>
             </label>
           </div>
           <div class="form fit-size">
-            <label class="label">Profession:
-              <input class="input min-input" type="text" name="attr_profession"/>
+            <label class="label clickable-label">Profession:
+              <input class="input min-input" type="text" name="attr_profession" style="font-size: 2.2rem;"/>
             </label>
           </div>
         </div>
@@ -27,68 +27,84 @@
       <div class="stat-blocks column">
         <div class="flex-row justify-evenly">
           <div class="stat-block">
-            <label class="label flex-col align-center">
+            <label class="label flex-col align-center clickable-label">
               <div class="flex-row align-center justify-center"><span>STR</span>
-                <button class="rollbutton" type="roll" name="roll_Str" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Strength})]]}} {{fumble=[[ceil(95+([[(@{Strength})]])/20))]]}} {{crit=[[ceil(([[(@{Strength})]])/20)+1]]}} {{special=[[ceil(([[(@{Strength})]])/5)+1]]}} {{success=[[(@{Strength})]]}} {{roll=[[1d100]]}} {{skillname=Strength}}"></button>
+                <button class="rollButton" type="roll" name="roll_Str" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Strength})]]}} {{fumble=[[ceil(95+([[(@{Strength})]])/20))]]}} {{crit=[[ceil(([[(@{Strength})]])/20)+1]]}} {{special=[[ceil(([[(@{Strength})]])/5)+1]]}} {{success=[[(@{Strength})]]}} {{roll=[[1d100]]}} {{skillname=Strength}}"></button>
               </div>
               <input class="input mini-number center-txt" type="number" name="attr_Strength" value="0"/>
             </label>
           </div>
           <div class="stat-block">
-            <label class="label flex-col align-center">
+            <label class="label flex-col align-center clickable-label">
               <div class="flex-row align-center justify-center"><span>INT</span>
-                <button class="rollbutton" type="roll" name="roll_Int" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Intelligence})]]}} {{fumble=[[ceil(95+([[(@{Intelligence})]])/20))]]}} {{crit=[[ceil(([[(@{Intelligence})]])/20)+1]]}} {{special=[[ceil(([[(@{Intelligence})]])/5)+1]]}} {{success=[[(@{Intelligence})]]}} {{roll=[[1d100]]}} {{skillname=Intelligence}}"></button>
+                <button class="rollButton" type="roll" name="roll_Int" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Intelligence})]]}} {{fumble=[[ceil(95+([[(@{Intelligence})]])/20))]]}} {{crit=[[ceil(([[(@{Intelligence})]])/20)+1]]}} {{special=[[ceil(([[(@{Intelligence})]])/5)+1]]}} {{success=[[(@{Intelligence})]]}} {{roll=[[1d100]]}} {{skillname=Intelligence}}"></button>
               </div>
               <input class="input mini-number center-txt" type="number" name="attr_Intelligence" value="0"/>
             </label>
           </div>
           <div class="stat-block">
-            <label class="label flex-col align-center">
+            <label class="label flex-col align-center clickable-label">
               <div class="flex-row align-center justify-center"><span>DEX</span>
-                <button class="rollbutton" type="roll" name="roll_Dex" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Dexterity})]]}} {{fumble=[[ceil(95+([[(@{Dexterity})]])/20))]]}} {{crit=[[ceil(([[(@{Dexterity})]])/20)+1]]}} {{special=[[ceil(([[(@{Dexterity})]])/5)+1]]}} {{success=[[(@{Dexterity})]]}} {{roll=[[1d100]]}} {{skillname=Dexterity}}"></button>
+                <button class="rollButton" type="roll" name="roll_Dex" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Dexterity})]]}} {{fumble=[[ceil(95+([[(@{Dexterity})]])/20))]]}} {{crit=[[ceil(([[(@{Dexterity})]])/20)+1]]}} {{special=[[ceil(([[(@{Dexterity})]])/5)+1]]}} {{success=[[(@{Dexterity})]]}} {{roll=[[1d100]]}} {{skillname=Dexterity}}"></button>
               </div>
               <input class="input mini-number center-txt" type="number" name="attr_Dexterity" value="0"/>
+            </label>
+          </div>
+          <div class="stat-block">
+            <label class="label flex-col align-center clickable-label">
+              <div class="flex-row align-center justify-center"><span>CHA</span>
+                <button class="rollButton" type="roll" name="roll_Cha" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Charisma})]]}} {{fumble=[[ceil(95+([[(@{Charisma})]])/20))]]}} {{crit=[[ceil(([[(@{Charisma})]])/20)+1]]}} {{special=[[ceil(([[(@{Charisma})]])/5)+1]]}} {{success=[[(@{Charisma})]]}} {{roll=[[1d100]]}} {{skillname=Charisma}}"></button>
+              </div>
+              <input class="input mini-number center-txt" type="number" name="attr_Charisma" value="0"/>
             </label>
           </div>
         </div>
         <div class="flex-row justify-evenly">
           <div class="stat-block">
-            <label class="label flex-col align-center">
+            <label class="label flex-col align-center clickable-label">
               <div class="flex-row align-center justify-center"><span>CON</span>
-                <button class="rollbutton" type="roll" name="roll_Con" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Constitution})]]}} {{fumble=[[ceil(95+([[(@{Constitution})]])/20))]]}} {{crit=[[ceil(([[(@{Constitution})]])/20)+1]]}} {{special=[[ceil(([[(@{Constitution})]])/5)+1]]}} {{success=[[(@{Constitution})]]}} {{roll=[[1d100]]}} {{skillname=Constitution}}"></button>
+                <button class="rollButton" type="roll" name="roll_Con" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Constitution})]]}} {{fumble=[[ceil(95+([[(@{Constitution})]])/20))]]}} {{crit=[[ceil(([[(@{Constitution})]])/20)+1]]}} {{special=[[ceil(([[(@{Constitution})]])/5)+1]]}} {{success=[[(@{Constitution})]]}} {{roll=[[1d100]]}} {{skillname=Constitution}}"></button>
               </div>
               <input class="input mini-number center-txt" type="number" name="attr_Constitution" value="0"/>
             </label>
           </div>
           <div class="stat-block">
-            <label class="label flex-col align-center">
+            <label class="label flex-col align-center clickable-label">
               <div class="flex-row align-center justify-center"><span>POW</span>
-                <button class="rollbutton" type="roll" name="roll_Pow" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Power})]]}} {{fumble=[[ceil(95+([[(@{Power})]])/20))]]}} {{crit=[[ceil(([[(@{Power})]])/20)+1]]}} {{special=[[ceil(([[(@{Power})]])/5)+1]]}} {{success=[[(@{Power})]]}} {{roll=[[1d100]]}} {{skillname=Power}}"></button>
+                <button class="rollButton" type="roll" name="roll_Pow" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Power})]]}} {{fumble=[[ceil(95+([[(@{Power})]])/20))]]}} {{crit=[[ceil(([[(@{Power})]])/20)+1]]}} {{special=[[ceil(([[(@{Power})]])/5)+1]]}} {{success=[[(@{Power})]]}} {{roll=[[1d100]]}} {{skillname=Power}}"></button>
               </div>
               <input class="input mini-number center-txt" type="number" name="attr_Power" value="0"/>
             </label>
           </div>
           <div class="stat-block">
-            <label class="label flex-col align-center">
+            <label class="label flex-col align-center clickable-label">
               <div class="flex-row align-center justify-center"><span>LUCK</span>
-                <button class="rollbutton" type="roll" name="roll_Luck" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Luck})]]}} {{fumble=[[ceil(95+([[(@{Luck})]])/20))]]}} {{crit=[[ceil(([[(@{Luck})]])/20)+1]]}} {{special=[[ceil(([[(@{Luck})]])/5)+1]]}} {{success=[[(@{Luck})]]}} {{roll=[[1d100]]}} {{skillname=Luck}}"></button>
+                <button class="rollButton" type="roll" name="roll_Luck" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Luck})]]}} {{fumble=[[ceil(95+([[(@{Luck})]])/20))]]}} {{crit=[[ceil(([[(@{Luck})]])/20)+1]]}} {{special=[[ceil(([[(@{Luck})]])/5)+1]]}} {{success=[[(@{Luck})]]}} {{roll=[[1d100]]}} {{skillname=Luck}}"></button>
               </div>
               <input class="input mini-number center-txt" type="number" name="attr_Luck" value="0"/>
+            </label>
+          </div>
+          <div class="stat-block">
+            <label class="label flex-col align-center clickable-label">
+              <div class="flex-row align-center justify-center"><span>I. LUCK</span>
+                <button class="rollButton" type="roll" name="roll_I. Luck" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Innate Luck})]]}} {{fumble=[[ceil(95+([[(@{Innate Luck})]])/20))]]}} {{crit=[[ceil(([[(@{Innate Luck})]])/20)+1]]}} {{special=[[ceil(([[(@{Innate Luck})]])/5)+1]]}} {{success=[[(@{Innate Luck})]]}} {{roll=[[1d100]]}} {{skillname=Innate Luck}}"></button>
+              </div>
+              <input class="input mini-number center-txt" type="number" name="attr_Innate Luck" value="0"/>
             </label>
           </div>
         </div>
       </div>
     </div>
     <div class="flex-row">   
-      <div class="column mt5">
+      <div class="column mt5" style="margin: 0; padding-left: 0; padding-right: 0;">
         <div class="flex-row">
           <div class="section column">
             <div class="stat-blocks column">
               <div class="flex-row justify-evenly">
                 <div class="stat-block">
-                  <label class="label flex-col align-center justify-center">
+                  <label class="label flex-col align-center justify-center clickable-label">
                     <div class="flex-row align-center"><span class="doubleLabel">HEALTH</span>
-                      <button class="rollbutton" type="roll" name="roll_Health" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Health})]]}} {{fumble=[[ceil(95+([[(@{Health})]])/20))]]}} {{crit=[[ceil(([[(@{Health})]])/20)+1]]}} {{special=[[ceil(([[(@{Health})]])/5)+1]]}}         {{success=[[(@{Health})]]}} {{roll=[[1d100]]}} {{skillname=Health}}"></button>
+                      <button class="rollButton" type="roll" name="roll_Health" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Health})]]}} {{fumble=[[ceil(95+([[(@{Health})]])/20))]]}} {{crit=[[ceil(([[(@{Health})]])/20)+1]]}} {{special=[[ceil(([[(@{Health})]])/5)+1]]}}         {{success=[[(@{Health})]]}} {{roll=[[1d100]]}} {{skillname=Health}}"></button>
                     </div>
                     <div class="flex-row align-center">
                       <input class="input mini-number center-txt" type="number" name="attr_Health" value="0"/><span class="vs">/</span>
@@ -103,9 +119,9 @@
             <div class="stat-blocks column">
               <div class="flex-row justify-evenly">
                 <div class="stat-block">
-                  <label class="label flex-col align-center justify-center">
+                  <label class="label flex-col align-center justify-center clickable-label">
                     <div class="flex-row align-center"><span class="doubleLabel">ARCANA</span>
-                      <button class="rollbutton" type="roll" name="roll_Arcana" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Arcana})]]}} {{fumble=[[ceil(95+([[(@{Arcana})]])/20))]]}} {{crit=[[ceil(([[(@{Arcana})]])/20)+1]]}} {{special=[[ceil(([[(@{Arcana})]])/5)+1]]}}         {{success=[[(@{Arcana})]]}} {{roll=[[1d100]]}} {{skillname=Arcana}}"></button>
+                      <button class="rollButton" type="roll" name="roll_Arcana" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Arcana})]]}} {{fumble=[[ceil(95+([[(@{Arcana})]])/20))]]}} {{crit=[[ceil(([[(@{Arcana})]])/20)+1]]}} {{special=[[ceil(([[(@{Arcana})]])/5)+1]]}}         {{success=[[(@{Arcana})]]}} {{roll=[[1d100]]}} {{skillname=Arcana}}"></button>
                     </div>
                     <div class="flex-row align-center">
                       <input class="input mini-number center-txt" type="number" name="attr_Arcana" value="0"/><span class="vs">/</span>
@@ -120,9 +136,9 @@
             <div class="stat-blocks column">
               <div class="flex-row justify-evenly">
                 <div class="stat-block">
-                  <label class="label flex-col align-center justify-center">
+                  <label class="label flex-col align-center justify-center clickable-label">
                     <div class="flex-row align-center"><span class="doubleLabel">SANITY</span>
-                      <button class="rollbutton" type="roll" name="roll_Sanity" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Sanity})]]}} {{fumble=[[ceil(95+([[(@{Sanity})]])/20))]]}} {{crit=[[ceil(([[(@{Sanity})]])/20)+1]]}} {{special=[[ceil(([[(@{Sanity})]])/5)+1]]}}         {{success=[[(@{Sanity})]]}} {{roll=[[1d100]]}} {{skillname=Sanity}}"></button>
+                      <button class="rollButton" type="roll" name="roll_Sanity" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Sanity})]]}} {{fumble=[[ceil(95+([[(@{Sanity})]])/20))]]}} {{crit=[[ceil(([[(@{Sanity})]])/20)+1]]}} {{special=[[ceil(([[(@{Sanity})]])/5)+1]]}}         {{success=[[(@{Sanity})]]}} {{roll=[[1d100]]}} {{skillname=Sanity}}"></button>
                     </div>
                     <div class="flex-row align-center">
                       <input class="input mini-number center-txt" type="number" name="attr_Sanity" value="0"/><span class="vs">/</span>
@@ -136,7 +152,7 @@
         </div>
       </div>
     </div>
-    <div class="flex-row mt5">
+    <div class="flex-row">
       <div class="section column">
         <div class="flex-row align-center justify-evenly mt5 negativeBottomMargin">
           <button class="tabButton" type="action" name="act_skills">Skills</button>
@@ -154,8 +170,8 @@
                   <input name="attr_alertness_check" type="checkbox"/><span></span>
                 </label>
                 <div class="skillLabelCol pr0">
-                  <label class="mb0"><strong class="displayTitle">Alertness</strong>
-                    <button class="rollbutton" type="roll" name="roll_Alertness" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Alertness})]]}} {{fumble=[[ceil(95+([[(@{Alertness})]])/20))]]}} {{crit=[[ceil(([[(@{Alertness})]])/20)+1]]}} {{special=[[ceil(([[(@{Alertness})]])/5)+1]]}}         {{success=[[(@{Alertness})]]}} {{roll=[[1d100]]}} {{skillname=Alertness}}"></button>
+                  <label class="mb0 clickable-label"><strong class="displayTitle">Alertness</strong>
+                    <button class="rollButton" type="roll" name="roll_Alertness" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Alertness})]]}} {{fumble=[[ceil(95+([[(@{Alertness})]])/20))]]}} {{crit=[[ceil(([[(@{Alertness})]])/20)+1]]}} {{special=[[ceil(([[(@{Alertness})]])/5)+1]]}}         {{success=[[(@{Alertness})]]}} {{roll=[[1d100]]}} {{skillname=Alertness}}"></button>
                   </label>
                   <label class="mb0 pr0 full-height">
                     <input class="input skillInput lora full-height" type="number" name="attr_Alertness" value="20"/>
@@ -167,8 +183,8 @@
                   <input name="attr_animal handling_check" type="checkbox"/><span></span>
                 </label>
                 <div class="skillLabelCol pr0">
-                  <label class="mb0"><strong class="displayTitle">Animal Handling</strong>
-                    <button class="rollbutton" type="roll" name="roll_Animal Handling" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Animal Handling})]]}} {{fumble=[[ceil(95+([[(@{Animal Handling})]])/20))]]}} {{crit=[[ceil(([[(@{Animal Handling})]])/20)+1]]}} {{special=[[ceil(([[(@{Animal Handling})]])/5)+1]]}}         {{success=[[(@{Animal Handling})]]}} {{roll=[[1d100]]}} {{skillname=Animal Handling}}"></button>
+                  <label class="mb0 clickable-label"><strong class="displayTitle">Animal Handling</strong>
+                    <button class="rollButton" type="roll" name="roll_Animal Handling" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Animal Handling})]]}} {{fumble=[[ceil(95+([[(@{Animal Handling})]])/20))]]}} {{crit=[[ceil(([[(@{Animal Handling})]])/20)+1]]}} {{special=[[ceil(([[(@{Animal Handling})]])/5)+1]]}}         {{success=[[(@{Animal Handling})]]}} {{roll=[[1d100]]}} {{skillname=Animal Handling}}"></button>
                   </label>
                   <label class="mb0 pr0 full-height">
                     <input class="input skillInput lora full-height" type="number" name="attr_Animal Handling" value="5"/>
@@ -180,8 +196,8 @@
                   <input name="attr_art_check" type="checkbox"/><span></span>
                 </label>
                 <div class="skillLabelCol pr0">
-                  <label class="mb0"><strong class="displayTitle">Art</strong>
-                    <button class="rollbutton" type="roll" name="roll_Art" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Art})]]}} {{fumble=[[ceil(95+([[(@{Art})]])/20))]]}} {{crit=[[ceil(([[(@{Art})]])/20)+1]]}} {{special=[[ceil(([[(@{Art})]])/5)+1]]}}         {{success=[[(@{Art})]]}} {{roll=[[1d100]]}} {{skillname=Art}}"></button>
+                  <label class="mb0 clickable-label"><strong class="displayTitle">Art</strong>
+                    <button class="rollButton" type="roll" name="roll_Art" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Art})]]}} {{fumble=[[ceil(95+([[(@{Art})]])/20))]]}} {{crit=[[ceil(([[(@{Art})]])/20)+1]]}} {{special=[[ceil(([[(@{Art})]])/5)+1]]}}         {{success=[[(@{Art})]]}} {{roll=[[1d100]]}} {{skillname=Art}}"></button>
                   </label>
                   <label class="mb0 pr0 full-height">
                     <input class="input skillInput lora full-height" type="number" name="attr_Art" value="0"/>
@@ -193,8 +209,8 @@
                   <input name="attr_athletics_check" type="checkbox"/><span></span>
                 </label>
                 <div class="skillLabelCol pr0">
-                  <label class="mb0"><strong class="displayTitle">Athletics</strong>
-                    <button class="rollbutton" type="roll" name="roll_Athletics" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Athletics})]]}} {{fumble=[[ceil(95+([[(@{Athletics})]])/20))]]}} {{crit=[[ceil(([[(@{Athletics})]])/20)+1]]}} {{special=[[ceil(([[(@{Athletics})]])/5)+1]]}}         {{success=[[(@{Athletics})]]}} {{roll=[[1d100]]}} {{skillname=Athletics}}"></button>
+                  <label class="mb0 clickable-label"><strong class="displayTitle">Athletics</strong>
+                    <button class="rollButton" type="roll" name="roll_Athletics" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Athletics})]]}} {{fumble=[[ceil(95+([[(@{Athletics})]])/20))]]}} {{crit=[[ceil(([[(@{Athletics})]])/20)+1]]}} {{special=[[ceil(([[(@{Athletics})]])/5)+1]]}}         {{success=[[(@{Athletics})]]}} {{roll=[[1d100]]}} {{skillname=Athletics}}"></button>
                   </label>
                   <label class="mb0 pr0 full-height">
                     <input class="input skillInput lora full-height" type="number" name="attr_Athletics" value="10"/>
@@ -206,8 +222,8 @@
                   <input name="attr_barter_check" type="checkbox"/><span></span>
                 </label>
                 <div class="skillLabelCol pr0">
-                  <label class="mb0"><strong class="displayTitle">Barter</strong>
-                    <button class="rollbutton" type="roll" name="roll_Barter" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Barter})]]}} {{fumble=[[ceil(95+([[(@{Barter})]])/20))]]}} {{crit=[[ceil(([[(@{Barter})]])/20)+1]]}} {{special=[[ceil(([[(@{Barter})]])/5)+1]]}}         {{success=[[(@{Barter})]]}} {{roll=[[1d100]]}} {{skillname=Barter}}"></button>
+                  <label class="mb0 clickable-label"><strong class="displayTitle">Barter</strong>
+                    <button class="rollButton" type="roll" name="roll_Barter" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Barter})]]}} {{fumble=[[ceil(95+([[(@{Barter})]])/20))]]}} {{crit=[[ceil(([[(@{Barter})]])/20)+1]]}} {{special=[[ceil(([[(@{Barter})]])/5)+1]]}}         {{success=[[(@{Barter})]]}} {{roll=[[1d100]]}} {{skillname=Barter}}"></button>
                   </label>
                   <label class="mb0 pr0 full-height">
                     <input class="input skillInput lora full-height" type="number" name="attr_Barter" value="5"/>
@@ -219,8 +235,8 @@
                   <input name="attr_bureaucracy_check" type="checkbox"/><span></span>
                 </label>
                 <div class="skillLabelCol pr0">
-                  <label class="mb0"><strong class="displayTitle">Bureaucracy</strong>
-                    <button class="rollbutton" type="roll" name="roll_Bureaucracy" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Bureaucracy})]]}} {{fumble=[[ceil(95+([[(@{Bureaucracy})]])/20))]]}} {{crit=[[ceil(([[(@{Bureaucracy})]])/20)+1]]}} {{special=[[ceil(([[(@{Bureaucracy})]])/5)+1]]}}         {{success=[[(@{Bureaucracy})]]}} {{roll=[[1d100]]}} {{skillname=Bureaucracy}}"></button>
+                  <label class="mb0 clickable-label"><strong class="displayTitle">Bureaucracy</strong>
+                    <button class="rollButton" type="roll" name="roll_Bureaucracy" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Bureaucracy})]]}} {{fumble=[[ceil(95+([[(@{Bureaucracy})]])/20))]]}} {{crit=[[ceil(([[(@{Bureaucracy})]])/20)+1]]}} {{special=[[ceil(([[(@{Bureaucracy})]])/5)+1]]}}         {{success=[[(@{Bureaucracy})]]}} {{roll=[[1d100]]}} {{skillname=Bureaucracy}}"></button>
                   </label>
                   <label class="mb0 pr0 full-height">
                     <input class="input skillInput lora full-height" type="number" name="attr_Bureaucracy" value="5"/>
@@ -232,8 +248,8 @@
                   <input name="attr_craft_check" type="checkbox"/><span></span>
                 </label>
                 <div class="skillLabelCol pr0">
-                  <label class="mb0"><strong class="displayTitle">Craft</strong>
-                    <button class="rollbutton" type="roll" name="roll_Craft" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Craft})]]}} {{fumble=[[ceil(95+([[(@{Craft})]])/20))]]}} {{crit=[[ceil(([[(@{Craft})]])/20)+1]]}} {{special=[[ceil(([[(@{Craft})]])/5)+1]]}}         {{success=[[(@{Craft})]]}} {{roll=[[1d100]]}} {{skillname=Craft}}"></button>
+                  <label class="mb0 clickable-label"><strong class="displayTitle">Craft</strong>
+                    <button class="rollButton" type="roll" name="roll_Craft" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Craft})]]}} {{fumble=[[ceil(95+([[(@{Craft})]])/20))]]}} {{crit=[[ceil(([[(@{Craft})]])/20)+1]]}} {{special=[[ceil(([[(@{Craft})]])/5)+1]]}}         {{success=[[(@{Craft})]]}} {{roll=[[1d100]]}} {{skillname=Craft}}"></button>
                   </label>
                   <label class="mb0 pr0 full-height">
                     <input class="input skillInput lora full-height" type="number" name="attr_Craft" value="0"/>
@@ -245,8 +261,8 @@
                   <input name="attr_deception_check" type="checkbox"/><span></span>
                 </label>
                 <div class="skillLabelCol pr0">
-                  <label class="mb0"><strong class="displayTitle">Deception</strong>
-                    <button class="rollbutton" type="roll" name="roll_Deception" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Deception})]]}} {{fumble=[[ceil(95+([[(@{Deception})]])/20))]]}} {{crit=[[ceil(([[(@{Deception})]])/20)+1]]}} {{special=[[ceil(([[(@{Deception})]])/5)+1]]}}         {{success=[[(@{Deception})]]}} {{roll=[[1d100]]}} {{skillname=Deception}}"></button>
+                  <label class="mb0 clickable-label"><strong class="displayTitle">Deception</strong>
+                    <button class="rollButton" type="roll" name="roll_Deception" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Deception})]]}} {{fumble=[[ceil(95+([[(@{Deception})]])/20))]]}} {{crit=[[ceil(([[(@{Deception})]])/20)+1]]}} {{special=[[ceil(([[(@{Deception})]])/5)+1]]}}         {{success=[[(@{Deception})]]}} {{roll=[[1d100]]}} {{skillname=Deception}}"></button>
                   </label>
                   <label class="mb0 pr0 full-height">
                     <input class="input skillInput lora full-height" type="number" name="attr_Deception" value="10"/>
@@ -258,8 +274,8 @@
                   <input name="attr_disguise_check" type="checkbox"/><span></span>
                 </label>
                 <div class="skillLabelCol pr0">
-                  <label class="mb0"><strong class="displayTitle">Disguise</strong>
-                    <button class="rollbutton" type="roll" name="roll_Disguise" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Disguise})]]}} {{fumble=[[ceil(95+([[(@{Disguise})]])/20))]]}} {{crit=[[ceil(([[(@{Disguise})]])/20)+1]]}} {{special=[[ceil(([[(@{Disguise})]])/5)+1]]}}         {{success=[[(@{Disguise})]]}} {{roll=[[1d100]]}} {{skillname=Disguise}}"></button>
+                  <label class="mb0 clickable-label"><strong class="displayTitle">Disguise</strong>
+                    <button class="rollButton" type="roll" name="roll_Disguise" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Disguise})]]}} {{fumble=[[ceil(95+([[(@{Disguise})]])/20))]]}} {{crit=[[ceil(([[(@{Disguise})]])/20)+1]]}} {{special=[[ceil(([[(@{Disguise})]])/5)+1]]}}         {{success=[[(@{Disguise})]]}} {{roll=[[1d100]]}} {{skillname=Disguise}}"></button>
                   </label>
                   <label class="mb0 pr0 full-height">
                     <input class="input skillInput lora full-height" type="number" name="attr_Disguise" value="5"/>
@@ -273,8 +289,8 @@
                   <input name="attr_dodge_check" type="checkbox"/><span></span>
                 </label>
                 <div class="skillLabelCol pr0">
-                  <label class="mb0"><strong class="displayTitle">Dodge</strong>
-                    <button class="rollbutton" type="roll" name="roll_Dodge" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Dodge})]]}} {{fumble=[[ceil(95+([[(@{Dodge})]])/20))]]}} {{crit=[[ceil(([[(@{Dodge})]])/20)+1]]}} {{special=[[ceil(([[(@{Dodge})]])/5)+1]]}}         {{success=[[(@{Dodge})]]}} {{roll=[[1d100]]}} {{skillname=Dodge}}"></button>
+                  <label class="mb0 clickable-label"><strong class="displayTitle">Dodge</strong>
+                    <button class="rollButton" type="roll" name="roll_Dodge" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Dodge})]]}} {{fumble=[[ceil(95+([[(@{Dodge})]])/20))]]}} {{crit=[[ceil(([[(@{Dodge})]])/20)+1]]}} {{special=[[ceil(([[(@{Dodge})]])/5)+1]]}}         {{success=[[(@{Dodge})]]}} {{roll=[[1d100]]}} {{skillname=Dodge}}"></button>
                   </label>
                   <label class="mb0 pr0 full-height">
                     <input class="input skillInput lora full-height" type="number" name="attr_Dodge" value="20"/>
@@ -286,8 +302,8 @@
                   <input name="attr_drive / pilot_check" type="checkbox"/><span></span>
                 </label>
                 <div class="skillLabelCol pr0">
-                  <label class="mb0"><strong class="displayTitle">Drive / Pilot</strong>
-                    <button class="rollbutton" type="roll" name="roll_Drive / Pilot" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Drive / Pilot})]]}} {{fumble=[[ceil(95+([[(@{Drive / Pilot})]])/20))]]}} {{crit=[[ceil(([[(@{Drive / Pilot})]])/20)+1]]}} {{special=[[ceil(([[(@{Drive / Pilot})]])/5)+1]]}}         {{success=[[(@{Drive / Pilot})]]}} {{roll=[[1d100]]}} {{skillname=Drive / Pilot}}"></button>
+                  <label class="mb0 clickable-label"><strong class="displayTitle">Drive / Pilot</strong>
+                    <button class="rollButton" type="roll" name="roll_Drive / Pilot" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Drive / Pilot})]]}} {{fumble=[[ceil(95+([[(@{Drive / Pilot})]])/20))]]}} {{crit=[[ceil(([[(@{Drive / Pilot})]])/20)+1]]}} {{special=[[ceil(([[(@{Drive / Pilot})]])/5)+1]]}}         {{success=[[(@{Drive / Pilot})]]}} {{roll=[[1d100]]}} {{skillname=Drive / Pilot}}"></button>
                   </label>
                   <label class="mb0 pr0 full-height">
                     <input class="input skillInput lora full-height" type="number" name="attr_Drive / Pilot" value="20"/>
@@ -299,8 +315,8 @@
                   <input name="attr_history_check" type="checkbox"/><span></span>
                 </label>
                 <div class="skillLabelCol pr0">
-                  <label class="mb0"><strong class="displayTitle">History</strong>
-                    <button class="rollbutton" type="roll" name="roll_History" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{History})]]}} {{fumble=[[ceil(95+([[(@{History})]])/20))]]}} {{crit=[[ceil(([[(@{History})]])/20)+1]]}} {{special=[[ceil(([[(@{History})]])/5)+1]]}}         {{success=[[(@{History})]]}} {{roll=[[1d100]]}} {{skillname=History}}"></button>
+                  <label class="mb0 clickable-label"><strong class="displayTitle">History</strong>
+                    <button class="rollButton" type="roll" name="roll_History" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{History})]]}} {{fumble=[[ceil(95+([[(@{History})]])/20))]]}} {{crit=[[ceil(([[(@{History})]])/20)+1]]}} {{special=[[ceil(([[(@{History})]])/5)+1]]}}         {{success=[[(@{History})]]}} {{roll=[[1d100]]}} {{skillname=History}}"></button>
                   </label>
                   <label class="mb0 pr0 full-height">
                     <input class="input skillInput lora full-height" type="number" name="attr_History" value="10"/>
@@ -312,8 +328,8 @@
                   <input name="attr_intimidation_check" type="checkbox"/><span></span>
                 </label>
                 <div class="skillLabelCol pr0">
-                  <label class="mb0"><strong class="displayTitle">Intimidation</strong>
-                    <button class="rollbutton" type="roll" name="roll_Intimidation" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Intimidation})]]}} {{fumble=[[ceil(95+([[(@{Intimidation})]])/20))]]}} {{crit=[[ceil(([[(@{Intimidation})]])/20)+1]]}} {{special=[[ceil(([[(@{Intimidation})]])/5)+1]]}}         {{success=[[(@{Intimidation})]]}} {{roll=[[1d100]]}} {{skillname=Intimidation}}"></button>
+                  <label class="mb0 clickable-label"><strong class="displayTitle">Intimidation</strong>
+                    <button class="rollButton" type="roll" name="roll_Intimidation" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Intimidation})]]}} {{fumble=[[ceil(95+([[(@{Intimidation})]])/20))]]}} {{crit=[[ceil(([[(@{Intimidation})]])/20)+1]]}} {{special=[[ceil(([[(@{Intimidation})]])/5)+1]]}}         {{success=[[(@{Intimidation})]]}} {{roll=[[1d100]]}} {{skillname=Intimidation}}"></button>
                   </label>
                   <label class="mb0 pr0 full-height">
                     <input class="input skillInput lora full-height" type="number" name="attr_Intimidation" value="5"/>
@@ -325,8 +341,8 @@
                   <input name="attr_medicine_check" type="checkbox"/><span></span>
                 </label>
                 <div class="skillLabelCol pr0">
-                  <label class="mb0"><strong class="displayTitle">Medicine</strong>
-                    <button class="rollbutton" type="roll" name="roll_Medicine" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Medicine})]]}} {{fumble=[[ceil(95+([[(@{Medicine})]])/20))]]}} {{crit=[[ceil(([[(@{Medicine})]])/20)+1]]}} {{special=[[ceil(([[(@{Medicine})]])/5)+1]]}}         {{success=[[(@{Medicine})]]}} {{roll=[[1d100]]}} {{skillname=Medicine}}"></button>
+                  <label class="mb0 clickable-label"><strong class="displayTitle">Medicine</strong>
+                    <button class="rollButton" type="roll" name="roll_Medicine" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Medicine})]]}} {{fumble=[[ceil(95+([[(@{Medicine})]])/20))]]}} {{crit=[[ceil(([[(@{Medicine})]])/20)+1]]}} {{special=[[ceil(([[(@{Medicine})]])/5)+1]]}}         {{success=[[(@{Medicine})]]}} {{roll=[[1d100]]}} {{skillname=Medicine}}"></button>
                   </label>
                   <label class="mb0 pr0 full-height">
                     <input class="input skillInput lora full-height" type="number" name="attr_Medicine" value="1"/>
@@ -338,8 +354,8 @@
                   <input name="attr_nature_check" type="checkbox"/><span></span>
                 </label>
                 <div class="skillLabelCol pr0">
-                  <label class="mb0"><strong class="displayTitle">Nature</strong>
-                    <button class="rollbutton" type="roll" name="roll_Nature" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Nature})]]}} {{fumble=[[ceil(95+([[(@{Nature})]])/20))]]}} {{crit=[[ceil(([[(@{Nature})]])/20)+1]]}} {{special=[[ceil(([[(@{Nature})]])/5)+1]]}}         {{success=[[(@{Nature})]]}} {{roll=[[1d100]]}} {{skillname=Nature}}"></button>
+                  <label class="mb0 clickable-label"><strong class="displayTitle">Nature</strong>
+                    <button class="rollButton" type="roll" name="roll_Nature" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Nature})]]}} {{fumble=[[ceil(95+([[(@{Nature})]])/20))]]}} {{crit=[[ceil(([[(@{Nature})]])/20)+1]]}} {{special=[[ceil(([[(@{Nature})]])/5)+1]]}}         {{success=[[(@{Nature})]]}} {{roll=[[1d100]]}} {{skillname=Nature}}"></button>
                   </label>
                   <label class="mb0 pr0 full-height">
                     <input class="input skillInput lora full-height" type="number" name="attr_Nature" value="5"/>
@@ -351,8 +367,8 @@
                   <input name="attr_navigate_check" type="checkbox"/><span></span>
                 </label>
                 <div class="skillLabelCol pr0">
-                  <label class="mb0"><strong class="displayTitle">Navigate</strong>
-                    <button class="rollbutton" type="roll" name="roll_Navigate" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Navigate})]]}} {{fumble=[[ceil(95+([[(@{Navigate})]])/20))]]}} {{crit=[[ceil(([[(@{Navigate})]])/20)+1]]}} {{special=[[ceil(([[(@{Navigate})]])/5)+1]]}}         {{success=[[(@{Navigate})]]}} {{roll=[[1d100]]}} {{skillname=Navigate}}"></button>
+                  <label class="mb0 clickable-label"><strong class="displayTitle">Navigate</strong>
+                    <button class="rollButton" type="roll" name="roll_Navigate" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Navigate})]]}} {{fumble=[[ceil(95+([[(@{Navigate})]])/20))]]}} {{crit=[[ceil(([[(@{Navigate})]])/20)+1]]}} {{special=[[ceil(([[(@{Navigate})]])/5)+1]]}}         {{success=[[(@{Navigate})]]}} {{roll=[[1d100]]}} {{skillname=Navigate}}"></button>
                   </label>
                   <label class="mb0 pr0 full-height">
                     <input class="input skillInput lora full-height" type="number" name="attr_Navigate" value="15"/>
@@ -364,8 +380,8 @@
                   <input name="attr_occult_check" type="checkbox"/><span></span>
                 </label>
                 <div class="skillLabelCol pr0">
-                  <label class="mb0"><strong class="displayTitle">Occult</strong>
-                    <button class="rollbutton" type="roll" name="roll_Occult" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Occult})]]}} {{fumble=[[ceil(95+([[(@{Occult})]])/20))]]}} {{crit=[[ceil(([[(@{Occult})]])/20)+1]]}} {{special=[[ceil(([[(@{Occult})]])/5)+1]]}}         {{success=[[(@{Occult})]]}} {{roll=[[1d100]]}} {{skillname=Occult}}"></button>
+                  <label class="mb0 clickable-label"><strong class="displayTitle">Occult</strong>
+                    <button class="rollButton" type="roll" name="roll_Occult" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Occult})]]}} {{fumble=[[ceil(95+([[(@{Occult})]])/20))]]}} {{crit=[[ceil(([[(@{Occult})]])/20)+1]]}} {{special=[[ceil(([[(@{Occult})]])/5)+1]]}}         {{success=[[(@{Occult})]]}} {{roll=[[1d100]]}} {{skillname=Occult}}"></button>
                   </label>
                   <label class="mb0 pr0 full-height">
                     <input class="input skillInput lora full-height" type="number" name="attr_Occult" value="0"/>
@@ -377,8 +393,8 @@
                   <input name="attr_portal sense_check" type="checkbox"/><span></span>
                 </label>
                 <div class="skillLabelCol pr0">
-                  <label class="mb0"><strong class="displayTitle">Portal Sense</strong>
-                    <button class="rollbutton" type="roll" name="roll_Portal Sense" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Portal Sense})]]}} {{fumble=[[ceil(95+([[(@{Portal Sense})]])/20))]]}} {{crit=[[ceil(([[(@{Portal Sense})]])/20)+1]]}} {{special=[[ceil(([[(@{Portal Sense})]])/5)+1]]}}         {{success=[[(@{Portal Sense})]]}} {{roll=[[1d100]]}} {{skillname=Portal Sense}}"></button>
+                  <label class="mb0 clickable-label"><strong class="displayTitle">Portal Sense</strong>
+                    <button class="rollButton" type="roll" name="roll_Portal Sense" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Portal Sense})]]}} {{fumble=[[ceil(95+([[(@{Portal Sense})]])/20))]]}} {{crit=[[ceil(([[(@{Portal Sense})]])/20)+1]]}} {{special=[[ceil(([[(@{Portal Sense})]])/5)+1]]}}         {{success=[[(@{Portal Sense})]]}} {{roll=[[1d100]]}} {{skillname=Portal Sense}}"></button>
                   </label>
                   <label class="mb0 pr0 full-height">
                     <input class="input skillInput lora full-height" type="number" name="attr_Portal Sense" value="0"/>
@@ -392,8 +408,8 @@
                   <input name="attr_performance_check" type="checkbox"/><span></span>
                 </label>
                 <div class="skillLabelCol pr0">
-                  <label class="mb0"><strong class="displayTitle">Performance</strong>
-                    <button class="rollbutton" type="roll" name="roll_Performance" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Performance})]]}} {{fumble=[[ceil(95+([[(@{Performance})]])/20))]]}} {{crit=[[ceil(([[(@{Performance})]])/20)+1]]}} {{special=[[ceil(([[(@{Performance})]])/5)+1]]}}         {{success=[[(@{Performance})]]}} {{roll=[[1d100]]}} {{skillname=Performance}}"></button>
+                  <label class="mb0 clickable-label"><strong class="displayTitle">Performance</strong>
+                    <button class="rollButton" type="roll" name="roll_Performance" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Performance})]]}} {{fumble=[[ceil(95+([[(@{Performance})]])/20))]]}} {{crit=[[ceil(([[(@{Performance})]])/20)+1]]}} {{special=[[ceil(([[(@{Performance})]])/5)+1]]}}         {{success=[[(@{Performance})]]}} {{roll=[[1d100]]}} {{skillname=Performance}}"></button>
                   </label>
                   <label class="mb0 pr0 full-height">
                     <input class="input skillInput lora full-height" type="number" name="attr_Performance" value="5"/>
@@ -405,8 +421,8 @@
                   <input name="attr_persuade_check" type="checkbox"/><span></span>
                 </label>
                 <div class="skillLabelCol pr0">
-                  <label class="mb0"><strong class="displayTitle">Persuade</strong>
-                    <button class="rollbutton" type="roll" name="roll_Persuade" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Persuade})]]}} {{fumble=[[ceil(95+([[(@{Persuade})]])/20))]]}} {{crit=[[ceil(([[(@{Persuade})]])/20)+1]]}} {{special=[[ceil(([[(@{Persuade})]])/5)+1]]}}         {{success=[[(@{Persuade})]]}} {{roll=[[1d100]]}} {{skillname=Persuade}}"></button>
+                  <label class="mb0 clickable-label"><strong class="displayTitle">Persuade</strong>
+                    <button class="rollButton" type="roll" name="roll_Persuade" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Persuade})]]}} {{fumble=[[ceil(95+([[(@{Persuade})]])/20))]]}} {{crit=[[ceil(([[(@{Persuade})]])/20)+1]]}} {{special=[[ceil(([[(@{Persuade})]])/5)+1]]}}         {{success=[[(@{Persuade})]]}} {{roll=[[1d100]]}} {{skillname=Persuade}}"></button>
                   </label>
                   <label class="mb0 pr0 full-height">
                     <input class="input skillInput lora full-height" type="number" name="attr_Persuade" value="10"/>
@@ -418,8 +434,8 @@
                   <input name="attr_repair_check" type="checkbox"/><span></span>
                 </label>
                 <div class="skillLabelCol pr0">
-                  <label class="mb0"><strong class="displayTitle">Repair</strong>
-                    <button class="rollbutton" type="roll" name="roll_Repair" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Repair})]]}} {{fumble=[[ceil(95+([[(@{Repair})]])/20))]]}} {{crit=[[ceil(([[(@{Repair})]])/20)+1]]}} {{special=[[ceil(([[(@{Repair})]])/5)+1]]}}         {{success=[[(@{Repair})]]}} {{roll=[[1d100]]}} {{skillname=Repair}}"></button>
+                  <label class="mb0 clickable-label"><strong class="displayTitle">Repair</strong>
+                    <button class="rollButton" type="roll" name="roll_Repair" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Repair})]]}} {{fumble=[[ceil(95+([[(@{Repair})]])/20))]]}} {{crit=[[ceil(([[(@{Repair})]])/20)+1]]}} {{special=[[ceil(([[(@{Repair})]])/5)+1]]}}         {{success=[[(@{Repair})]]}} {{roll=[[1d100]]}} {{skillname=Repair}}"></button>
                   </label>
                   <label class="mb0 pr0 full-height">
                     <input class="input skillInput lora full-height" type="number" name="attr_Repair" value="5"/>
@@ -431,8 +447,8 @@
                   <input name="attr_science_check" type="checkbox"/><span></span>
                 </label>
                 <div class="skillLabelCol pr0">
-                  <label class="mb0"><strong class="displayTitle">Science</strong>
-                    <button class="rollbutton" type="roll" name="roll_Science" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Science})]]}} {{fumble=[[ceil(95+([[(@{Science})]])/20))]]}} {{crit=[[ceil(([[(@{Science})]])/20)+1]]}} {{special=[[ceil(([[(@{Science})]])/5)+1]]}}         {{success=[[(@{Science})]]}} {{roll=[[1d100]]}} {{skillname=Science}}"></button>
+                  <label class="mb0 clickable-label"><strong class="displayTitle">Science</strong>
+                    <button class="rollButton" type="roll" name="roll_Science" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Science})]]}} {{fumble=[[ceil(95+([[(@{Science})]])/20))]]}} {{crit=[[ceil(([[(@{Science})]])/20)+1]]}} {{special=[[ceil(([[(@{Science})]])/5)+1]]}}         {{success=[[(@{Science})]]}} {{roll=[[1d100]]}} {{skillname=Science}}"></button>
                   </label>
                   <label class="mb0 pr0 full-height">
                     <input class="input skillInput lora full-height" type="number" name="attr_Science" value="15"/>
@@ -444,8 +460,8 @@
                   <input name="attr_sleight of hand_check" type="checkbox"/><span></span>
                 </label>
                 <div class="skillLabelCol pr0">
-                  <label class="mb0"><strong class="displayTitle">Sleight of Hand</strong>
-                    <button class="rollbutton" type="roll" name="roll_Sleight of Hand" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Sleight of Hand})]]}} {{fumble=[[ceil(95+([[(@{Sleight of Hand})]])/20))]]}} {{crit=[[ceil(([[(@{Sleight of Hand})]])/20)+1]]}} {{special=[[ceil(([[(@{Sleight of Hand})]])/5)+1]]}}         {{success=[[(@{Sleight of Hand})]]}} {{roll=[[1d100]]}} {{skillname=Sleight of Hand}}"></button>
+                  <label class="mb0 clickable-label"><strong class="displayTitle">Sleight of Hand</strong>
+                    <button class="rollButton" type="roll" name="roll_Sleight of Hand" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Sleight of Hand})]]}} {{fumble=[[ceil(95+([[(@{Sleight of Hand})]])/20))]]}} {{crit=[[ceil(([[(@{Sleight of Hand})]])/20)+1]]}} {{special=[[ceil(([[(@{Sleight of Hand})]])/5)+1]]}}         {{success=[[(@{Sleight of Hand})]]}} {{roll=[[1d100]]}} {{skillname=Sleight of Hand}}"></button>
                   </label>
                   <label class="mb0 pr0 full-height">
                     <input class="input skillInput lora full-height" type="number" name="attr_Sleight of Hand" value="5"/>
@@ -457,8 +473,8 @@
                   <input name="attr_stealth_check" type="checkbox"/><span></span>
                 </label>
                 <div class="skillLabelCol pr0">
-                  <label class="mb0"><strong class="displayTitle">Stealth</strong>
-                    <button class="rollbutton" type="roll" name="roll_Stealth" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Stealth})]]}} {{fumble=[[ceil(95+([[(@{Stealth})]])/20))]]}} {{crit=[[ceil(([[(@{Stealth})]])/20)+1]]}} {{special=[[ceil(([[(@{Stealth})]])/5)+1]]}}         {{success=[[(@{Stealth})]]}} {{roll=[[1d100]]}} {{skillname=Stealth}}"></button>
+                  <label class="mb0 clickable-label"><strong class="displayTitle">Stealth</strong>
+                    <button class="rollButton" type="roll" name="roll_Stealth" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Stealth})]]}} {{fumble=[[ceil(95+([[(@{Stealth})]])/20))]]}} {{crit=[[ceil(([[(@{Stealth})]])/20)+1]]}} {{special=[[ceil(([[(@{Stealth})]])/5)+1]]}}         {{success=[[(@{Stealth})]]}} {{roll=[[1d100]]}} {{skillname=Stealth}}"></button>
                   </label>
                   <label class="mb0 pr0 full-height">
                     <input class="input skillInput lora full-height" type="number" name="attr_Stealth" value="10"/>
@@ -470,8 +486,8 @@
                   <input name="attr_survival_check" type="checkbox"/><span></span>
                 </label>
                 <div class="skillLabelCol pr0">
-                  <label class="mb0"><strong class="displayTitle">Survival</strong>
-                    <button class="rollbutton" type="roll" name="roll_Survival" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Survival})]]}} {{fumble=[[ceil(95+([[(@{Survival})]])/20))]]}} {{crit=[[ceil(([[(@{Survival})]])/20)+1]]}} {{special=[[ceil(([[(@{Survival})]])/5)+1]]}}         {{success=[[(@{Survival})]]}} {{roll=[[1d100]]}} {{skillname=Survival}}"></button>
+                  <label class="mb0 clickable-label"><strong class="displayTitle">Survival</strong>
+                    <button class="rollButton" type="roll" name="roll_Survival" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Survival})]]}} {{fumble=[[ceil(95+([[(@{Survival})]])/20))]]}} {{crit=[[ceil(([[(@{Survival})]])/20)+1]]}} {{special=[[ceil(([[(@{Survival})]])/5)+1]]}}         {{success=[[(@{Survival})]]}} {{roll=[[1d100]]}} {{skillname=Survival}}"></button>
                   </label>
                   <label class="mb0 pr0 full-height">
                     <input class="input skillInput lora full-height" type="number" name="attr_Survival" value="10"/>
@@ -483,8 +499,8 @@
                   <input name="attr_unsanity_check" type="checkbox"/><span></span>
                 </label>
                 <div class="skillLabelCol pr0">
-                  <label class="mb0"><strong class="displayTitle">Unsanity</strong>
-                    <button class="rollbutton" type="roll" name="roll_Unsanity" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Unsanity})]]}} {{fumble=[[ceil(95+([[(@{Unsanity})]])/20))]]}} {{crit=[[ceil(([[(@{Unsanity})]])/20)+1]]}} {{special=[[ceil(([[(@{Unsanity})]])/5)+1]]}}         {{success=[[(@{Unsanity})]]}} {{roll=[[1d100]]}} {{skillname=Unsanity}}"></button>
+                  <label class="mb0 clickable-label"><strong class="displayTitle">Unsanity</strong>
+                    <button class="rollButton" type="roll" name="roll_Unsanity" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Unsanity})]]}} {{fumble=[[ceil(95+([[(@{Unsanity})]])/20))]]}} {{crit=[[ceil(([[(@{Unsanity})]])/20)+1]]}} {{special=[[ceil(([[(@{Unsanity})]])/5)+1]]}}         {{success=[[(@{Unsanity})]]}} {{roll=[[1d100]]}} {{skillname=Unsanity}}"></button>
                   </label>
                   <label class="mb0 pr0 full-height">
                     <input class="input skillInput lora full-height" type="number" name="attr_Unsanity" value="0"/>
@@ -496,8 +512,8 @@
                   <input name="attr_vibe check_check" type="checkbox"/><span></span>
                 </label>
                 <div class="skillLabelCol pr0">
-                  <label class="mb0"><strong class="displayTitle">Vibe Check</strong>
-                    <button class="rollbutton" type="roll" name="roll_Vibe Check" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Vibe Check})]]}} {{fumble=[[ceil(95+([[(@{Vibe Check})]])/20))]]}} {{crit=[[ceil(([[(@{Vibe Check})]])/20)+1]]}} {{special=[[ceil(([[(@{Vibe Check})]])/5)+1]]}}         {{success=[[(@{Vibe Check})]]}} {{roll=[[1d100]]}} {{skillname=Vibe Check}}"></button>
+                  <label class="mb0 clickable-label"><strong class="displayTitle">Vibe Check</strong>
+                    <button class="rollButton" type="roll" name="roll_Vibe Check" value="&amp;{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Vibe Check})]]}} {{fumble=[[ceil(95+([[(@{Vibe Check})]])/20))]]}} {{crit=[[ceil(([[(@{Vibe Check})]])/20)+1]]}} {{special=[[ceil(([[(@{Vibe Check})]])/5)+1]]}}         {{success=[[(@{Vibe Check})]]}} {{roll=[[1d100]]}} {{skillname=Vibe Check}}"></button>
                   </label>
                   <label class="mb0 pr0 full-height">
                     <input class="input skillInput lora full-height" type="number" name="attr_Vibe Check" value="15"/>
@@ -512,23 +528,6 @@
         </div>
         <div class="magick">
           <h1 class="skillHeading">Magick</h1>
-          <div class="flex-row">
-            <div class="column fit-size">
-              <h3 class="center-txt">Roll</h3>
-            </div>
-            <div class="column removeSides">
-              <h3 class="center-txt">Spell Name</h3>
-            </div>
-            <div class="column removeSides">
-              <h3 class="center-txt">Cost</h3>
-            </div>
-            <div class="column removeSides">
-              <h3 class="center-txt">Type</h3>
-            </div>
-            <div class="column removeSides">
-              <h3 class="center-txt">Damage</h3>
-            </div>
-          </div>
           <fieldset class="repeating_spell-level1">
             <div class="flex-row">
               <div class="column fit-size">
@@ -536,22 +535,22 @@
               </div>
               <div class="column removeSides">
                 <div class="label">
-                  <input class="input min-input shaded-input" type="text" name="attr_spellname"/>
+                  <input class="input min-input shaded-input font-2" type="text" name="attr_spellname" placeholder="Spell Name"/>
                 </div>
               </div>
               <div class="column removeSides">
                 <div class="label">
-                  <input class="input min-input shaded-input" type="text" name="attr_spellcost"/>
+                  <input class="input min-input shaded-input font-2" type="text" name="attr_spellcost" placeholder="Cost"/>
                 </div>
               </div>
               <div class="column removeSides">
                 <div class="label">
-                  <input class="input min-input shaded-input" type="text" name="attr_spelltype"/>
+                  <input class="input min-input shaded-input font-2" type="text" name="attr_spelltype" placeholder="Type"/>
                 </div>
               </div>
               <div class="column removeSides">
                 <div class="label">
-                  <input class="input min-input shaded-input" type="text" name="attr_spelldamage"/>
+                  <input class="input min-input shaded-input font-2" type="text" name="attr_spelldamage" placeholder="Damage"/>
                 </div>
               </div>
             </div>
@@ -563,22 +562,22 @@
             <div class="flex-row" style="margin-left: 2.5rem">
               <div class="column removeSides">
                 <div class="label">
-                  <input class="input shaded-input fit-width" type="text" name="attr_itemName"/>
+                  <input class="input shaded-input fit-width font-2" type="text" name="attr_itemName" placeholder="Item Name"/>
                 </div>
               </div>
               <div class="column removeSides" style="max-width: 30.8%;">
                 <div class="label">
-                  <input class="input shaded-input" type="text" name="attr_itemType"/>
+                  <input class="input shaded-input font-2" type="text" name="attr_itemType" placeholder="Type/Amount"/>
                 </div>
               </div>
             </div>
             <div style="margin-top: -1rem;">
-              <label class="checklabel">
-                <input class="togglebox sheet-toggle-show" type="checkbox" name="a"/><span class="checkPlus">&amp;</span><span class="checkMinus">_</span>
+              <label class="check-label">
+                <input class="toggle-box toggle-show" type="checkbox" name="a"/><span class="checkPlus">&amp;</span><span class="checkMinus">_</span>
                 <div class="hiddenSection flex-row">
                   <div class="column removeSides">
                     <div class="label">
-                      <textarea class="input shaded-input" name="attr_itemDesc" style="text-align: left; font-family: 'Lora'; font-size: 1.5rem; margin-bottom: 0"></textarea>
+                      <textarea class="input shaded-input" name="attr_itemDesc" style="text-align: left; font-size: 2rem; margin-bottom: 0" placeholder="Description"></textarea>
                     </div>
                   </div>
                 </div>

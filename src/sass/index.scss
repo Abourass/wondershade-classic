@@ -5,6 +5,10 @@
 @use 'tools/tabs';
 @use 'rolls/skillsRoll';
 
+input[type=number] {
+  -moz-appearance:textfield;
+}
+
 .stat-blocks {
   border-radius: 10px;
   background: #151617;
@@ -30,13 +34,11 @@
   text-align: center;
 }
 
-.checklabel {
+.check-label {
   cursor: pointer;
 }
 
-.togglebox {
-  display: none;
-}
+.toggle-box { display: none !important; }
 
 .skillHeading {
   margin: 2rem 0;
@@ -169,7 +171,7 @@
   width: 4rem;
 }
 
-.rollbutton {
+.rollButton {
   background: transparent;
   border-radius: .5rem;
   color: aqua;
@@ -195,4 +197,11 @@
   width: 100% !important;
   background: #33383e61;
   padding-top: 0;
+}
+
+.btn {
+  &:hover {
+    background: transparent !important;
+    color: rgb(216, 64, 203) !important;
+  }
 }

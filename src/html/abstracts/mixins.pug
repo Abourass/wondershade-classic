@@ -3,19 +3,19 @@
 
 mixin txtInput(name, label = null)
   .form
-    label.label
+    label.label.clickable-label
       | #{label || `${capitalize(name)}:`}
       input.input(type='text' name=`attr_${name}`)&attributes(attributes)
 
 mixin miniTxtInput(name, label = null)
   .form.fit-size
-    label.label
+    label.label.clickable-label
       | #{label || `${capitalize(name)}:`}
       input.input.min-input(type='text' name=`attr_${name}`)&attributes(attributes)
 
 mixin miniNumInput(name, label = null)
   .form
-    label.label
+    label.label.clickable-label
       | #{label || `${capitalize(name)}:`}
       input.input.mini-number(type='number' name=`attr_${name}`)&attributes(attributes)
 
@@ -24,10 +24,10 @@ mixin force(name, rollAbbreviation = name)
     .stat-blocks.column
       .flex-row.justify-evenly
         .stat-block
-          label.label.flex-col.align-center.justify-center
+          label.label.flex-col.align-center.justify-center.clickable-label
             .flex-row.align-center
               span.doubleLabel #{toUpperCase(name)}
-              button.rollbutton(
+              button.rollButton(
                 type='roll'
                 name=`roll_${rollAbbreviation}`
                 value=`&{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{${name}})]]}} {{fumble=[[ceil(95+([[(@{${name}})]])/20))]]}} {{crit=[[ceil(([[(@{${name}})]])/20)+1]]}} {{special=[[ceil(([[(@{${name}})]])/5)+1]]}}         {{success=[[(@{${name}})]]}} {{roll=[[1d100]]}} {{skillname=${name}}}`
@@ -43,9 +43,9 @@ mixin skill(name, value)
       input(name=`attr_${name.toLowerCase()}_check` type='checkbox')
       span
     .skillLabelCol.pr0
-      label.mb0
+      label.mb0.clickable-label
         strong.displayTitle #{name}
-        button.rollbutton(
+        button.rollButton(
           type='roll'
           name=`roll_${name}`
           value=`&{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{${name}})]]}} {{fumble=[[ceil(95+([[(@{${name}})]])/20))]]}} {{crit=[[ceil(([[(@{${name}})]])/20)+1]]}} {{special=[[ceil(([[(@{${name}})]])/5)+1]]}}         {{success=[[(@{${name}})]]}} {{roll=[[1d100]]}} {{skillname=${name}}}`
@@ -59,10 +59,10 @@ mixin skill(name, value)
 
 mixin stat(shortName, longName)
   .stat-block
-    label.label.flex-col.align-center
+    label.label.flex-col.align-center.clickable-label
       .flex-row.align-center.justify-center
         span #{toUpperCase(shortName)}
-        button.rollbutton(
+        button.rollButton(
           type='roll'
           name=`roll_${shortName}`
           value='&{template:skillzRoll} '

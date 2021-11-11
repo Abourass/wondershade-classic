@@ -7,6 +7,8 @@
   margin-bottom: 0;
 }
 
+.clickable-label { cursor: pointer; }
+
 label {
   margin-bottom: 0 !important;
   font-family: 'Lora', serif;
@@ -22,7 +24,7 @@ label {
 .input {
   background: #151617;
   color: #d6d2d2;
-  font-size: 2rem;
+  font-size: 3rem;
   border-radius: .2rem;
   border-color: transparent;
   padding-left: .2rem;
@@ -74,7 +76,6 @@ input.toggle-show {
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
 
   input[type=checkbox] {
     position: absolute;
@@ -104,6 +105,7 @@ input.toggle-show {
       align-self: center;
       border-radius: 50%;
       word-break: break-word;
+      cursor: pointer;
     }
 
     &:checked + span {

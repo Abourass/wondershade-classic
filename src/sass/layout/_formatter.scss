@@ -1,11 +1,11 @@
 .fit-size { max-width: fit-content; }
-.fit-width { width: -webkit-fill-available; }
+.fit-width { width: -webkit-fill-available; width: -moz-available; }
 
 .min-input { max-width: 16rem; }
 .mini-number {
   font-size: xx-large;
   height: 2.8rem !important;
-  width: 3.5rem !important;
+  width: 4.5rem !important;
 }
 
 .center-txt { text-align: center; }
@@ -29,3 +29,5 @@
 .mt10 { margin-top: 1rem; }
 
 .mb0 { margin-bottom: 0; }
+
+.font-2 { font-size: 2rem !important; }
