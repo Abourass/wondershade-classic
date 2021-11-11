@@ -1,0 +1,53 @@
+rolltemplate.sheet-rolltemplate-skilledCompRoll
+  .rollContainer
+    h1 {{skillname}}
+    h2 {{name}}
+    .rollWrapper
+      //- If we roll in the success range
+      | {{#rollBetween() computed::Roll 1 success}}
+      //- If we roll a crit
+      |   {{#rollBetween() computed::Roll 1 crit}}
+      .rollSuccess
+        span critical success
+      |   {{/rollBetween() computed::Roll 1 crit}}
+
+      //- if we roll an extreme success
+      |   {{#rollBetween() computed::Roll crit extreme}}
+      .rollSuccess
+        span extreme success
+      |   {{/rollBetween() computed::Roll crit extreme}}
+
+      //- if we roll a hard success
+      |   {{#rollBetween() computed::Roll extreme hard}}
+      .rollSuccess
+        span hard success
+      |   {{/rollBetween() computed::Roll extreme hard}}
+
+      //- if we roll a regular success
+      |   {{#rollBetween() computed::Roll hard success}}
+      .rollSuccess
+        span success
+      |   {{/rollBetween() computed::Roll hard success}}
+
+      | {{/rollBetween() computed::Roll 1 success}}
+
+      //- If we DONT roll in the success range
+      | {{#^rollBetween() computed::Roll 1 success}}
+      //- If we roll a fumble
+      |   {{#rollBetween() computed::Roll fumble 100}}
+      .rollFailure
+        span fumble
+      |   {{/rollBetween() computed::Roll fumble 100}}
+
+      //- If we roll a normal failure
+      |    {{#rollBetween() computed::Roll success fumble}}
+      .rollFailure
+        span failure
+      |    {{/rollBetween() computed::Roll success fumble}}
+      | {{/^rollBetween() computed::Roll 1 success}}
+
+      .rollResult
+        span.roll {{computed::Roll}}
+        span.vs
+          span vs.
+        span.roll {{skillvalue}}

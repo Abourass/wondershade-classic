@@ -3,7 +3,7 @@
   fieldset.repeating_spell-level1
     .flex-row
       .column.fit-size
-        button.spell_button(type='roll' name='roll_spell' value='&{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Unsanity})]]}} {{fumble=[[ceil(95+([[(@{Unsanity})]])/20))]]}} {{crit=[[ceil(([[(@{Unsanity})]])/20)+1]]}} {{special=[[ceil(([[(@{Unsanity})]])/5)+1]]}}         {{success=[[(@{Unsanity})]]}} {{roll=[[1d100]]}} {{skillname=@{spellname}}}')
+        button.spell_button(type='roll' name='roll_spell' value=`&{template:skilledRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Unsanity})]]}} {{fumble=[[ceil(95+([[(@{Unsanity})]])/20))]]}} {{crit=[[ceil(([[(@{Unsanity})]])/20)+1]]}} {{extreme=[[ceil(([[(@{Unsanity})]])/5)+1]]}} {{hard=[[ceil(([[(@{Unsanity})]])/2)+1]]}} {{success=[[(@{Unsanity})]]}} {{roll=[[1d100]]}} {{skillname=@{spellname}}}`)
       .column.removeSides
         .label
           input.input.min-input.shaded-input.font-2(type='text' name='attr_spellname' placeholder='Spell Name')

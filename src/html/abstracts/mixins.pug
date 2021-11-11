@@ -27,11 +27,7 @@ mixin force(name, rollAbbreviation = name)
           label.label.flex-col.align-center.justify-center.clickable-label
             .flex-row.align-center
               span.doubleLabel #{toUpperCase(name)}
-              button.rollButton(
-                type='roll'
-                name=`roll_${rollAbbreviation}`
-                value=`&{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{${name}})]]}} {{fumble=[[ceil(95+([[(@{${name}})]])/20))]]}} {{crit=[[ceil(([[(@{${name}})]])/20)+1]]}} {{special=[[ceil(([[(@{${name}})]])/5)+1]]}}         {{success=[[(@{${name}})]]}} {{roll=[[1d100]]}} {{skillname=${name}}}`
-                )
+              button.skillButton(type='action' name='act_skillRoll' title=`${name.toLowerCase()}`)
             .flex-row.align-center
               input.input.mini-number.center-txt(type='number' name=`attr_${name}` value='0')
               span.vs /
@@ -45,11 +41,7 @@ mixin skill(name, value)
     .skillLabelCol.pr0
       label.mb0.clickable-label
         strong.displayTitle #{name}
-        button.rollButton(
-          type='roll'
-          name=`roll_${name}`
-          value=`&{template:skillzRoll} {{name=@{character_name}}} {{skillvalue=[[(@{${name}})]]}} {{fumble=[[ceil(95+([[(@{${name}})]])/20))]]}} {{crit=[[ceil(([[(@{${name}})]])/20)+1]]}} {{special=[[ceil(([[(@{${name}})]])/5)+1]]}}         {{success=[[(@{${name}})]]}} {{roll=[[1d100]]}} {{skillname=${name}}}`
-        )
+        button.skillButton(type='action' name='act_skillRoll' title=`${name.toLowerCase()}`)
       label.mb0.pr0.full-height
         input.input.skillInput.lora.full-height(
           type='number'
@@ -62,16 +54,5 @@ mixin stat(shortName, longName)
     label.label.flex-col.align-center.clickable-label
       .flex-row.align-center.justify-center
         span #{toUpperCase(shortName)}
-        button.rollButton(
-          type='roll'
-          name=`roll_${shortName}`
-          value='&{template:skillzRoll} '
-          + '{{name=@{character_name}}} '
-          + `{{skillvalue=[[(@{${longName}})]]}} `
-          + `{{fumble=[[ceil(95+([[(@{${longName}})]])/20))]]}} `
-          + `{{crit=[[ceil(([[(@{${longName}})]])/20)+1]]}} `
-          + `{{special=[[ceil(([[(@{${longName}})]])/5)+1]]}} `
-          + `{{success=[[(@{${longName}})]]}} `
-          + '{{roll=[[1d100]]}} '
-          + `{{skillname=${longName}}}`)
+        button.skillButton(type='action' name='act_skillRoll' title=`${longName.toLowerCase()}`)
       input.input.mini-number.center-txt(type='number' name=`attr_${longName}` value='0')

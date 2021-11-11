@@ -18,7 +18,14 @@ include abstracts/mixins
         include tabs/items
 
 include roll-templates/cocAttack1
-include roll-templates/skillz
+include roll-templates/skilled
+include roll-templates/skill
+
+script(type='text/worker')
+  include ../js/workers/skill.js
+
+script(type='text/worker')
+  include ../js/workers/magick.js
 
 script(type='text/worker')
   include ../js/modules/tabs.js
