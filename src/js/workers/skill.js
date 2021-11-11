@@ -10,12 +10,12 @@ on('clicked:skillRoll', async(info) => {
   const hard = `{{hard=[[ceil(([[(@{${skill}})]])/2)+1]]}}`;
   const success = `{{success=[[(@{${skill}})]]}}`;
   const roll = '{{Roll=[[1d100]]}}';
+  const bonus = `{{bonus=[[@{bonus}]]}}`;
   const skillName = `{{skillname=${skill}}}`
-  const {results, rollId} = await startRoll(`${template} ${name} ${skillValue} ${fumble} ${crit} ${extreme} ${hard} ${success} ${roll} ${skillName}`)
+  const {results, rollId} = await startRoll(`${template} ${name} ${skillValue} ${fumble} ${crit} ${extreme} ${hard} ${success} ${roll} ${skillName} ${bonus}`)
   console.log({results, rollId});
-
-  const total = results.Roll.result;
-  let computed = total + 20;
+  let computed = results.Roll.result + results.bonus.result;
   if (computed > 100) computed = 100;
+  if (computed < 1) computed = 1;
   finishRoll(rollId, { Roll: computed })
 })

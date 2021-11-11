@@ -16,6 +16,18 @@ include abstracts/mixins
         include tabs/combat
         include tabs/magick
         include tabs/items
+  +dropdown('bonus', 'Bonus Modifier', [
+    {value: '-40', text: '-40'},
+    {value: '-30', text: '-30'},
+    {value: '-20', text: '-20'},
+    {value: '-10', text: '-10'},
+    {value: '+0', text: '+0', selected: true},
+    {value: '+10', text: '+10'},
+    {value: '+20', text: '+20'},
+    {value: '+30', text: '+30'},
+    {value: '+40', text: '+40'},
+  ])
+</select>
 
 include roll-templates/cocAttack1
 include roll-templates/skilled

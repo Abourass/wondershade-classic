@@ -588,7 +588,18 @@
       </div>
     </div>
   </div>
-</div>
+  <select name="attr_bonus" title="Bonus Modifier">
+    <option value="-40">-40</option>
+    <option value="-30">-30</option>
+    <option value="-20">-20</option>
+    <option value="-10">-10</option>
+    <option value="+0" selected="selected">+0</option>
+    <option value="+10">+10</option>
+    <option value="+20">+20</option>
+    <option value="+30">+30</option>
+    <option value="+40">+40</option>
+  </select>
+</div></select>
 <rolltemplate class="sheet-rolltemplate-coc-attack-1">
   <table>
     <caption>{{name}}</caption>
@@ -701,13 +712,13 @@ on('clicked:skillRoll', async(info) => {
   const hard = `{{hard=[[ceil(([[(@{${skill}})]])/2)+1]]}}`;
   const success = `{{success=[[(@{${skill}})]]}}`;
   const roll = '{{Roll=[[1d100]]}}';
+  const bonus = `{{bonus=[[@{bonus}]]}}`;
   const skillName = `{{skillname=${skill}}}`
-  const {results, rollId} = await startRoll(`${template} ${name} ${skillValue} ${fumble} ${crit} ${extreme} ${hard} ${success} ${roll} ${skillName}`)
+  const {results, rollId} = await startRoll(`${template} ${name} ${skillValue} ${fumble} ${crit} ${extreme} ${hard} ${success} ${roll} ${skillName} ${bonus}`)
   console.log({results, rollId});
-
-  const total = results.Roll.result;
-  let computed = total + 20;
+  let computed = results.Roll.result + results.bonus.result;
   if (computed > 100) computed = 100;
+  if (computed < 1) computed = 1;
   finishRoll(rollId, { Roll: computed })
 })
 
