@@ -13,9 +13,9 @@ on('clicked:skillRoll', async(info) => {
   const bonus = `{{bonus=[[@{bonus}]]}}`;
   const skillName = `{{skillname=${skill}}}`
   const {results, rollId} = await startRoll(`${template} ${name} ${skillValue} ${fumble} ${crit} ${extreme} ${hard} ${success} ${roll} ${skillName} ${bonus}`)
-  console.log({results, rollId});
   let computed = results.Roll.result + results.bonus.result;
   if (computed > 100) computed = 100;
   if (computed < 1) computed = 1;
+  console.log({results, bonus: results.bonus.result, computed});
   finishRoll(rollId, { Roll: computed })
 })
