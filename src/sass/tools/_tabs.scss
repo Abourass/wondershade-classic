@@ -1,9 +1,13 @@
 /*Configure the tab buttons*/
-.skills, .combat, .magick, .items { display: none; }
+.skills, .combat, .magick, .items, .journal { display: none; }
 
 /* show the selected tab */
 .sheet-tabstoggle {
-  &[value="skills"] ~ div.skills, &[value="combat"] ~ div.combat, &[value="magick"] ~ div.magick, &[value="items"] ~ div.items {
+  &[value="skills"] ~ div.skills,
+  &[value="combat"] ~ div.combat,
+  &[value="magick"] ~ div.magick,
+  &[value="items"] ~ div.items,
+  &[value="journal"] ~ div.journal {
     display: block;
   }
 }

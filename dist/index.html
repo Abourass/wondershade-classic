@@ -1,7 +1,7 @@
 
 <div class="body">
   <div class="header">
-    <h1 class="title">Call of Wondershade</h1>
+    <h1 class="title neon">Call of Wondershade</h1>
   </div>
   <div class="base">
     <div class="flex-row">
@@ -159,6 +159,7 @@
           <button class="tabButton" type="action" name="act_combat">Combat</button>
           <button class="tabButton" type="action" name="act_magick">Magick</button>
           <button class="tabButton" type="action" name="act_items">Items</button>
+          <button class="tabButton" type="action" name="act_journal">Journal</button>
         </div>
         <input class="sheet-tabstoggle" type="hidden" name="attr_sheetTab" value="items"/>
         <div class="skills">
@@ -585,6 +586,23 @@
             </div>
           </fieldset>
         </div>
+        <div class="journal">
+          <h1 class="skillHeading">Journal</h1>
+          <fieldset class="repeating_journal">
+            <div class="flex-row">
+              <div class="column" style="padding-top: 0; padding-bottom: 0">
+                <div class="flex-row">
+                  <input class="input shaded-input fit-width font-2" type="text" placeholder="Title" name="attr_journalTitle" style="margin-bottom: .5rem; margin-right: .5rem"/>
+                  <input class="input shaded-input fit-width font-2" type="text" placeholder="Date" name="attr_journalDate" style="margin-bottom: .5rem; margin-left: .5rem"/>
+                </div>
+                <div class="flex-row">
+                  <textarea class="shaded-input journal-entry" name="attr_journalEntry" rows="10"> </textarea>
+                </div>
+                <hr class="journal-border"/>
+              </div>
+            </div>
+          </fieldset>
+        </div>
       </div>
     </div>
     <select name="attr_bonus" title="Bonus Modifier">
@@ -715,10 +733,10 @@ on('clicked:skillRoll', async(info) => {
   const bonus = `{{bonus=[[@{bonus}]]}}`;
   const skillName = `{{skillname=${skill}}}`
   const {results, rollId} = await startRoll(`${template} ${name} ${skillValue} ${fumble} ${crit} ${extreme} ${hard} ${success} ${roll} ${skillName} ${bonus}`)
-  console.log({results, rollId});
   let computed = results.Roll.result + results.bonus.result;
   if (computed > 100) computed = 100;
   if (computed < 1) computed = 1;
+  console.log({results, bonus: results.bonus.result, computed});
   finishRoll(rollId, { Roll: computed })
 })
 
@@ -747,7 +765,7 @@ on('clicked:magickRoll', async(info) => {
 
 </script>
 <script type="text/worker">
-["skills", "combat", "magick", "items"].forEach(button => {
+["skills", "combat", "magick", "items", 'journal'].forEach(button => {
   on(`clicked:${button}`, function() {
     setAttrs({ sheetTab: button });
   });

@@ -6,6 +6,42 @@
   min-height: 100%;
 }
 
+.neon {
+  animation: neonGlow 2s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+@keyframes neonGlow {
+  0% {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.8), 0 0 22px rgba(255, 255, 255, 0.8), 0 0 40px rgba(66, 220, 219, 0.8), 0 0 60px rgba(66, 220, 219, 0.8), 0 0 80px rgba(66, 220, 219, 0.5), 0 0 100px rgba(66, 220, 219, 0.5), 0 0 140px rgba(66, 220, 219, 0.5), 0 0 200px rgba(66, 220, 219, 0.5);
+  }
+  100% {
+    text-shadow: 0 0 2px rgba(255, 255, 255, 0.8), 0 0 8px rgba(255, 255, 255, 0.8), 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(66, 220, 219, 0.8), 0 0 30px rgba(66, 220, 219, 0.8), 0 0 40px rgba(66, 220, 219, 0.8), 0 0 50px rgba(66, 220, 219, 0.5), 0 0 80px rgba(66, 220, 219, 0.5);
+  }
+}
+.neon-red {
+  animation: neonRedGlow 2s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+@keyframes neonRedGlow {
+  0% {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.8), 0 0 22px rgba(255, 255, 255, 0.8), 0 0 40px rgba(206, 81, 102, 0.8), 0 0 60px rgba(206, 81, 102, 0.8), 0 0 80px rgba(206, 81, 102, 0.5), 0 0 100px rgba(206, 81, 102, 0.5), 0 0 140px rgba(206, 81, 102, 0.5), 0 0 200px rgba(206, 81, 102, 0.5);
+  }
+  100% {
+    text-shadow: 0 0 2px rgba(255, 255, 255, 0.8), 0 0 8px rgba(255, 255, 255, 0.8), 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(206, 81, 102, 0.8), 0 0 30px rgba(206, 81, 102, 0.8), 0 0 40px rgba(206, 81, 102, 0.8), 0 0 50px rgba(206, 81, 102, 0.5), 0 0 80px rgba(206, 81, 102, 0.5);
+  }
+}
+@keyframes neonBgGlow {
+  0% {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.8), 0 0 22px rgba(255, 255, 255, 0.8), 0 0 40px rgba(179, 116, 204, 0.8), 0 0 60px rgba(179, 116, 204, 0.8), 0 0 80px rgba(179, 116, 204, 0.5), 0 0 100px rgba(179, 116, 204, 0.5), 0 0 140px rgba(179, 116, 204, 0.5), 0 0 200px rgba(179, 116, 204, 0.5);
+    background: rgba(255, 255, 255, 0.8);
+    border-color: rgba(255, 255, 255, 0.144);
+  }
+  100% {
+    box-shadow: 0 0 2px rgba(255, 255, 255, 0.8), 0 0 8px rgba(255, 255, 255, 0.8), 0 0 10px rgba(179, 116, 204, 0.9), 0 0 20px rgba(179, 116, 204, 0.8), 0 0 30px rgba(179, 116, 204, 0.8), 0 0 40px rgba(179, 116, 204, 0.8), 0 0 50px rgba(179, 116, 204, 0.5), 0 0 80px rgba(179, 116, 204, 0.5);
+    background: rgba(179, 116, 204, 0.5);
+    border-color: rgba(179, 116, 204, 0.5);
+  }
+}
 .fit-size {
   max-width: fit-content;
 }
@@ -248,8 +284,11 @@ input.toggle-show:not(:checked) ~ .checkMinus {
   cursor: pointer;
 }
 .checkmark input[type=checkbox]:checked + span {
+  animation: neonBgGlow 3s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
   background-color: #873b8e;
   border: 1px solid #873b8e;
+  height: 0.75em;
+  width: 0.75em;
 }
 
 .form {
@@ -259,12 +298,12 @@ input.toggle-show:not(:checked) ~ .checkMinus {
 }
 
 /*Configure the tab buttons*/
-.skills, .combat, .magick, .items {
+.skills, .combat, .magick, .items, .journal {
   display: none;
 }
 
 /* show the selected tab */
-.sheet-tabstoggle[value=skills] ~ div.skills, .sheet-tabstoggle[value=combat] ~ div.combat, .sheet-tabstoggle[value=magick] ~ div.magick, .sheet-tabstoggle[value=items] ~ div.items {
+.sheet-tabstoggle[value=skills] ~ div.skills, .sheet-tabstoggle[value=combat] ~ div.combat, .sheet-tabstoggle[value=magick] ~ div.magick, .sheet-tabstoggle[value=items] ~ div.items, .sheet-tabstoggle[value=journal] ~ div.journal {
   display: block;
 }
 
@@ -456,7 +495,7 @@ input[type=number] {
 
 .skillLabelCol {
   grid-column: 2;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.02);
   position: relative;
   display: grid;
   align-items: center;
@@ -577,6 +616,21 @@ input[type=number] {
 .btn:hover {
   background: transparent !important;
   color: #d840cb !important;
+}
+
+.journal-border {
+  border: 1px solid #7a717a38;
+  border-radius: 55px;
+  margin-top: 0.2rem;
+  margin-bottom: 1rem;
+}
+
+.journal-entry {
+  border: none;
+  color: whitesmoke;
+  font-family: "Lora";
+  font-size: 1.5rem;
+  text-align: left;
 }
 
 /*# sourceMappingURL=style.css.map */

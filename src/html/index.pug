@@ -2,7 +2,7 @@ include abstracts/mixins
 
 .body
   .header
-    h1.title Call of Wondershade
+    h1.title.neon Call of Wondershade
   .base
     .flex-row
       include layout/backgroundInfo
@@ -16,6 +16,7 @@ include abstracts/mixins
         include tabs/combat
         include tabs/magick
         include tabs/items
+        include tabs/journal
     +dropdown('bonus', 'Bonus Modifier', [
       {value: '-40', text: '-40'},
       {value: '-30', text: '-30'},
@@ -27,7 +28,6 @@ include abstracts/mixins
       {value: '+30', text: '+30'},
       {value: '+40', text: '+40'},
     ])
-
 
 include roll-templates/cocAttack1
 include roll-templates/skilled
