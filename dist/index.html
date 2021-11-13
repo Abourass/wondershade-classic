@@ -87,9 +87,9 @@
           <div class="stat-block">
             <label class="label flex-col align-center clickable-label">
               <div class="flex-row align-center justify-center"><span>I. LUCK</span>
-                <button class="skillButton" type="action" name="act_skillRoll" title="innate luck"></button>
+                <button class="skillButton" type="action" name="act_skillRoll" title="iluck"></button>
               </div>
-              <input class="input mini-number center-txt" type="number" name="attr_Innate Luck" value="0"/>
+              <input class="input mini-number center-txt" type="number" name="attr_ILuck" value="0"/>
             </label>
           </div>
         </div>
@@ -109,23 +109,6 @@
                     <div class="flex-row align-center">
                       <input class="input mini-number center-txt" type="number" name="attr_Health" value="0"/><span class="vs">/</span>
                       <input class="input mini-number center-txt" type="number" name="attr_MaxHealth" value="0"/>
-                    </div>
-                  </label>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="section column">
-            <div class="stat-blocks column">
-              <div class="flex-row justify-evenly">
-                <div class="stat-block">
-                  <label class="label flex-col align-center justify-center clickable-label">
-                    <div class="flex-row align-center"><span class="doubleLabel">ARCANA</span>
-                      <button class="skillButton" type="action" name="act_skillRoll" title="arcana"></button>
-                    </div>
-                    <div class="flex-row align-center">
-                      <input class="input mini-number center-txt" type="number" name="attr_Arcana" value="0"/><span class="vs">/</span>
-                      <input class="input mini-number center-txt" type="number" name="attr_MaxArcana" value="0"/>
                     </div>
                   </label>
                 </div>
@@ -596,7 +579,7 @@
                   <input class="input shaded-input fit-width font-2" type="text" placeholder="Date" name="attr_journalDate" style="margin-bottom: .5rem; margin-left: .5rem"/>
                 </div>
                 <div class="flex-row">
-                  <textarea class="shaded-input journal-entry" name="attr_journalEntry" rows="10"> </textarea>
+                  <textarea class="shaded-input journal-entry" name="attr_journalEntry" rows="4" placeholder="Journal Entry"></textarea>
                 </div>
                 <hr class="journal-border"/>
               </div>
@@ -714,7 +697,7 @@
          {{#rollBetween() computed::Roll success fumble}}
       <div class="rollFailure"><span>failure</span></div>   {{/rollBetween() computed::Roll success fumble}}
       {{/^rollBetween() computed::Roll 1 success}}
-      <div class="rollResult"><span class="roll">{{computed::Roll}}</span><span class="vs"><span>vs.</span></span><span class="roll">{{skillvalue}}</span></div>
+      <div class="rollResult"><span class="roll">{{computed::Roll}}</span><span class="vs"><span>vs.</span></span><span class="roll">{{computed::success}}</span></div>
     </div>
   </div>
 </rolltemplate>
@@ -728,16 +711,22 @@ on('clicked:skillRoll', async(info) => {
   const crit = `{{crit=[[ceil(([[(@{${skill}})]])/20)+1]]}}`;
   const extreme = `{{extreme=[[ceil(([[(@{${skill}})]])/5)+1]]}}`;
   const hard = `{{hard=[[ceil(([[(@{${skill}})]])/2)+1]]}}`;
-  const success = `{{success=[[(@{${skill}})]]}}`;
+  const success = `{{success=[[(@{${skill}})+(@{ILuck})[I Luck]]]}}`;
   const roll = '{{Roll=[[1d100]]}}';
   const bonus = `{{bonus=[[@{bonus}]]}}`;
-  const skillName = `{{skillname=${skill}}}`
-  const {results, rollId} = await startRoll(`${template} ${name} ${skillValue} ${fumble} ${crit} ${extreme} ${hard} ${success} ${roll} ${skillName} ${bonus}`)
-  let computed = results.Roll.result + results.bonus.result;
-  if (computed > 100) computed = 100;
-  if (computed < 1) computed = 1;
-  console.log({results, bonus: results.bonus.result, computed});
-  finishRoll(rollId, { Roll: computed })
+  const innateLuck = `{{innateLuck=[[@{ILuck}]]}}`;
+  const skillName = `{{skillname=${skill}}}`;
+  
+  const {results, rollId} = await startRoll(`${template} ${name} ${skillValue} ${fumble} ${crit} ${extreme} ${hard} ${success} ${roll} ${skillName} ${bonus} ${innateLuck}`)
+  let computedRoll = results.Roll.result + results.bonus.result;
+  if (computedRoll > 100) computedRoll = 100;
+  if (computedRoll < 1) computedRoll = 1;
+
+  let computedSuccess = results.success.result;
+  if (computedSuccess > 100) computedSuccess = 100;
+
+  console.log({results, bonus: results.bonus.result, computed: {roll: computedRoll, success: computedSuccess}});
+  finishRoll(rollId, { Roll: computedRoll, success: computedSuccess});
 })
 
 </script>
