@@ -118,6 +118,26 @@
           <div class="section column">
             <div class="stat-blocks column">
               <div class="flex-row justify-evenly">
+                <label class="label flex-col align-center justify-center">
+                  <div class="flex-row align-center"><span class="doubleLabel">Willpower</span></div>
+                  <div class="flex-row align-center">
+                    <select class="dark-drop" name="attr_willpower" title="Willpower">
+                      <option value="-30">Overloaded (-30%)</option>
+                      <option value="-20">Pumped (-20%)</option>
+                      <option value="-10">Hyper (-10%)</option>
+                      <option value="0" selected="selected">Normal (0%)</option>
+                      <option value="10">Tired (+10%)</option>
+                      <option value="20">Rundown (+20%)</option>
+                      <option value="30">Exhausted (+30%)</option>
+                    </select>
+                  </div>
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="section column">
+            <div class="stat-blocks column">
+              <div class="flex-row justify-evenly">
                 <div class="stat-block">
                   <label class="label flex-col align-center justify-center clickable-label">
                     <div class="flex-row align-center"><span class="doubleLabel">SANITY</span>
@@ -588,16 +608,16 @@
         </div>
       </div>
     </div>
-    <select name="attr_bonus" title="Bonus Modifier">
+    <select class="dark-drop" name="attr_bonus" title="Bonus Modifier">
       <option value="-40">-40</option>
       <option value="-30">-30</option>
       <option value="-20">-20</option>
       <option value="-10">-10</option>
-      <option value="+0" selected="selected">+0</option>
-      <option value="+10">+10</option>
-      <option value="+20">+20</option>
-      <option value="+30">+30</option>
-      <option value="+40">+40</option>
+      <option value="0" selected="selected">+0</option>
+      <option value="10">+10</option>
+      <option value="20">+20</option>
+      <option value="30">+30</option>
+      <option value="40">+40</option>
     </select>
   </div>
 </div>
@@ -711,14 +731,14 @@ on('clicked:skillRoll', async(info) => {
   const crit = `{{crit=[[ceil(([[(@{${skill}})]])/20)+1]]}}`;
   const extreme = `{{extreme=[[ceil(([[(@{${skill}})]])/5)+1]]}}`;
   const hard = `{{hard=[[ceil(([[(@{${skill}})]])/2)+1]]}}`;
-  const success = `{{success=[[(@{${skill}})+(@{ILuck})[I Luck]]]}}`;
-  const roll = '{{Roll=[[1d100]]}}';
+  const success = `{{success=[[(@{${skill}})(Skill Level)+(@{ILuck})[ILuck]]]}}`;
+  const roll = '{{Roll=[[(1d100)[Roll]+(@{willpower})[Willpower]+(@{bonus})[Bonus]]]}}';
   const bonus = `{{bonus=[[@{bonus}]]}}`;
   const innateLuck = `{{innateLuck=[[@{ILuck}]]}}`;
   const skillName = `{{skillname=${skill}}}`;
   
   const {results, rollId} = await startRoll(`${template} ${name} ${skillValue} ${fumble} ${crit} ${extreme} ${hard} ${success} ${roll} ${skillName} ${bonus} ${innateLuck}`)
-  let computedRoll = results.Roll.result + results.bonus.result;
+  let computedRoll = results.Roll.result;
   if (computedRoll > 100) computedRoll = 100;
   if (computedRoll < 1) computedRoll = 1;
 

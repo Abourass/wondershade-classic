@@ -8,14 +8,14 @@ on('clicked:skillRoll', async(info) => {
   const crit = `{{crit=[[ceil(([[(@{${skill}})]])/20)+1]]}}`;
   const extreme = `{{extreme=[[ceil(([[(@{${skill}})]])/5)+1]]}}`;
   const hard = `{{hard=[[ceil(([[(@{${skill}})]])/2)+1]]}}`;
-  const success = `{{success=[[(@{${skill}})+(@{ILuck})[I Luck]]]}}`;
-  const roll = '{{Roll=[[1d100]]}}';
+  const success = `{{success=[[(@{${skill}})(Skill Level)+(@{ILuck})[ILuck]]]}}`;
+  const roll = '{{Roll=[[(1d100)[Roll]+(@{willpower})[Willpower]+(@{bonus})[Bonus]]]}}';
   const bonus = `{{bonus=[[@{bonus}]]}}`;
   const innateLuck = `{{innateLuck=[[@{ILuck}]]}}`;
   const skillName = `{{skillname=${skill}}}`;
   
   const {results, rollId} = await startRoll(`${template} ${name} ${skillValue} ${fumble} ${crit} ${extreme} ${hard} ${success} ${roll} ${skillName} ${bonus} ${innateLuck}`)
-  let computedRoll = results.Roll.result + results.bonus.result;
+  let computedRoll = results.Roll.result;
   if (computedRoll > 100) computedRoll = 100;
   if (computedRoll < 1) computedRoll = 1;
 

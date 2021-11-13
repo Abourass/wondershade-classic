@@ -1,5 +1,20 @@
 .column.mt5(style="margin: 0; padding-left: 0; padding-right: 0;")
   .flex-row
     +force('Health')
-    
+    .section.column
+      .stat-blocks.column
+        .flex-row.justify-evenly
+          label.label.flex-col.align-center.justify-center
+            .flex-row.align-center
+              span.doubleLabel Willpower
+            .flex-row.align-center
+              +dropdown('willpower', 'Willpower', [
+                {value: '-30', text: 'Overloaded (-30%)'},
+                {value: '-20', text: 'Pumped (-20%)'},
+                {value: '-10', text: 'Hyper (-10%)'},
+                {value: '0', text: 'Normal (0%)', selected: true},
+                {value: '10', text: 'Tired (+10%)'},
+                {value: '20', text: 'Rundown (+20%)'},
+                {value: '30', text: 'Exhausted (+30%)'},
+              ])
     +force('Sanity')

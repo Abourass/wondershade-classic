@@ -125,3 +125,72 @@ input.toggle-show {
   display: flex;
   align-items: center;
 }
+
+select {
+  border: none;
+  padding: 0 1em 0 0;
+  font-size: inherit;
+  cursor: inherit;
+  line-height: inherit;
+  border: none;
+
+  &.dark-drop {
+    appearance: none;
+    background-color: transparent;
+    margin: 0;
+    width: 100%;
+    font-family: 'Mountains of Christmas';
+    font-size: 2rem;
+    cursor: pointer;
+    line-height: 1;
+    color: #d6d2d2;
+    height: 3rem;
+    text-align: center;
+
+    // Stack above custom arrow
+    z-index: 1;
+  
+    // Remove dropdown arrow in IE10 & IE11
+    // @link https://www.filamentgroup.com/lab/select-css.html
+    &::-ms-expand { display: none; }
+  
+    // Remove focus outline, will add on alternate element
+    outline: none;
+
+    display: grid;
+    grid-template-areas: "select";
+    align-items: center;
+    position: relative;
+
+    &::after { grid-area: select; }
+
+    min-width: 15ch;
+    max-width: 30ch;
+
+    border: 1px solid transparent;
+    border-radius: 0.25em;
+    padding: 0.25em 0.5em;
+
+    // Custom arrow
+    &:not(.select--multiple)::after {
+      content: "";
+      justify-self: end;
+      width: 0.8em;
+      height: 0.5em;
+      background-color: whitesmoke;
+      clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+    }
+  }
+  
+}
+
+option {
+  white-space: normal;
+  outline-color: rgb(155, 19, 148);
+  background: #222428;
+
+  &:focus-within {
+    background: #3AC5C9;
+    color: #222428;
+  }
+}

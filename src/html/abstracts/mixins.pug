@@ -58,7 +58,7 @@ mixin stat(shortName, longName)
       input.input.mini-number.center-txt(type='number' name=`attr_${longName}` value='0')
 
 mixin dropdown(name, title, options)
-  select(name=`attr_${name}` title=title)
+  select.dark-drop(name=`attr_${name}` title=title)
     each option in options
       if option.selected
         option(value=option.value, selected='selected') #{option.text}
