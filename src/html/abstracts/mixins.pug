@@ -20,18 +20,16 @@ mixin miniNumInput(name, label = null)
       input.input.mini-number(type='number' name=`attr_${name}`)&attributes(attributes)
 
 mixin force(name, rollAbbreviation = name)
-  .section.column
-    .stat-blocks.column
-      .flex-row.justify-evenly
-        .stat-block
-          label.label.flex-col.align-center.justify-center.clickable-label
-            .flex-row.align-center
-              span.doubleLabel #{toUpperCase(name)}
-              button.skillButton(type='action' name='act_skillRoll' title=`${name.toLowerCase()}`)
-            .flex-row.align-center
-              input.input.mini-number.center-txt(type='number' name=`attr_${name}` value='0')
-              span.vs /
-              input.input.mini-number.center-txt(type='number' name=`attr_Max${name}` value='0')
+  .section.column.flex-center
+    .stat-block.flex-center
+      label.label.flex-col.align-center.justify-center.clickable-label
+        .flex-row.align-center
+          span.doubleLabel #{toUpperCase(name)}
+          button.skillButton(type='action' name='act_skillRoll' title=`${name.toLowerCase()}`)
+        .flex-row.align-center
+          input.input.mini-number.center-txt(type='number' name=`attr_${name}` value='0')
+          span.vs /
+          input.input.mini-number.center-txt(type='number' name=`attr_Max${name}` value='0')
 
 mixin skill(name, value)
   .skillDisplay

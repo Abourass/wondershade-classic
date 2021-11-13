@@ -1,8 +1,9 @@
 .column.mt5(style="margin: 0; padding-left: 0; padding-right: 0;")
   .flex-row
     +force('Health')
+    +force('Sanity')
     .section.column
-      .stat-blocks.column
+      .stat-blocks
         .flex-row.justify-evenly
           label.label.flex-col.align-center.justify-center
             .flex-row.align-center
@@ -17,4 +18,5 @@
                 {value: '20', text: 'Rundown (+20%)'},
                 {value: '30', text: 'Exhausted (+30%)'},
               ])
-    +force('Sanity')
+    +force('Force')
+    +force('Finesse')
