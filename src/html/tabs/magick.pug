@@ -1,15 +1,26 @@
 .magick
   h1.skillHeading Magick
-  fieldset.repeating_spell-level1
+  fieldset.repeating_spell
     .flex-row
-      .column.fit-size
-        button.spell_button(type='roll' name='roll_spell' value=`&{template:skilledRoll} {{name=@{character_name}}} {{skillvalue=[[(@{Unsanity})]]}} {{fumble=[[ceil(95+([[(@{Unsanity})]])/20))]]}} {{crit=[[ceil(([[(@{Unsanity})]])/20)+1]]}} {{extreme=[[ceil(([[(@{Unsanity})]])/5)+1]]}} {{hard=[[ceil(([[(@{Unsanity})]])/2)+1]]}} {{success=[[(@{Unsanity})]]}} {{roll=[[1d100]]}} {{skillname=@{spellname}}}`)
+      .column.fit-size(style='display: flex')
+        button.spell_button(type='action' name='act_magick-roll' title='So anyway I just started blasting')
       .column.removeSides
         .label
           input.input.min-input.shaded-input.font-2(type='text' name='attr_spellname' placeholder='Spell Name')
       .column.removeSides
-        .label
-          input.input.min-input.shaded-input.font-2(type='text' name='attr_spellcost' placeholder='Cost')
+        +dropdown('spellcost', 'Cost', [
+          {option: 'Raw', text: 'Raw'},
+          {option: 1, text: '1st Level'},
+          {option: 2, text: '2nd Level'},
+          {option: 3, text: '3rd Level'},
+          {option: 4, text: '4th Level'},
+          {option: 5, text: '5th Level'},
+          {option: 6, text: '6th Level'},
+          {option: 7, text: '7th Level'},
+          {option: 8, text: '8th Level'},
+          {option: 9, text: '9th Level'},
+          {option: 10, text: '10th Level'},
+        ])(class=['shaded-input', 'mini-drop'])
       .column.removeSides
         .label
           input.input.min-input.shaded-input.font-2(type='text' name='attr_spelltype' placeholder='Type')

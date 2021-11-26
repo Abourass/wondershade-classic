@@ -360,6 +360,14 @@ option:focus-within {
   color: #222428;
 }
 
+.mini-drop {
+  height: 38px !important;
+  border-radius: 0.2rem !important;
+  margin-left: 0.9rem !important;
+  margin-right: 0.1rem !important;
+  width: -webkit-fill-available !important;
+}
+
 /*Configure the tab buttons*/
 .skills, .combat, .magick, .items, .journal {
   display: none;
@@ -477,15 +485,6 @@ option:focus-within {
   border: none;
 }
 
-input[type=number] {
-  -moz-appearance: textfield;
-}
-
-.stat-blocks {
-  border-radius: 10px;
-  background: #151617;
-}
-
 .spell_button {
   background: transparent;
   color: aqua;
@@ -494,6 +493,23 @@ input[type=number] {
   font-size: 3.2rem !important;
   padding-left: 0 !important;
   padding-right: 0 !important;
+}
+.spell_button:hover {
+  color: #fd28eb;
+}
+
+.spell_button:before {
+  font-family: "dicefontd20";
+  content: "t";
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.stat-blocks {
+  border-radius: 10px;
+  background: #151617;
 }
 
 .removeSides {

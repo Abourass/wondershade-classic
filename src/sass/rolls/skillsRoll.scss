@@ -98,3 +98,21 @@
   background-color: transparent;
   border: none;
 }
+
+.spell_button {
+  background: transparent;
+  color: aqua;
+  outline: none;
+  border: none;
+  font-size: 3.2rem !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  &:hover {
+    color: rgb(253, 40, 235);
+  }
+}
+
+.spell_button:before {
+  font-family: "dicefontd20";
+  content: "t";
+}

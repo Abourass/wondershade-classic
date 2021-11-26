@@ -53,7 +53,7 @@ module.exports = {
     right: [
       { name: 'Performance', value: 5},
       { name: 'Persuade', value: 10},
-      { name: 'Repair', value: 5 },
+      { name: 'Machinery', value: 5 },
       { name: 'Science', value: 15 },
       { name: 'Sleight of Hand', value: 5},
       { name: 'Stealth', value: 10},

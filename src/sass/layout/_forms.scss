@@ -194,3 +194,11 @@ option {
     color: #222428;
   }
 }
+
+.mini-drop {
+  height: 38px !important;
+  border-radius: .2rem !important;
+  margin-left: 0.9rem !important;
+  margin-right: 0.1rem !important;
+  width: -webkit-fill-available !important;
+}
