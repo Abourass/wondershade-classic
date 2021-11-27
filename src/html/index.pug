@@ -7,35 +7,10 @@ include abstracts/mixins
     .flex-row
       include layout/backgroundInfo
       include layout/stats
-    .flex-row
+    .flex-row(style="padding-top: 0; padding-bottom: 0")
       include layout/forces
     .flex-row(style="padding-top: 0; padding-bottom: 5px")
-          .column.section(style='display: flex; align-items: center')
-            +dropdown('bonus', 'Bonus Modifier', [
-              {value: '-40', text: 'Bonus -40'},
-              {value: '-30', text: 'Bonus -30'},
-              {value: '-20', text: 'Bonus -20'},
-              {value: '-10', text: 'Bonus -10'},
-              {value: '0', text: 'Bonus +0', selected: true},
-              {value: '10', text: 'Bonus +10'},
-              {value: '20', text: 'Bonus +20'},
-              {value: '30', text: 'Bonus +30'},
-              {value: '40', text: 'Bonus +40'},
-            ])(class=['mini-drop'] style='margin-left: 0!important')
-          .column.section
-            .flex-row
-              each spellSlot in spellSlots
-                .column
-                  +dropdown(`level-${spellSlot.num}-slot`, `${spellSlot.num}`, [
-                    {value: 0, text: '0'},
-                    {value: 1, text: '1'},
-                    {value: 2, text: '2'},
-                    {value: 3, text: '3'},
-                    {value: 4, text: '4'},
-                    {value: 5, text: '5'},
-                    {value: 6, text: '6'},
-                  ])(class=['mini-drop', 'center-drop'] style='margin-left: 0!important; min-width: 3.6rem !important; width: 3.6rem !important')
-                  label.slot-label(style='text-align: center') #{spellSlot.txt}
+      include layout/bonusSpellSlots
     .flex-row
       .section.column
         include layout/tabs
@@ -43,7 +18,6 @@ include abstracts/mixins
         include tabs/combat
         include tabs/magick
         include tabs/items
-        include tabs/journal
 
 include roll-templates/cocAttack1
 include roll-templates/skilled

@@ -102,7 +102,7 @@
         </div>
       </div>
     </div>
-    <div class="flex-row">
+    <div class="flex-row" style="padding-top: 0; padding-bottom: 0">
       <div class="column mt5" style="margin: 0; padding-left: 0; padding-right: 0;">
         <div class="flex-row">
           <div class="section column flex-center">
@@ -325,8 +325,7 @@
           <button class="tabButton" type="action" name="act_skills">Skills</button>
           <button class="tabButton" type="action" name="act_combat">Combat</button>
           <button class="tabButton" type="action" name="act_magick">Magick</button>
-          <button class="tabButton" type="action" name="act_items">Items</button>
-          <button class="tabButton" type="action" name="act_journal">Journal</button>
+          <button class="tabButton" type="action" name="act_items">Inventory</button>
         </div>
         <input class="sheet-tabstoggle" type="hidden" name="attr_sheetTab" value="items"/>
         <div class="skills">
@@ -725,22 +724,22 @@
                 <button class="spell_button" type="action" name="act_magick-roll" title="So anyway I just started blasting"></button>
               </div>
               <div class="column removeSides">
-                <div class="label">
+                <div class="label" style="padding-left: 2px">
                   <input class="input min-input shaded-input font-2" type="text" name="attr_spellname" placeholder="Spell Name"/>
                 </div>
               </div>
               <div class="column removeSides">
-                <div class="label">
+                <div class="label" style="padding-left: 2px">
                   <input class="input min-input shaded-input font-2" type="text" name="attr_spellcost" placeholder="Cost"/>
                 </div>
               </div>
               <div class="column removeSides">
-                <div class="label">
+                <div class="label" style="padding-left: 2px">
                   <input class="input min-input shaded-input font-2" type="text" name="attr_spelltype" placeholder="Type"/>
                 </div>
               </div>
               <div class="column removeSides">
-                <div class="label">
+                <div class="label" style="padding-left: 2px">
                   <input class="input min-input shaded-input font-2" type="text" name="attr_spelldamage" placeholder="Damage"/>
                 </div>
               </div>
@@ -748,7 +747,30 @@
           </fieldset>
         </div>
         <div class="items">
-          <h1 class="skillHeading">Items</h1>
+          <h1 class="skillHeading">Inventory</h1>
+          <div class="flex-row">
+            <div class="column removeSides" style="display: flex; align-items: center; flex-direction: column">
+              <label class="label" style="width: auto">Copper</label>
+              <input class="input shaded-input fit-width font-2" type="text" name="attr_copper" placeholder="0" style="width: 8vw"/>
+            </div>
+            <div class="column removeSides" style="display: flex; align-items: center; flex-direction: column">
+              <label class="label" style="width: auto">Silver</label>
+              <input class="input shaded-input fit-width font-2" type="text" name="attr_silver" placeholder="0" style="width: 8vw"/>
+            </div>
+            <div class="column removeSides" style="display: flex; align-items: center; flex-direction: column">
+              <label class="label" style="width: auto">Gold</label>
+              <input class="input shaded-input fit-width font-2" type="text" name="attr_gold" placeholder="0" style="width: 8vw"/>
+            </div>
+            <div class="column removeSides" style="display: flex; align-items: center; flex-direction: column">
+              <label class="label" style="width: auto">Platinum</label>
+              <input class="input shaded-input fit-width font-2" type="text" name="attr_platinum" placeholder="0" style="width: 8vw"/>
+            </div>
+            <div class="column removeSides" style="display: flex; align-items: center; flex-direction: column">
+              <label class="label" style="width: auto">Drops</label>
+              <input class="input shaded-input fit-width font-2" type="text" name="attr_drops" placeholder="0" style="width: 8vw"/>
+            </div>
+          </div>
+          <hr style="border-color: #887389;"/>
           <fieldset class="repeating_items" style="margin-left: 0.8rem; margin-right: 1.6rem;">
             <div class="flex-row" style="margin-left: 2.5rem">
               <div class="column removeSides">
@@ -773,23 +795,6 @@
                   </div>
                 </div>
               </label>
-            </div>
-          </fieldset>
-        </div>
-        <div class="journal">
-          <h1 class="skillHeading">Journal</h1>
-          <fieldset class="repeating_">
-            <div class="flex-row">
-              <div class="column" style="padding-top: 0; padding-bottom: 0">
-                <div class="flex-row">
-                  <input class="input shaded-input fit-width font-2" type="text" placeholder="Title" name="attr_journalTitle" style="margin-bottom: .5rem; margin-right: .5rem"/>
-                  <input class="input shaded-input fit-width font-2" type="text" placeholder="Date" name="attr_journalDate" style="margin-bottom: .5rem; margin-left: .5rem"/>
-                </div>
-                <div class="flex-row">
-                  <textarea class="shaded-input journal-entry" name="attr_journalEntry" rows="4" placeholder="Journal Entry"></textarea>
-                </div>
-                <hr class="journal-border"/>
-              </div>
             </div>
           </fieldset>
         </div>

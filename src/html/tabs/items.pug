@@ -1,5 +1,22 @@
 .items
-  h1.skillHeading Items
+  h1.skillHeading Inventory
+  .flex-row
+    .column.removeSides(style="display: flex; align-items: center; flex-direction: column")
+      label.label(style="width: auto") Copper
+      input.input.shaded-input.fit-width.font-2(type='text' name='attr_copper' placeholder='0' style="width: 8vw")
+    .column.removeSides(style="display: flex; align-items: center; flex-direction: column")
+      label.label(style="width: auto") Silver
+      input.input.shaded-input.fit-width.font-2(type='text' name='attr_silver' placeholder='0' style="width: 8vw")
+    .column.removeSides(style="display: flex; align-items: center; flex-direction: column")
+      label.label(style="width: auto") Gold
+      input.input.shaded-input.fit-width.font-2(type='text' name='attr_gold' placeholder='0' style="width: 8vw")
+    .column.removeSides(style="display: flex; align-items: center; flex-direction: column")
+      label.label(style="width: auto") Platinum
+      input.input.shaded-input.fit-width.font-2(type='text' name='attr_platinum' placeholder='0' style="width: 8vw")
+    .column.removeSides(style="display: flex; align-items: center; flex-direction: column")
+      label.label(style="width: auto") Drops
+      input.input.shaded-input.fit-width.font-2(type='text' name='attr_drops' placeholder='0' style="width: 8vw")
+  hr(style="border-color: #887389;")
   fieldset.repeating_items(style='margin-left: 0.8rem; margin-right: 1.6rem;')
     .flex-row(style='margin-left: 2.5rem')
       .column.removeSides
