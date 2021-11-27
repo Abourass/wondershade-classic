@@ -202,3 +202,16 @@ option {
   margin-right: 0.1rem !important;
   width: -webkit-fill-available !important;
 }
+
+.center-drop {
+  option {
+    padding: 0 !important;
+    padding-left: 2px !important;
+    text-align: left !important;
+  }
+}
+
+.slot-label {
+  font-family: 'Lora', serif;
+  color: #f5f5f5c2;
+}

@@ -61,5 +61,17 @@ module.exports = {
       { name: 'Unsanity', value: 0},
       { name: 'Vibe Check', value: 15},
     ].sort(dynamicSort('name')),
-  }
+  },
+  spellSlots: [
+    {num: 1, txt: '1st'},
+    {num: 2, txt: '2nd'},
+    {num: 3, txt: '3rd'},
+    {num: 4, txt: '4th'},
+    {num: 5, txt: '5th'},
+    {num: 6, txt: '6th'},
+    {num: 7, txt: '7th'},
+    {num: 8, txt: '8th'},
+    {num: 9, txt: '9th'},
+    {num: 10, txt: '10th'},
+],
 }
