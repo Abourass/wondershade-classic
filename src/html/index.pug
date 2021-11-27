@@ -7,7 +7,7 @@ include abstracts/mixins
     .flex-row
       include layout/backgroundInfo
       include layout/stats
-    .flex-row    
+    .flex-row
       include layout/forces
     .flex-row
       .section.column
@@ -38,6 +38,9 @@ script(type='text/worker')
 
 script(type='text/worker')
   include ../js/workers/magick.js
+
+script(type='text/worker')
+  include ../js/workers/combat.js
 
 script(type='text/worker')
   include ../js/modules/tabs.js

@@ -6,10 +6,17 @@
   <div class="base">
     <div class="flex-row">
       <div class="section column pt0 even-spaced-col">
-        <div class="form">
-          <label class="label clickable-label">Name:
-            <input class="input" type="text" name="attr_character_name" style="font-size: 2.2rem;"/>
-          </label>
+        <div class="flex-row">
+          <div class="form">
+            <label class="label clickable-label">Name:
+              <input class="input" type="text" name="attr_character_name" style="font-size: 2.2rem;"/>
+            </label>
+          </div>
+          <div class="form">
+            <label class="label clickable-label">Level:
+              <input class="input mini-number" type="number" name="attr_level"/>
+            </label>
+          </div>
         </div>
         <div class="flex-row">
           <div class="form">
@@ -95,7 +102,7 @@
         </div>
       </div>
     </div>
-    <div class="flex-row">   
+    <div class="flex-row">
       <div class="column mt5" style="margin: 0; padding-left: 0; padding-right: 0;">
         <div class="flex-row">
           <div class="section column flex-center">
@@ -546,7 +553,30 @@
           </div>
         </div>
         <div class="combat">
-          <h1 class="skillHeading">Combat</h1><span>Combat Stuff Goes here</span>
+          <h1 class="skillHeading">Combat</h1>
+          <fieldset class="repeating_combat">
+            <div class="flex-row">
+              <div class="column fit-size" style="display: flex">
+                <button class="spell_button" type="action" name="act_combat-roll"></button>
+              </div>
+              <div class="column removeSides">
+                <div class="label">
+                  <input class="input shaded-input font-2" type="text" name="attr_weapon-name" placeholder="Name"/>
+                </div>
+              </div>
+              <div class="column removeSides">
+                <select class="dark-drop shaded-input mini-drop" name="attr_weapon-type" title="Type">
+                  <option value="Strength">Melee</option>
+                  <option value="Dexterity">Ranged</option>
+                </select>
+              </div>
+              <div class="column removeSides">
+                <div class="label">
+                  <input class="input shaded-input font-2" type="text" name="attr_weapon-damage" placeholder="Damage"/>
+                </div>
+              </div>
+            </div>
+          </fieldset>
         </div>
         <div class="magick">
           <h1 class="skillHeading">Magick</h1>
@@ -561,19 +591,9 @@
                 </div>
               </div>
               <div class="column removeSides">
-                <select class="dark-drop shaded-input mini-drop" name="attr_spellcost" title="Cost">
-                  <option>Raw</option>
-                  <option>1st Level</option>
-                  <option>2nd Level</option>
-                  <option>3rd Level</option>
-                  <option>4th Level</option>
-                  <option>5th Level</option>
-                  <option>6th Level</option>
-                  <option>7th Level</option>
-                  <option>8th Level</option>
-                  <option>9th Level</option>
-                  <option>10th Level</option>
-                </select>
+                <div class="label">
+                  <input class="input min-input shaded-input font-2" type="text" name="attr_spellcost" placeholder="Cost"/>
+                </div>
               </div>
               <div class="column removeSides">
                 <div class="label">
@@ -783,6 +803,7 @@ on('clicked:repeating_spell:magick-roll', async(info) => {
   const rowAttributes = info.sourceAttribute.split('_');
   rowAttributes.pop();
   const rowPrefix = rowAttributes.join('_');
+  
   const template = '&{template:skilledCompRoll}';
   const name = '{{name=@{character_name}}}';
   const skillValue = `{{skillvalue=[[(@{Unsanity})]]}}`;
@@ -808,6 +829,46 @@ on('clicked:repeating_spell:magick-roll', async(info) => {
 
   console.log({results, bonus: results.bonus.result, computed: {roll: computedRoll, success: computedSuccess}});
   finishRoll(rollId, { Roll: computedRoll, success: computedSuccess});
+})
+
+</script>
+<script type="text/worker">
+on('clicked:repeating_combat:combat-roll', async(info) => {
+  const rowAttributes = info.sourceAttribute.split('_');
+  rowAttributes.pop();
+  const rowPrefix = rowAttributes.join('_');
+
+  getAttrs([`${rowPrefix}_weapon-type`], (attrs) => {
+    const skill = Object.values(attrs)[0];
+    console.log({skill});
+
+    const template = '&{template:skilledCompRoll}';
+    const name = '{{name=@{character_name}}}';
+    const skillValue = `{{skillvalue=[[(@{${skill}})]]}}`;
+    const fumble = `{{fumble=[[ceil(95+([[(@{${skill}})]])/20))]]}}`;
+    const crit = `{{crit=[[ceil(([[(@{${skill}})]])/20)+1]]}}`;
+    const extreme = `{{extreme=[[ceil(([[(@{${skill}})]])/5)+1]]}}`;
+    const hard = `{{hard=[[ceil(([[(@{${skill}})]])/2)+1]]}}`;
+    const success = `{{success=[[(@{${skill}})+(@{ILuck})[ILuck]]]}}`;
+    const roll = '{{Roll=[[(1d100)[Roll]+(@{willpower})[Willpower]+(@{bonus})[Bonus]]]}}';
+    const bonus = `{{bonus=[[@{bonus}]]}}`;
+    const innateLuck = `{{innateLuck=[[@{ILuck}]]}}`;
+    const skillName = `{{skillname=@{${rowPrefix}_weapon-name}}}`
+
+    startRoll(`${template} ${name} ${skillValue} ${fumble} ${crit} ${extreme} ${hard} ${success} ${roll} ${skillName} ${bonus} ${innateLuck}`, ({results, rollId}) => {
+      console.log({results, rollId});
+
+      let computedRoll = results.Roll.result;
+      if (computedRoll > 100) computedRoll = 100;
+      if (computedRoll < 1) computedRoll = 1;
+
+      let computedSuccess = results.success.result;
+      if (computedSuccess > 100) computedSuccess = 100;
+
+      console.log({results, bonus: results.bonus.result, computed: {roll: computedRoll, success: computedSuccess}});
+      finishRoll(rollId, { Roll: computedRoll, success: computedSuccess});
+    });
+  });
 })
 
 </script>

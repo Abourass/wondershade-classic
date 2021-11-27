@@ -1,3 +1,19 @@
 .combat
   h1.skillHeading Combat
-  span Combat Stuff Goes here
+  fieldset.repeating_combat
+    .flex-row
+      .column.fit-size(style='display: flex')
+        button.spell_button(type='action' name='act_combat-roll')
+      .column.removeSides
+        .label
+          input.input.shaded-input.font-2(type='text' name='attr_weapon-name' placeholder='Name')
+      .column.removeSides
+         +dropdown('weapon-type', 'Type', [
+          {value: 'Strength', text: 'Melee'},
+          {value: 'Dexterity', text: 'Ranged'},
+        ])(class=['shaded-input', 'mini-drop'])
+      .column.removeSides
+        .label
+          input.input.shaded-input.font-2(type='text' name='attr_weapon-damage' placeholder='Damage')
+
+

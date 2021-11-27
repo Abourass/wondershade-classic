@@ -8,19 +8,8 @@
         .label
           input.input.min-input.shaded-input.font-2(type='text' name='attr_spellname' placeholder='Spell Name')
       .column.removeSides
-        +dropdown('spellcost', 'Cost', [
-          {option: 'Raw', text: 'Raw'},
-          {option: 1, text: '1st Level'},
-          {option: 2, text: '2nd Level'},
-          {option: 3, text: '3rd Level'},
-          {option: 4, text: '4th Level'},
-          {option: 5, text: '5th Level'},
-          {option: 6, text: '6th Level'},
-          {option: 7, text: '7th Level'},
-          {option: 8, text: '8th Level'},
-          {option: 9, text: '9th Level'},
-          {option: 10, text: '10th Level'},
-        ])(class=['shaded-input', 'mini-drop'])
+        .label
+          input.input.min-input.shaded-input.font-2(type='text' name='attr_spellcost' placeholder='Cost')
       .column.removeSides
         .label
           input.input.min-input.shaded-input.font-2(type='text' name='attr_spelltype' placeholder='Type')

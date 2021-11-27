@@ -3,6 +3,7 @@ on('clicked:repeating_spell:magick-roll', async(info) => {
   const rowAttributes = info.sourceAttribute.split('_');
   rowAttributes.pop();
   const rowPrefix = rowAttributes.join('_');
+  
   const template = '&{template:skilledCompRoll}';
   const name = '{{name=@{character_name}}}';
   const skillValue = `{{skillvalue=[[(@{Unsanity})]]}}`;

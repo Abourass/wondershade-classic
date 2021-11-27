@@ -526,6 +526,26 @@ input[type=number] {
   cursor: pointer;
 }
 
+.repcontrol {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 0.7rem;
+  margin-top: 0.4rem;
+}
+.repcontrol .btn {
+  background: #25272b;
+  color: aqua;
+  border: aqua;
+  text-shadow: none;
+  font-family: "Mountains of Christmas";
+  font-size: 1.5rem;
+}
+.repcontrol .btn:hover {
+  background: #4a4848a6 !important;
+  color: #d840cb !important;
+}
+
 .toggle-box {
   display: none !important;
 }
