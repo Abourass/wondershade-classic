@@ -30,7 +30,7 @@ module.exports = {
   skills: {
     left: [
       { name: 'Alertness', value: 20 },
-      { name: 'Arcanum', value: 5 },
+      { name: 'Arcana', value: 5 },
       { name: 'Animal Handling', value: 5},
       { name: 'Athletics', value: 10 },
       { name: 'Art', value: 0 },
