@@ -1001,3 +1001,49 @@ on('clicked:repeating_combat:combat-roll', async(info) => {
 });
 
 </script>
+<script type="text/worker">
+on('change:Strength change:Constitution sheet:opened', function(){
+  getAttrs(['Strength', 'Constitution'], (values) => {
+    const str = parseInt(values.Strength) || 0;
+    const con = parseInt(values.Constitution) || 0;
+    if (str + con <= 85){
+      setAttrs({MaxFortitude: 0});
+    } else if (str + con > 85 && str + con <= 129){
+      setAttrs({MaxFortitude: 1});
+    } else if (str + con > 130){
+      setAttrs({MaxFortitude: 2});
+    }
+  })
+})
+
+</script>
+<script type="text/worker">
+on('change:Power sheet:opened', function(){
+  getAttrs(['Power'], (values) => {
+    const pow = parseInt(values.Power) || 0;
+    setAttrs({MaxSanity: pow});
+  })
+})
+
+</script>
+<script type="text/worker">
+on('change:Dexterity change:ILuck sheet:opened', function(){
+  getAttrs(['Dexterity', 'ILuck'], (values) => {
+    const dex = parseInt(values.Dexterity) || 0;
+    const iLuck = parseInt(values.ILuck) || 0;
+    setAttrs({Dodge: Math.round((dex + iLuck) / 2)});
+  })
+})
+
+</script>
+<script type="text/worker">
+on('change:Strength change:Constitution sheet:opened', function(){
+  getAttrs(['Strength', 'Constitution'], (values) => {
+    const str = parseInt(values.Strength) || 0;
+    const con = parseInt(values.Constitution) || 0;
+
+    setAttrs({MaxHealth: Math.round(((str / 5) + (con / 5)) * 1.5)});
+  })
+})
+
+</script>
