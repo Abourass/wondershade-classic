@@ -72,6 +72,5 @@ module.exports = {
     {num: 7, txt: '7th'},
     {num: 8, txt: '8th'},
     {num: 9, txt: '9th'},
-    {num: 10, txt: '10th'},
-],
+  ],
 }
