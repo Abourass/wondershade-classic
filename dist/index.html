@@ -348,19 +348,6 @@
               </div>
               <div class="skillDisplay">
                 <label class="checkmark mb0 flex">
-                  <input name="attr_arcana_check" type="checkbox"/><span></span>
-                </label>
-                <div class="skillLabelCol pr0">
-                  <label class="mb0 clickable-label"><strong class="displayTitle">Arcana</strong>
-                    <button class="skillButton" type="action" name="act_skillRoll" title="arcana"></button>
-                  </label>
-                  <label class="mb0 pr0 full-height">
-                    <input class="input skillInput lora full-height" type="number" name="attr_Arcana" value="5"/>
-                  </label>
-                </div>
-              </div>
-              <div class="skillDisplay">
-                <label class="checkmark mb0 flex">
                   <input name="attr_art_check" type="checkbox"/><span></span>
                 </label>
                 <div class="skillLabelCol pr0">
@@ -437,8 +424,6 @@
                   </label>
                 </div>
               </div>
-            </div>
-            <div class="skillCol">
               <div class="skillDisplay">
                 <label class="checkmark mb0 flex">
                   <input name="attr_dodge_check" type="checkbox"/><span></span>
@@ -452,6 +437,8 @@
                   </label>
                 </div>
               </div>
+            </div>
+            <div class="skillCol">
               <div class="skillDisplay">
                 <label class="checkmark mb0 flex">
                   <input name="attr_drive / pilot_check" type="checkbox"/><span></span>
@@ -556,6 +543,19 @@
                   </label>
                 </div>
               </div>
+              <div class="skillDisplay">
+                <label class="checkmark mb0 flex">
+                  <input name="attr_persuade_check" type="checkbox"/><span></span>
+                </label>
+                <div class="skillLabelCol pr0">
+                  <label class="mb0 clickable-label"><strong class="displayTitle">Persuade</strong>
+                    <button class="skillButton" type="action" name="act_skillRoll" title="persuade"></button>
+                  </label>
+                  <label class="mb0 pr0 full-height">
+                    <input class="input skillInput lora full-height" type="number" name="attr_Persuade" value="10"/>
+                  </label>
+                </div>
+              </div>
             </div>
             <div class="skillCol">
               <div class="skillDisplay">
@@ -568,19 +568,6 @@
                   </label>
                   <label class="mb0 pr0 full-height">
                     <input class="input skillInput lora full-height" type="number" name="attr_Machinery" value="5"/>
-                  </label>
-                </div>
-              </div>
-              <div class="skillDisplay">
-                <label class="checkmark mb0 flex">
-                  <input name="attr_persuade_check" type="checkbox"/><span></span>
-                </label>
-                <div class="skillLabelCol pr0">
-                  <label class="mb0 clickable-label"><strong class="displayTitle">Persuade</strong>
-                    <button class="skillButton" type="action" name="act_skillRoll" title="persuade"></button>
-                  </label>
-                  <label class="mb0 pr0 full-height">
-                    <input class="input skillInput lora full-height" type="number" name="attr_Persuade" value="10"/>
                   </label>
                 </div>
               </div>
@@ -620,6 +607,19 @@
                   </label>
                   <label class="mb0 pr0 full-height">
                     <input class="input skillInput lora full-height" type="number" name="attr_Sleight of Hand" value="5"/>
+                  </label>
+                </div>
+              </div>
+              <div class="skillDisplay">
+                <label class="checkmark mb0 flex">
+                  <input name="attr_speed_check" type="checkbox"/><span></span>
+                </label>
+                <div class="skillLabelCol pr0">
+                  <label class="mb0 clickable-label"><strong class="displayTitle">Speed</strong>
+                    <button class="skillButton" type="action" name="act_skillRoll" title="speed"></button>
+                  </label>
+                  <label class="mb0 pr0 full-height">
+                    <input class="input skillInput lora full-height" type="number" name="attr_Speed" value="0"/>
                   </label>
                 </div>
               </div>
@@ -778,7 +778,7 @@
                 <div class="hiddenSection flex-row">
                   <div class="column removeSides">
                     <div class="label">
-                      <textarea class="input shaded-input" name="attr_itemDesc" style="text-align: left; font-size: 2rem; margin-bottom: 0" placeholder="Description"></textarea>
+                      <textarea class="input shaded-input" name="attr_itemDesc" style="text-align: left; font-size: 1.8rem; margin-bottom: 0; font-family: fangsong;" placeholder="Description"></textarea>
                     </div>
                   </div>
                 </div>
@@ -1027,6 +1027,15 @@ on('change:Power sheet:opened', function(){
 
 </script>
 <script type="text/worker">
+on('change:Sanity sheet:opened', function(){
+  getAttrs(['Sanity'], (values) => {
+    const sanity = parseInt(values.Sanity) || 0;
+    setAttrs({Unsanity: sanity});
+  })
+})
+
+</script>
+<script type="text/worker">
 on('change:Dexterity change:ILuck sheet:opened', function(){
   getAttrs(['Dexterity', 'ILuck'], (values) => {
     const dex = parseInt(values.Dexterity) || 0;
@@ -1043,6 +1052,16 @@ on('change:Strength change:Constitution sheet:opened', function(){
     const con = parseInt(values.Constitution) || 0;
 
     setAttrs({MaxHealth: Math.round(((str / 5) + (con / 5)) * 1.5)});
+  })
+})
+
+</script>
+<script type="text/worker">
+on('change:Dexterity sheet:opened', function(){
+  getAttrs(['Dexterity'], (values) => {
+    const dex = parseInt(values.Dexterity) || 0;
+    const Speed = Math.floor((dex / 10)) * 5;
+    setAttrs({ Speed });
   })
 })
 

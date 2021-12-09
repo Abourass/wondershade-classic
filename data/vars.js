@@ -30,7 +30,6 @@ module.exports = {
   skills: {
     left: [
       { name: 'Alertness', value: 20 },
-      { name: 'Arcana', value: 5 },
       { name: 'Animal Handling', value: 5},
       { name: 'Athletics', value: 10 },
       { name: 'Art', value: 0 },
@@ -38,9 +37,9 @@ module.exports = {
       { name: 'Craft', value: 0 },
       { name: 'Deception', value: 10 },
       { name: 'Disguise', value: 5 },
+      { name: 'Dodge', value: 20 },
     ].sort(dynamicSort('name')),
     middle: [
-      { name: 'Dodge', value: 20 },
       { name: 'Drive / Pilot', value: 20 },
       { name: 'History', value: 10 },
       { name: 'Intimidation', value: 5 },
@@ -49,12 +48,13 @@ module.exports = {
       { name: 'Navigate', value: 15 },
       { name: 'Occult', value: 0 },
       { name: 'Performance', value: 5},
+      { name: 'Persuade', value: 10},
     ].sort(dynamicSort('name')),
     right: [
-      { name: 'Persuade', value: 10},
       { name: 'Machinery', value: 5 },
       { name: 'Science', value: 10 },
       { name: 'Search', value: 10 },
+      { name: 'Speed', value: 0 },
       { name: 'Sleight of Hand', value: 5},
       { name: 'Stealth', value: 10},
       { name: 'Survival', value: 10},
