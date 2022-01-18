@@ -1018,15 +1018,6 @@ on('change:Strength change:Constitution sheet:opened', function(){
 
 </script>
 <script type="text/worker">
-on('change:Power sheet:opened', function(){
-  getAttrs(['Power'], (values) => {
-    const pow = parseInt(values.Power) || 0;
-    setAttrs({MaxSanity: pow});
-  })
-})
-
-</script>
-<script type="text/worker">
 on('change:Sanity sheet:opened', function(){
   getAttrs(['Sanity'], (values) => {
     const sanity = parseInt(values.Sanity) || 0;
@@ -1041,17 +1032,6 @@ on('change:Dexterity change:ILuck sheet:opened', function(){
     const dex = parseInt(values.Dexterity) || 0;
     const iLuck = parseInt(values.ILuck) || 0;
     setAttrs({Dodge: Math.round((dex + iLuck) / 2)});
-  })
-})
-
-</script>
-<script type="text/worker">
-on('change:Strength change:Constitution sheet:opened', function(){
-  getAttrs(['Strength', 'Constitution'], (values) => {
-    const str = parseInt(values.Strength) || 0;
-    const con = parseInt(values.Constitution) || 0;
-
-    setAttrs({MaxHealth: Math.round(((str / 5) + (con / 5)) * 1.5)});
   })
 })
 
