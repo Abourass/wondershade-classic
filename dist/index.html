@@ -1018,6 +1018,15 @@ on('change:Strength change:Constitution sheet:opened', function(){
 
 </script>
 <script type="text/worker">
+on('change:Power sheet:opened', function(){
+  getAttrs(['Power'], (values) => {
+    const pow = parseInt(values.Power) || 0;
+    setAttrs({MaxSanity: pow});
+  })
+})
+
+</script>
+<script type="text/worker">
 on('change:Sanity sheet:opened', function(){
   getAttrs(['Sanity'], (values) => {
     const sanity = parseInt(values.Sanity) || 0;
