@@ -73,4 +73,16 @@ module.exports = {
     {num: 8, txt: '8th'},
     {num: 9, txt: '9th'},
   ],
+  spellLevels: [
+    {soft: 'wonderLvlSpell', txt: 'Wonder'},
+    {soft: 'firstLvlSpell', txt: '1st'},
+    {soft: 'secondLvlSpell', txt: '2nd'},
+    {soft: 'thirdLvlSpell', txt: '3rd'},
+    {soft: 'fourthLvlSpell', txt: '4th'},
+    {soft: 'fifthLvlSpell', txt: '5th'},
+    {soft: 'sixthLvlSpell', txt: '6th'},
+    {soft: 'seventhLvlSpell', txt: '7th'},
+    {soft: 'eighthLvlSpell', txt: '8th'},
+    {soft: 'ninthLvlSpell', txt: '9th'},
+  ]
 }

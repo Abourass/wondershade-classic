@@ -315,7 +315,7 @@
           <button class="tabButton" type="action" name="act_magick">Magick</button>
           <button class="tabButton" type="action" name="act_items">Inventory</button>
         </div>
-        <input class="sheet-tabstoggle" type="hidden" name="attr_sheetTab" value="items"/>
+        <input class="sheet-tabstoggle" type="hidden" name="attr_sheetTab" value="skills"/>
         <div class="skills">
           <h1 class="skillHeading">Skills</h1>
           <div class="skillSection">
@@ -706,33 +706,214 @@
         </div>
         <div class="magick">
           <h1 class="skillHeading">Magick</h1>
-          <fieldset class="repeating_spell">
-            <div class="flex-row">
-              <div class="column fit-size" style="display: flex">
-                <button class="spell_button" type="action" name="act_magick-roll" title="So anyway I just started blasting"></button>
-              </div>
-              <div class="column removeSides">
-                <div class="label" style="padding-left: 2px">
-                  <input class="input min-input shaded-input font-2" type="text" name="attr_spellname" placeholder="Spell Name"/>
+          <div class="flex-row align-center justify-evenly mt5">
+            <button class="tabButton" type="action" name="act_wonderLvlSpell">Wonder</button>
+            <button class="tabButton" type="action" name="act_firstLvlSpell">1st</button>
+            <button class="tabButton" type="action" name="act_secondLvlSpell">2nd</button>
+            <button class="tabButton" type="action" name="act_thirdLvlSpell">3rd</button>
+            <button class="tabButton" type="action" name="act_fourthLvlSpell">4th</button>
+            <button class="tabButton" type="action" name="act_fifthLvlSpell">5th</button>
+            <button class="tabButton" type="action" name="act_sixthLvlSpell">6th</button>
+            <button class="tabButton" type="action" name="act_seventhLvlSpell">7th</button>
+            <button class="tabButton" type="action" name="act_eighthLvlSpell">8th</button>
+            <button class="tabButton" type="action" name="act_ninthLvlSpell">9th</button>
+          </div>
+          <input class="sheet-magictabstoggle" type="hidden" name="attr_sheetMagicTab" value="wonder"/>
+          <div class="wonderLvlSpell">
+            <fieldset class="repeating_spell-wonderLvlSpell">
+              <div class="flex-row">
+                <div class="column fit-size" style="display: flex">
+                  <button class="spell_button" type="action" name="act_magick-roll" title="So anyway I just started blasting"></button>
+                </div>
+                <div class="column removeSides">
+                  <div class="label" style="padding-left: 2px">
+                    <input class="input shaded-input font-2" type="text" name="attr_spellname" placeholder="Spell Name"/>
+                  </div>
+                </div>
+                <div class="column removeSides">
+                  <div class="label" style="padding-left: 2px">
+                    <input class="input shaded-input font-2" type="text" name="attr_spellcost" placeholder="Cost"/>
+                  </div>
+                </div>
+                <div class="column removeSides">
+                  <div class="label" style="padding-left: 2px">
+                    <input class="input shaded-input font-2" type="text" name="attr_spelldamage" placeholder="Damage"/>
+                  </div>
                 </div>
               </div>
-              <div class="column removeSides">
-                <div class="label" style="padding-left: 2px">
-                  <input class="input min-input shaded-input font-2" type="text" name="attr_spellcost" placeholder="Cost"/>
+            </fieldset>
+          </div>
+          <div class="firstLvlSpell">
+            <fieldset class="repeating_spell-firstLvlSpell">
+              <div class="flex-row">
+                <div class="column fit-size" style="display: flex">
+                  <button class="spell_button" type="action" name="act_magick-roll" title="So anyway I just started blasting"></button>
+                </div>
+                <div class="column removeSides">
+                  <div class="label" style="padding-left: 2px">
+                    <input class="input shaded-input font-2" type="text" name="attr_spellname" placeholder="Spell Name"/>
+                  </div>
+                </div>
+                <div class="column removeSides">
+                  <div class="label" style="padding-left: 2px">
+                    <input class="input shaded-input font-2" type="text" name="attr_spelldamage" placeholder="Damage"/>
+                  </div>
                 </div>
               </div>
-              <div class="column removeSides">
-                <div class="label" style="padding-left: 2px">
-                  <input class="input min-input shaded-input font-2" type="text" name="attr_spelltype" placeholder="Type"/>
+            </fieldset>
+          </div>
+          <div class="secondLvlSpell">
+            <fieldset class="repeating_spell-secondLvlSpell">
+              <div class="flex-row">
+                <div class="column fit-size" style="display: flex">
+                  <button class="spell_button" type="action" name="act_magick-roll" title="So anyway I just started blasting"></button>
+                </div>
+                <div class="column removeSides">
+                  <div class="label" style="padding-left: 2px">
+                    <input class="input shaded-input font-2" type="text" name="attr_spellname" placeholder="Spell Name"/>
+                  </div>
+                </div>
+                <div class="column removeSides">
+                  <div class="label" style="padding-left: 2px">
+                    <input class="input shaded-input font-2" type="text" name="attr_spelldamage" placeholder="Damage"/>
+                  </div>
                 </div>
               </div>
-              <div class="column removeSides">
-                <div class="label" style="padding-left: 2px">
-                  <input class="input min-input shaded-input font-2" type="text" name="attr_spelldamage" placeholder="Damage"/>
+            </fieldset>
+          </div>
+          <div class="thirdLvlSpell">
+            <fieldset class="repeating_spell-thirdLvlSpell">
+              <div class="flex-row">
+                <div class="column fit-size" style="display: flex">
+                  <button class="spell_button" type="action" name="act_magick-roll" title="So anyway I just started blasting"></button>
+                </div>
+                <div class="column removeSides">
+                  <div class="label" style="padding-left: 2px">
+                    <input class="input shaded-input font-2" type="text" name="attr_spellname" placeholder="Spell Name"/>
+                  </div>
+                </div>
+                <div class="column removeSides">
+                  <div class="label" style="padding-left: 2px">
+                    <input class="input shaded-input font-2" type="text" name="attr_spelldamage" placeholder="Damage"/>
+                  </div>
                 </div>
               </div>
-            </div>
-          </fieldset>
+            </fieldset>
+          </div>
+          <div class="fourthLvlSpell">
+            <fieldset class="repeating_spell-fourthLvlSpell">
+              <div class="flex-row">
+                <div class="column fit-size" style="display: flex">
+                  <button class="spell_button" type="action" name="act_magick-roll" title="So anyway I just started blasting"></button>
+                </div>
+                <div class="column removeSides">
+                  <div class="label" style="padding-left: 2px">
+                    <input class="input shaded-input font-2" type="text" name="attr_spellname" placeholder="Spell Name"/>
+                  </div>
+                </div>
+                <div class="column removeSides">
+                  <div class="label" style="padding-left: 2px">
+                    <input class="input shaded-input font-2" type="text" name="attr_spelldamage" placeholder="Damage"/>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+          <div class="fifthLvlSpell">
+            <fieldset class="repeating_spell-fifthLvlSpell">
+              <div class="flex-row">
+                <div class="column fit-size" style="display: flex">
+                  <button class="spell_button" type="action" name="act_magick-roll" title="So anyway I just started blasting"></button>
+                </div>
+                <div class="column removeSides">
+                  <div class="label" style="padding-left: 2px">
+                    <input class="input shaded-input font-2" type="text" name="attr_spellname" placeholder="Spell Name"/>
+                  </div>
+                </div>
+                <div class="column removeSides">
+                  <div class="label" style="padding-left: 2px">
+                    <input class="input shaded-input font-2" type="text" name="attr_spelldamage" placeholder="Damage"/>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+          <div class="sixthLvlSpell">
+            <fieldset class="repeating_spell-sixthLvlSpell">
+              <div class="flex-row">
+                <div class="column fit-size" style="display: flex">
+                  <button class="spell_button" type="action" name="act_magick-roll" title="So anyway I just started blasting"></button>
+                </div>
+                <div class="column removeSides">
+                  <div class="label" style="padding-left: 2px">
+                    <input class="input shaded-input font-2" type="text" name="attr_spellname" placeholder="Spell Name"/>
+                  </div>
+                </div>
+                <div class="column removeSides">
+                  <div class="label" style="padding-left: 2px">
+                    <input class="input shaded-input font-2" type="text" name="attr_spelldamage" placeholder="Damage"/>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+          <div class="seventhLvlSpell">
+            <fieldset class="repeating_spell-seventhLvlSpell">
+              <div class="flex-row">
+                <div class="column fit-size" style="display: flex">
+                  <button class="spell_button" type="action" name="act_magick-roll" title="So anyway I just started blasting"></button>
+                </div>
+                <div class="column removeSides">
+                  <div class="label" style="padding-left: 2px">
+                    <input class="input shaded-input font-2" type="text" name="attr_spellname" placeholder="Spell Name"/>
+                  </div>
+                </div>
+                <div class="column removeSides">
+                  <div class="label" style="padding-left: 2px">
+                    <input class="input shaded-input font-2" type="text" name="attr_spelldamage" placeholder="Damage"/>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+          <div class="eighthLvlSpell">
+            <fieldset class="repeating_spell-eighthLvlSpell">
+              <div class="flex-row">
+                <div class="column fit-size" style="display: flex">
+                  <button class="spell_button" type="action" name="act_magick-roll" title="So anyway I just started blasting"></button>
+                </div>
+                <div class="column removeSides">
+                  <div class="label" style="padding-left: 2px">
+                    <input class="input shaded-input font-2" type="text" name="attr_spellname" placeholder="Spell Name"/>
+                  </div>
+                </div>
+                <div class="column removeSides">
+                  <div class="label" style="padding-left: 2px">
+                    <input class="input shaded-input font-2" type="text" name="attr_spelldamage" placeholder="Damage"/>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+          <div class="ninthLvlSpell">
+            <fieldset class="repeating_spell-ninthLvlSpell">
+              <div class="flex-row">
+                <div class="column fit-size" style="display: flex">
+                  <button class="spell_button" type="action" name="act_magick-roll" title="So anyway I just started blasting"></button>
+                </div>
+                <div class="column removeSides">
+                  <div class="label" style="padding-left: 2px">
+                    <input class="input shaded-input font-2" type="text" name="attr_spellname" placeholder="Spell Name"/>
+                  </div>
+                </div>
+                <div class="column removeSides">
+                  <div class="label" style="padding-left: 2px">
+                    <input class="input shaded-input font-2" type="text" name="attr_spelldamage" placeholder="Damage"/>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+          </div>
         </div>
         <div class="items">
           <h1 class="skillHeading">Inventory</h1>
@@ -920,37 +1101,54 @@ on('clicked:skillRoll', async(info) => {
 
 </script>
 <script type="text/worker">
-on('clicked:repeating_spell:magick-roll', async(info) => {
-  const rowAttributes = info.sourceAttribute.split('_');
-  rowAttributes.pop();
-  const rowPrefix = rowAttributes.join('_');
+const ids = [
+  {soft: 'wonderLvlSpell', txt: 'Wonder'},
+  {soft: 'firstLvlSpell', txt: '1st'},
+  {soft: 'secondLvlSpell', txt: '2nd'},
+  {soft: 'thirdLvlSpell', txt: '3rd'},
+  {soft: 'fourthLvlSpell', txt: '4th'},
+  {soft: 'fifthLvlSpell', txt: '5th'},
+  {soft: 'sixthLvlSpell', txt: '6th'},
+  {soft: 'seventhLvlSpell', txt: '7th'},
+  {soft: 'eighthLvlSpell', txt: '8th'},
+  {soft: 'ninthLvlSpell', txt: '9th'},
+].map(e => e.soft)
+
+ids.forEach(id => {
+  on(`clicked:repeating_spell-${id}:magick-roll`, async(info) => {
+    const rowAttributes = info.sourceAttribute.split('_');
+    rowAttributes.pop();
+    const rowPrefix = rowAttributes.join('_');
+    
+    const template = '&{template:skilledCompRoll}';
+    const name = '{{name=@{character_name}}}';
+    const skillValue = `{{skillvalue=[[(@{Unsanity})]]}}`;
+    const fumble = `{{fumble=[[ceil(95+([[(@{Unsanity})]])/20))]]}}`;
+    const crit = `{{crit=[[ceil(([[(@{Unsanity})]])/20)+1]]}}`;
+    const extreme = `{{extreme=[[ceil(([[(@{Unsanity})]])/5)+1]]}}`;
+    const hard = `{{hard=[[ceil(([[(@{Unsanity})]])/2)+1]]}}`;
+    const success = `{{success=[[(@{Unsanity})+(@{ILuck})[ILuck]]]}}`;
+    const roll = '{{Roll=[[(1d100)[Roll]+(@{willpower})[Willpower]+(@{bonus})[Bonus]]]}}';
+    const bonus = `{{bonus=[[@{bonus}]]}}`;
+    const innateLuck = `{{innateLuck=[[@{ILuck}]]}}`;
+    const skillName = `{{skillname=@{${rowPrefix}_spellName}}}`
   
-  const template = '&{template:skilledCompRoll}';
-  const name = '{{name=@{character_name}}}';
-  const skillValue = `{{skillvalue=[[(@{Unsanity})]]}}`;
-  const fumble = `{{fumble=[[ceil(95+([[(@{Unsanity})]])/20))]]}}`;
-  const crit = `{{crit=[[ceil(([[(@{Unsanity})]])/20)+1]]}}`;
-  const extreme = `{{extreme=[[ceil(([[(@{Unsanity})]])/5)+1]]}}`;
-  const hard = `{{hard=[[ceil(([[(@{Unsanity})]])/2)+1]]}}`;
-  const success = `{{success=[[(@{Unsanity})+(@{ILuck})[ILuck]]]}}`;
-  const roll = '{{Roll=[[(1d100)[Roll]+(@{willpower})[Willpower]+(@{bonus})[Bonus]]]}}';
-  const bonus = `{{bonus=[[@{bonus}]]}}`;
-  const innateLuck = `{{innateLuck=[[@{ILuck}]]}}`;
-  const skillName = `{{skillname=@{${rowPrefix}_spellName}}}`
-
-  const {results, rollId} = await startRoll(`${template} ${name} ${skillValue} ${fumble} ${crit} ${extreme} ${hard} ${success} ${roll} ${skillName} ${bonus} ${innateLuck}`)
-  console.log({results, rollId});
-
-  let computedRoll = results.Roll.result;
-  if (computedRoll > 100) computedRoll = 100;
-  if (computedRoll < 1) computedRoll = 1;
-
-  let computedSuccess = results.success.result;
-  if (computedSuccess > 100) computedSuccess = 100;
-
-  console.log({results, bonus: results.bonus.result, computed: {roll: computedRoll, success: computedSuccess}});
-  finishRoll(rollId, { Roll: computedRoll, success: computedSuccess});
+    const {results, rollId} = await startRoll(`${template} ${name} ${skillValue} ${fumble} ${crit} ${extreme} ${hard} ${success} ${roll} ${skillName} ${bonus} ${innateLuck}`)
+    console.log({results, rollId});
+  
+    let computedRoll = results.Roll.result;
+    if (computedRoll > 100) computedRoll = 100;
+    if (computedRoll < 1) computedRoll = 1;
+  
+    let computedSuccess = results.success.result;
+    if (computedSuccess > 100) computedSuccess = 100;
+  
+    console.log({results, bonus: results.bonus.result, computed: {roll: computedRoll, success: computedSuccess}});
+    finishRoll(rollId, { Roll: computedRoll, success: computedSuccess});
+  })
 })
+
+
 
 </script>
 <script type="text/worker">
@@ -997,6 +1195,23 @@ on('clicked:repeating_combat:combat-roll', async(info) => {
 ["skills", "combat", "magick", "items", 'journal'].forEach(button => {
   on(`clicked:${button}`, function() {
     setAttrs({ sheetTab: button });
+  });
+});
+
+[
+  {soft: 'wonderLvlSpell', txt: 'Wonder'},
+  {soft: 'firstLvlSpell', txt: '1st'},
+  {soft: 'secondLvlSpell', txt: '2nd'},
+  {soft: 'thirdLvlSpell', txt: '3rd'},
+  {soft: 'fourthLvlSpell', txt: '4th'},
+  {soft: 'fifthLvlSpell', txt: '5th'},
+  {soft: 'sixthLvlSpell', txt: '6th'},
+  {soft: 'seventhLvlSpell', txt: '7th'},
+  {soft: 'eighthLvlSpell', txt: '8th'},
+  {soft: 'ninthLvlSpell', txt: '9th'},
+].map(e => e.soft).forEach(button => {
+  on(`clicked:${button}`, function() {
+    setAttrs({ sheetMagicTab: button });
   });
 });
 

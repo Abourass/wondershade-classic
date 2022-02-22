@@ -1,18 +1,23 @@
 .magick
   h1.skillHeading Magick
-  fieldset.repeating_spell
-    .flex-row
-      .column.fit-size(style='display: flex')
-        button.spell_button(type='action' name='act_magick-roll' title='So anyway I just started blasting')
-      .column.removeSides
-        .label(style="padding-left: 2px")
-          input.input.min-input.shaded-input.font-2(type='text' name='attr_spellname' placeholder='Spell Name')
-      .column.removeSides
-        .label(style="padding-left: 2px")
-          input.input.min-input.shaded-input.font-2(type='text' name='attr_spellcost' placeholder='Cost')
-      .column.removeSides
-        .label(style="padding-left: 2px")
-          input.input.min-input.shaded-input.font-2(type='text' name='attr_spelltype' placeholder='Type')
-      .column.removeSides
-        .label(style="padding-left: 2px")
-          input.input.min-input.shaded-input.font-2(type='text' name='attr_spelldamage' placeholder='Damage')
+  .flex-row.align-center.justify-evenly.mt5
+    each spellLvl in spellLevels
+      button.tabButton(type='action' name=`act_${spellLvl.soft}`) #{spellLvl.txt}
+  input.sheet-magictabstoggle(type='hidden' name='attr_sheetMagicTab' value='wonder')
+  each spellLvl in spellLevels
+    div(class=spellLvl.soft)
+      fieldset(class=`repeating_spell-${spellLvl.soft}`)
+        .flex-row
+          .column.fit-size(style='display: flex')
+            button.spell_button(type='action' name='act_magick-roll' title='So anyway I just started blasting')
+          .column.removeSides
+            .label(style="padding-left: 2px")
+              input.input.shaded-input.font-2(type='text' name='attr_spellname' placeholder='Spell Name')
+          if spellLvl.soft == 'wonderLvlSpell'
+            .column.removeSides
+              .label(style="padding-left: 2px")
+                input.input.shaded-input.font-2(type='text' name='attr_spellcost' placeholder='Cost')
+          .column.removeSides
+            .label(style="padding-left: 2px")
+              input.input.shaded-input.font-2(type='text' name='attr_spelldamage' placeholder='Damage')
+    
