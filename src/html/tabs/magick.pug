@@ -6,6 +6,22 @@
   input.sheet-magictabstoggle(type='hidden' name='attr_sheetMagicTab' value='wonder')
   each spellLvl in spellLevels
     div(class=spellLvl.soft)
+      if spellLvl.soft != 'wonderLvlSpell'
+        .flex-row.spellSlotRow
+          .column.flex.spellSlotLabel
+            span #{spellLvl.txt} Level Spell Slots
+          .column.flex.smallCol
+            +glowingCheckbox(`${spellLvl.soft}_check_one`)
+          .column.flex.smallCol
+            +glowingCheckbox(`${spellLvl.soft}_check_two`)
+          .column.flex.smallCol
+            +glowingCheckbox(`${spellLvl.soft}_check_three`)
+          .column.flex.smallCol
+            +glowingCheckbox(`${spellLvl.soft}_check_four`)
+          .column.flex.smallCol
+            +glowingCheckbox(`${spellLvl.soft}_check_five`)
+          .column.flex.smallCol
+            +glowingCheckbox(`${spellLvl.soft}_check_six`)
       fieldset(class=`repeating_spell-${spellLvl.soft}`)
         .flex-row
           .column.fit-size(style='display: flex')

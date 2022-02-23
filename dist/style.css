@@ -398,11 +398,6 @@ option:focus-within {
   display: block;
 }
 
-.activeMagick {
-  border-bottom: 2px solid #5bd5d5ab !important;
-  border-radius: 0.25rem;
-}
-
 .sheet-rolltemplate-skilledRoll .sheet-rollContainer,
 .sheet-rolltemplate-skilledCompRoll .sheet-rollContainer {
   background-image: url(https://s3.amazonaws.com/files.d20.io/images/97938169/2H_jIrRYHQLhEIW3TlZYow/max.png?1574800581), url(https://s3.amazonaws.com/files.d20.io/images/97938213/qxfGqZZDIGms6oySxMyPtA/max.png?1574800622), url(https://s3.amazonaws.com/files.d20.io/images/97938159/DQvw7NbZMn_E52h6RW8DUA/max.png?1574800572), url(https://s3.amazonaws.com/files.d20.io/images/97938152/iX1L3c8KUcynHfqZz1Qwgw/max.png?1574800563), url(https://github.com/Abourass/wondershade-classic/blob/main/dist/stars-964022_960_720.png?raw=true);
@@ -549,6 +544,26 @@ input[type=number] {
 
 .check-label {
   cursor: pointer;
+}
+
+.smallCheck {
+  height: 3rem !important;
+  width: 3rem !important;
+}
+
+.spellSlotRow {
+  padding: 0px 111px;
+  align-items: center;
+}
+
+.spellSlotLabel {
+  min-width: 12rem;
+}
+
+.smallCol {
+  align-items: center;
+  width: fit-content;
+  justify-content: center;
 }
 
 .repcontrol {

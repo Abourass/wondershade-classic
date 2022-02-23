@@ -84,5 +84,5 @@ module.exports = {
     {soft: 'seventhLvlSpell', txt: '7th'},
     {soft: 'eighthLvlSpell', txt: '8th'},
     {soft: 'ninthLvlSpell', txt: '9th'},
-  ]
+  ],
 }

@@ -29,6 +29,26 @@ input[type=number] {
   cursor: pointer;
 }
 
+.smallCheck {
+  height: 3rem !important;
+  width: 3rem !important;
+}
+
+.spellSlotRow {
+  padding: 0px 111px;
+  align-items: center;
+}
+
+.spellSlotLabel {
+  min-width: 12rem
+}
+
+.smallCol {
+  align-items: center;
+  width: fit-content;
+  justify-content: center;
+}
+
 .repcontrol {
   display: flex;
   justify-content: space-between;
