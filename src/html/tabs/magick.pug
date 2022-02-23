@@ -10,17 +10,17 @@
         .flex-row.spellSlotRow
           .column.flex.spellSlotLabel
             span #{spellLvl.txt} Level Spell Slots
-          .column.flex.smallCol
+          .flex-col.flex.smallCol
             +glowingCheckbox(`${spellLvl.soft}_check_one`)
-          .column.flex.smallCol
+          .flex-col.flex.smallCol
             +glowingCheckbox(`${spellLvl.soft}_check_two`)
-          .column.flex.smallCol
+          .flex-col.flex.smallCol
             +glowingCheckbox(`${spellLvl.soft}_check_three`)
-          .column.flex.smallCol
+          .flex-col.flex.smallCol
             +glowingCheckbox(`${spellLvl.soft}_check_four`)
-          .column.flex.smallCol
+          .flex-col.flex.smallCol
             +glowingCheckbox(`${spellLvl.soft}_check_five`)
-          .column.flex.smallCol
+          .flex-col.flex.smallCol
             +glowingCheckbox(`${spellLvl.soft}_check_six`)
       fieldset(class=`repeating_spell-${spellLvl.soft}`)
         .flex-row
