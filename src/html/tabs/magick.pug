@@ -2,7 +2,7 @@
   h1.skillHeading Magick
   .flex-row.align-center.justify-evenly.mt5
     each spellLvl in spellLevels
-      button.tabButton(type='action' name=`act_${spellLvl.soft}`) #{spellLvl.txt}
+      button.magickTabButton(type='action' name=`act_${spellLvl.soft}`) #{spellLvl.txt}
   input.sheet-magictabstoggle(type='hidden' name='attr_sheetMagicTab' value='wonder')
   each spellLvl in spellLevels
     div(class=spellLvl.soft)

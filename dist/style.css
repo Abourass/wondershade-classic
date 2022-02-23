@@ -385,7 +385,7 @@ option:focus-within {
 }
 
 /* show the selected tab */
-.sheet-tabstoggle[value=skills] ~ div.skills, .sheet-tabstoggle[value=combat] ~ div.combat, .sheet-tabstoggle[value=magick] ~ div.magick, .sheet-tabstoggle[value=items] ~ div.items, .sheet-tabstoggle[value=journal] ~ div.journal {
+.sheet-tabstoggle[value=skills] ~ div.skills, .sheet-tabstoggle[value=combat] ~ div.combat, .sheet-tabstoggle[value=magick] ~ div.magick, .sheet-tabstoggle[value=items] ~ div.items {
   display: block;
 }
 
@@ -396,6 +396,11 @@ option:focus-within {
 
 .sheet-magictabstoggle[value=wonderLvlSpell] ~ div.wonderLvlSpell, .sheet-magictabstoggle[value=firstLvlSpell] ~ div.firstLvlSpell, .sheet-magictabstoggle[value=secondLvlSpell] ~ div.secondLvlSpell, .sheet-magictabstoggle[value=thirdLvlSpell] ~ div.thirdLvlSpell, .sheet-magictabstoggle[value=fourthLvlSpell] ~ div.fourthLvlSpell, .sheet-magictabstoggle[value=fifthLvlSpell] ~ div.fifthLvlSpell, .sheet-magictabstoggle[value=sixthLvlSpell] ~ div.sixthLvlSpell, .sheet-magictabstoggle[value=seventhLvlSpell] ~ div.seventhLvlSpell, .sheet-magictabstoggle[value=eighthLvlSpell] ~ div.eighthLvlSpell, .sheet-magictabstoggle[value=ninthLvlSpell] ~ div.ninthLvlSpell {
   display: block;
+}
+
+.activeMagick {
+  border-bottom: 2px solid #5bd5d5ab !important;
+  border-radius: 0.25rem;
 }
 
 .sheet-rolltemplate-skilledRoll .sheet-rollContainer,
@@ -675,6 +680,15 @@ input[type=number] {
   background: transparent;
   font-size: 2.8rem;
   font-family: "Mountains of Christmas";
+  border: none;
+  padding: 0.4rem 0.2rem;
+  margin: 0.5rem;
+}
+
+.magickTabButton {
+  background: transparent;
+  font-size: 1.8rem;
+  font-family: "Lora", serif;
   border: none;
   padding: 0.4rem 0.2rem;
   margin: 0.5rem;

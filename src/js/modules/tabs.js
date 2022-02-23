@@ -5,19 +5,28 @@
   });
 });
 
-[
-  {soft: 'wonderLvlSpell', txt: 'Wonder'},
-  {soft: 'firstLvlSpell', txt: '1st'},
-  {soft: 'secondLvlSpell', txt: '2nd'},
-  {soft: 'thirdLvlSpell', txt: '3rd'},
-  {soft: 'fourthLvlSpell', txt: '4th'},
-  {soft: 'fifthLvlSpell', txt: '5th'},
-  {soft: 'sixthLvlSpell', txt: '6th'},
-  {soft: 'seventhLvlSpell', txt: '7th'},
-  {soft: 'eighthLvlSpell', txt: '8th'},
-  {soft: 'ninthLvlSpell', txt: '9th'},
-].map(e => e.soft).forEach(button => {
+const spellCategories = [
+  'wonderLvlSpell',
+  'firstLvlSpell',
+  'secondLvlSpell',
+  'thirdLvlSpell',
+  'fourthLvlSpell',
+  'fifthLvlSpell',
+  'sixthLvlSpell',
+  'seventhLvlSpell',
+  'eighthLvlSpell',
+  'ninthLvlSpell',
+]
+
+spellCategories.forEach(button => {
   on(`clicked:${button}`, function() {
     setAttrs({ sheetMagicTab: button });
+
+    // Add Border and Neon to the Active Category
+    $20(`[name="act_${button}"]`).addClass('activeMagick').addClass('neon');
+    // Make sure the class isn't on any other categories
+    spellCategories.filter(cat => cat !== button).forEach(cat => {
+      $20(`[name="act_${cat}"]`).removeClass('activeMagick').removeClass('neon');
+    })
   });
 });

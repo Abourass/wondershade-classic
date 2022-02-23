@@ -165,6 +165,15 @@ input[type=number] {
   margin: .5rem;
 }
 
+.magickTabButton {
+  background: transparent;
+  font-size: 1.8rem;
+  font-family: 'Lora', serif;
+  border: none;
+  padding: .4rem 0.2rem;
+  margin: .5rem;
+}
+
 .skillSection {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
