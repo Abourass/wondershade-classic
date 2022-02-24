@@ -35,9 +35,21 @@ input[type=number] {
   padding-right: 0!important;
 }
 
+.smallDot {
+  height: 7px!important;
+  width: 7px!important;
+  &.tearShape {
+    border-radius: 0px 50% 50% 50% !important;
+    /* Angle at the top */
+    transform: rotate(45deg);
+  }
+}
+
+
 .spellSlotRow {
-  padding: 0px 111px;
+  margin-bottom: .2rem;
   align-items: center;
+  justify-content: center;
 }
 
 .spellSlotLabel {

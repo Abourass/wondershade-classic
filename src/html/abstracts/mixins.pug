@@ -63,7 +63,10 @@ mixin dropdown(name, title, options)
       else
         option(value=option.value) #{option.text}
 
-mixin glowingCheckbox(name)
+mixin glowingCheckbox(name, small = false)
   label.checkmark.mb0.flex.smallCheck
     input(name=`attr_${name}` type='checkbox')
-    span
+    if small
+      span.smallDot()&attributes(attributes)
+    else
+      span()&attributes(attributes)

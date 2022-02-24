@@ -117,6 +117,9 @@ input.toggle-show {
       height: .75em;
       width: .75em;
     }
+    &:checked + span.fairyFire {
+      animation: neonSoftBgGlow 2s infinite alternate cubic-bezier(0, 1.67, 1, 1.63) !important;
+    }
   }
 }
 

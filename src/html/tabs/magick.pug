@@ -8,20 +8,20 @@
     div(class=spellLvl.soft)
       if spellLvl.soft != 'wonderLvlSpell'
         .flex-row.spellSlotRow
-          .column.flex.spellSlotLabel
+          .flex-col.flex.spellSlotLabel
             span #{spellLvl.txt} Level Spell Slots
           .flex-col.flex.smallCol
-            +glowingCheckbox(`${spellLvl.soft}_check_one`)
+            +glowingCheckbox(`${spellLvl.soft}_check_one`, true)(class=['tearShape', 'fairyFire'])
           .flex-col.flex.smallCol
-            +glowingCheckbox(`${spellLvl.soft}_check_two`)
+            +glowingCheckbox(`${spellLvl.soft}_check_two`, true)(class=['tearShape', 'fairyFire'])
           .flex-col.flex.smallCol
-            +glowingCheckbox(`${spellLvl.soft}_check_three`)
+            +glowingCheckbox(`${spellLvl.soft}_check_three`, true)(class=['tearShape', 'fairyFire'])
           .flex-col.flex.smallCol
-            +glowingCheckbox(`${spellLvl.soft}_check_four`)
+            +glowingCheckbox(`${spellLvl.soft}_check_four`, true)(class=['tearShape', 'fairyFire'])
           .flex-col.flex.smallCol
-            +glowingCheckbox(`${spellLvl.soft}_check_five`)
+            +glowingCheckbox(`${spellLvl.soft}_check_five`, true)(class=['tearShape', 'fairyFire'])
           .flex-col.flex.smallCol
-            +glowingCheckbox(`${spellLvl.soft}_check_six`)
+            +glowingCheckbox(`${spellLvl.soft}_check_six`, true)(class=['tearShape', 'fairyFire'])
       fieldset(class=`repeating_spell-${spellLvl.soft}`)
         .flex-row
           .column.fit-size(style='display: flex')
