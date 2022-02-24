@@ -1,13 +1,40 @@
 .journal
   h1.skillHeading Journal
+  .flex-col.flex
+    h3(style=`
+      margin: 0;
+      font-size: 1.5em;
+      letter-spacing: 5px;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      color: #88738a;
+      font-family: "Mountains of Christmas";
+      margin-bottom: 0.5rem;
+      justify-content: center;`) Bonus
+  fieldset.repeating_bonus
+    .flex-row
+      input.input.shaded-input.fit-width.font-2(type="text" placeholder="Bonus Name" name="attr_bonusName" style="margin-bottom: .5rem; margin-right: .5rem")
+      input.input.shaded-input.fit-width.font-2(type="text" placeholder="Bonus Amount" name="attr_bonusAmount" style="margin-bottom: .5rem; margin-right: .5rem")
+  hr(style="border-color: #887389;")
+  .flex-col.flex
+    h3(style=`
+      margin: 0;
+      font-size: 1.5em;
+      letter-spacing: 5px;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      color: #88738a;
+      font-family: "Mountains of Christmas";
+      margin-bottom: 0.5rem;
+      justify-content: center;`) Notes
   fieldset.repeating_journal
     .flex-row
       .column(style="padding-top: 0; padding-bottom: 0")
         .flex-row
           input.input.shaded-input.fit-width.font-2(type="text" placeholder="Title" name="attr_journalTitle" style="margin-bottom: .5rem; margin-right: .5rem")
-
           input.input.shaded-input.fit-width.font-2(type="text" placeholder="Date" name="attr_journalDate" style="margin-bottom: .5rem; margin-left: .5rem")
         .flex-row
-
           textarea.shaded-input.journal-entry(name="attr_journalEntry" rows="4" placeholder="Journal Entry")
         hr.journal-border

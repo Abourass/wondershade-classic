@@ -181,128 +181,43 @@
       </div>
     </div>
     <div class="flex-row" style="padding-top: 0; padding-bottom: 5px">
-      <div class="column section" style="display: flex; align-items: center">
-        <select class="dark-drop mini-drop" name="attr_bonus" title="Bonus Modifier" style="margin-left: 0!important;">
-          <option value="-40">Bonus -40</option>
-          <option value="-30">Bonus -30</option>
-          <option value="-20">Bonus -20</option>
-          <option value="-10">Bonus -10</option>
-          <option value="0" selected="selected">Bonus +0</option>
-          <option value="10">Bonus +10</option>
-          <option value="20">Bonus +20</option>
-          <option value="30">Bonus +30</option>
-          <option value="40">Bonus +40</option>
-        </select>
-      </div>
-      <div class="column section">
-        <div class="flex-row">
-          <div class="column">
-            <select class="dark-drop mini-drop center-drop" name="attr_level-1-slot" title="1" style="margin-left: 0!important; min-width: 3.6rem !important; width: 3.6rem !important;">
-              <option value="0">0</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-            </select>
-            <label class="slot-label" style="text-align: center">1st</label>
+      <div class="section flex-row" style="width: 100%; justify-content: space-evenly;">
+        <div class="flex-col" style="display: flex; align-items: center; justify-content: center">
+          <select class="dark-drop mini-drop" name="attr_bonus" title="Bonus Modifier" style="margin-left: 0!important;">
+            <option value="-40">40% Easier</option>
+            <option value="-30">30% Easier</option>
+            <option value="-25">25% Easier</option>
+            <option value="-20">20% Easier</option>
+            <option value="-15">15% Easier</option>
+            <option value="-10">10% Easier</option>
+            <option value="-5">5% Easier</option>
+            <option value="0" selected="selected">No Bonus / Penalty</option>
+            <option value="5">5% Harder</option>
+            <option value="10">10% Harder</option>
+            <option value="15">15% Harder</option>
+            <option value="20">20% Harder</option>
+            <option value="25">25% Harder</option>
+            <option value="30">30% Harder</option>
+            <option value="40">40% Harder</option>
+          </select>
+        </div>
+        <div class="flex-col" style="min-width: 155px;">
+          <div class="stat-block">
+            <label class="label flex-col align-center clickable-label">
+              <div class="flex-row align-center justify-center"><span>INIT</span>
+                <button class="skillButton" type="action" name="act_initRoll" title="Initiative"></button>
+              </div>
+              <input class="input mini-number center-txt" type="number" name="attr_initiative" value="0"/>
+            </label>
           </div>
-          <div class="column">
-            <select class="dark-drop mini-drop center-drop" name="attr_level-2-slot" title="2" style="margin-left: 0!important; min-width: 3.6rem !important; width: 3.6rem !important;">
-              <option value="0">0</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-            </select>
-            <label class="slot-label" style="text-align: center">2nd</label>
-          </div>
-          <div class="column">
-            <select class="dark-drop mini-drop center-drop" name="attr_level-3-slot" title="3" style="margin-left: 0!important; min-width: 3.6rem !important; width: 3.6rem !important;">
-              <option value="0">0</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-            </select>
-            <label class="slot-label" style="text-align: center">3rd</label>
-          </div>
-          <div class="column">
-            <select class="dark-drop mini-drop center-drop" name="attr_level-4-slot" title="4" style="margin-left: 0!important; min-width: 3.6rem !important; width: 3.6rem !important;">
-              <option value="0">0</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-            </select>
-            <label class="slot-label" style="text-align: center">4th</label>
-          </div>
-          <div class="column">
-            <select class="dark-drop mini-drop center-drop" name="attr_level-5-slot" title="5" style="margin-left: 0!important; min-width: 3.6rem !important; width: 3.6rem !important;">
-              <option value="0">0</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-            </select>
-            <label class="slot-label" style="text-align: center">5th</label>
-          </div>
-          <div class="column">
-            <select class="dark-drop mini-drop center-drop" name="attr_level-6-slot" title="6" style="margin-left: 0!important; min-width: 3.6rem !important; width: 3.6rem !important;">
-              <option value="0">0</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-            </select>
-            <label class="slot-label" style="text-align: center">6th</label>
-          </div>
-          <div class="column">
-            <select class="dark-drop mini-drop center-drop" name="attr_level-7-slot" title="7" style="margin-left: 0!important; min-width: 3.6rem !important; width: 3.6rem !important;">
-              <option value="0">0</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-            </select>
-            <label class="slot-label" style="text-align: center">7th</label>
-          </div>
-          <div class="column">
-            <select class="dark-drop mini-drop center-drop" name="attr_level-8-slot" title="8" style="margin-left: 0!important; min-width: 3.6rem !important; width: 3.6rem !important;">
-              <option value="0">0</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-            </select>
-            <label class="slot-label" style="text-align: center">8th</label>
-          </div>
-          <div class="column">
-            <select class="dark-drop mini-drop center-drop" name="attr_level-9-slot" title="9" style="margin-left: 0!important; min-width: 3.6rem !important; width: 3.6rem !important;">
-              <option value="0">0</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-            </select>
-            <label class="slot-label" style="text-align: center">9th</label>
+        </div>
+        <div class="flex-column flex" style="justify-content: center;">
+          <div class="stat-block">
+            <label class="label flex-col align-center clickable-label">
+              <div class="flex-row align-center justify-center"><span>Short Rest</span>
+                <button class="skillButton" type="roll" value="&amp;{template:default} {{name=Short Rest}} {{Recover=  You heal [[ [[?{How many hit dice do you spend?|1}]]?{What's your Hit dice?|d4|d6|d8|d10|d12|d20} ]] hit points, having spent $[[0]] of your hit dice.}}"></button>
+              </div>
+            </label>
           </div>
         </div>
       </div>
@@ -314,6 +229,7 @@
           <button class="tabButton" type="action" name="act_combat">Combat</button>
           <button class="tabButton" type="action" name="act_magick">Magick</button>
           <button class="tabButton" type="action" name="act_items">Inventory</button>
+          <button class="tabButton" type="action" name="act_journal">Journal</button>
         </div>
         <input class="sheet-tabstoggle" type="hidden" name="attr_sheetTab" value="skills"/>
         <div class="skills">
@@ -1465,6 +1381,56 @@
             </div>
           </fieldset>
         </div>
+        <div class="journal">
+          <h1 class="skillHeading">Journal</h1>
+          <div class="flex-col flex">
+            <h3 style="
+      margin: 0;
+      font-size: 1.5em;
+      letter-spacing: 5px;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      color: #88738a;
+      font-family: &quot;Mountains of Christmas&quot;;
+      margin-bottom: 0.5rem;
+      justify-content: center;">Bonus</h3>
+          </div>
+          <fieldset class="repeating_bonus">
+            <div class="flex-row">
+              <input class="input shaded-input fit-width font-2" type="text" placeholder="Bonus Name" name="attr_bonusName" style="margin-bottom: .5rem; margin-right: .5rem"/>
+              <input class="input shaded-input fit-width font-2" type="text" placeholder="Bonus Amount" name="attr_bonusAmount" style="margin-bottom: .5rem; margin-right: .5rem"/>
+            </div>
+          </fieldset>
+          <hr style="border-color: #887389;"/>
+          <div class="flex-col flex">
+            <h3 style="
+      margin: 0;
+      font-size: 1.5em;
+      letter-spacing: 5px;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      color: #88738a;
+      font-family: &quot;Mountains of Christmas&quot;;
+      margin-bottom: 0.5rem;
+      justify-content: center;">Notes</h3>
+          </div>
+          <fieldset class="repeating_journal">
+            <div class="flex-row">
+              <div class="column" style="padding-top: 0; padding-bottom: 0">
+                <div class="flex-row">
+                  <input class="input shaded-input fit-width font-2" type="text" placeholder="Title" name="attr_journalTitle" style="margin-bottom: .5rem; margin-right: .5rem"/>
+                  <input class="input shaded-input fit-width font-2" type="text" placeholder="Date" name="attr_journalDate" style="margin-bottom: .5rem; margin-left: .5rem"/>
+                </div>
+                <div class="flex-row">
+                  <textarea class="shaded-input journal-entry" name="attr_journalEntry" rows="4" placeholder="Journal Entry"></textarea>
+                </div>
+                <hr class="journal-border"/>
+              </div>
+            </div>
+          </fieldset>
+        </div>
       </div>
     </div>
   </div>
@@ -1569,6 +1535,15 @@
     </div>
   </div>
 </rolltemplate>
+<rolltemplate class="sheet-rolltemplate-initRoll">
+  <div class="rollContainer">
+    <h1>Initiative</h1>
+    <h2>{{name}}</h2>
+    <div class="rollWrapper">
+      <div class="rollResult"><span class="roll">{{computed::Roll}}</span></div>
+    </div>
+  </div>
+</rolltemplate>
 <script type="text/worker">
 on('clicked:skillRoll', async(info) => {
   const template = '&{template:skilledCompRoll}';
@@ -1595,6 +1570,20 @@ on('clicked:skillRoll', async(info) => {
 
   console.log({results, bonus: results.bonus.result, computed: {roll: computedRoll, success: computedSuccess}});
   finishRoll(rollId, { Roll: computedRoll, success: computedSuccess});
+})
+
+</script>
+<script type="text/worker">
+on('clicked:initRoll', async(info) => {
+  const template = '&{template:initRoll}';
+  const name = '{{name=@{character_name}}}';
+  const skill = info.htmlAttributes.title;
+  const skillModifier = `{{skillModifier=[[(@{${skill}})]]}}`;
+  const roll = '{{Roll=[[(1d20)[Roll]+(@{initiative})[Initiative]]]}}';
+
+  const {results, rollId} = await startRoll(`${template} ${name} ${skillModifier} ${roll}`);
+
+  finishRoll(rollId, { Roll: results.Roll.result });
 })
 
 </script>

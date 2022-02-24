@@ -6,7 +6,8 @@
   &[value="skills"] ~ div.skills,
   &[value="combat"] ~ div.combat,
   &[value="magick"] ~ div.magick,
-  &[value="items"] ~ div.items {
+  &[value="items"] ~ div.items,
+  &[value="journal"] ~ div.journal {
     display: block;
   }
 }

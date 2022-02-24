@@ -414,7 +414,7 @@ option:focus-within {
 }
 
 /* show the selected tab */
-.sheet-tabstoggle[value=skills] ~ div.skills, .sheet-tabstoggle[value=combat] ~ div.combat, .sheet-tabstoggle[value=magick] ~ div.magick, .sheet-tabstoggle[value=items] ~ div.items {
+.sheet-tabstoggle[value=skills] ~ div.skills, .sheet-tabstoggle[value=combat] ~ div.combat, .sheet-tabstoggle[value=magick] ~ div.magick, .sheet-tabstoggle[value=items] ~ div.items, .sheet-tabstoggle[value=journal] ~ div.journal {
   display: block;
 }
 
@@ -438,8 +438,16 @@ option:focus-within {
   display: block;
 }
 
+.sheet-rolltemplate-initRoll .userscript-roll {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
 .sheet-rolltemplate-skilledRoll .sheet-rollContainer,
-.sheet-rolltemplate-skilledCompRoll .sheet-rollContainer {
+.sheet-rolltemplate-skilledCompRoll .sheet-rollContainer,
+.sheet-rolltemplate-initRoll .sheet-rollContainer {
   background-image: url(https://s3.amazonaws.com/files.d20.io/images/97938169/2H_jIrRYHQLhEIW3TlZYow/max.png?1574800581), url(https://s3.amazonaws.com/files.d20.io/images/97938213/qxfGqZZDIGms6oySxMyPtA/max.png?1574800622), url(https://s3.amazonaws.com/files.d20.io/images/97938159/DQvw7NbZMn_E52h6RW8DUA/max.png?1574800572), url(https://s3.amazonaws.com/files.d20.io/images/97938152/iX1L3c8KUcynHfqZz1Qwgw/max.png?1574800563), url(https://github.com/Abourass/wondershade-classic/blob/main/dist/stars-964022_960_720.png?raw=true);
   background-position: left top, right top, right bottom, left bottom, center center;
   background-repeat: no-repeat;
@@ -451,26 +459,32 @@ option:focus-within {
   font-family: "Lucida Bright", "Cambria", serif;
 }
 .sheet-rolltemplate-skilledRoll .sheet-rollContainer h1,
-.sheet-rolltemplate-skilledCompRoll .sheet-rollContainer h1 {
+.sheet-rolltemplate-skilledCompRoll .sheet-rollContainer h1,
+.sheet-rolltemplate-initRoll .sheet-rollContainer h1 {
   font-size: 1.8em;
   color: #e5d280;
 }
 .sheet-rolltemplate-skilledRoll .sheet-rollContainer h2,
-.sheet-rolltemplate-skilledCompRoll .sheet-rollContainer h2 {
+.sheet-rolltemplate-skilledCompRoll .sheet-rollContainer h2,
+.sheet-rolltemplate-initRoll .sheet-rollContainer h2 {
   font-weight: 400;
   font-size: 2rem;
   color: #f2f2f2;
   font-family: "Mountains of Christmas";
 }
 .sheet-rolltemplate-skilledRoll .sheet-rollContainer h3,
-.sheet-rolltemplate-skilledCompRoll .sheet-rollContainer h3 {
+.sheet-rolltemplate-skilledCompRoll .sheet-rollContainer h3,
+.sheet-rolltemplate-initRoll .sheet-rollContainer h3 {
   font-size: 1.1em;
   color: #f2f2f2;
 }
 .sheet-rolltemplate-skilledRoll .sheet-rollContainer h1, .sheet-rolltemplate-skilledRoll .sheet-rollContainer h2, .sheet-rolltemplate-skilledRoll .sheet-rollContainer h3,
 .sheet-rolltemplate-skilledCompRoll .sheet-rollContainer h1,
 .sheet-rolltemplate-skilledCompRoll .sheet-rollContainer h2,
-.sheet-rolltemplate-skilledCompRoll .sheet-rollContainer h3 {
+.sheet-rolltemplate-skilledCompRoll .sheet-rollContainer h3,
+.sheet-rolltemplate-initRoll .sheet-rollContainer h1,
+.sheet-rolltemplate-initRoll .sheet-rollContainer h2,
+.sheet-rolltemplate-initRoll .sheet-rollContainer h3 {
   display: block;
   text-align: center;
   text-transform: capitalize;
@@ -479,21 +493,26 @@ option:focus-within {
   line-height: 1;
 }
 .sheet-rolltemplate-skilledRoll .sheet-rollWrapper,
-.sheet-rolltemplate-skilledCompRoll .sheet-rollWrapper {
+.sheet-rolltemplate-skilledCompRoll .sheet-rollWrapper,
+.sheet-rolltemplate-initRoll .sheet-rollWrapper {
   padding: 0.5rem;
   font-family: "Helvetica", "Verdana", sans;
 }
 .sheet-rolltemplate-skilledRoll .sheet-rollSuccess,
-.sheet-rolltemplate-skilledCompRoll .sheet-rollSuccess {
+.sheet-rolltemplate-skilledCompRoll .sheet-rollSuccess,
+.sheet-rolltemplate-initRoll .sheet-rollSuccess {
   background: #396713;
 }
 .sheet-rolltemplate-skilledRoll .sheet-rollFailure,
-.sheet-rolltemplate-skilledCompRoll .sheet-rollFailure {
+.sheet-rolltemplate-skilledCompRoll .sheet-rollFailure,
+.sheet-rolltemplate-initRoll .sheet-rollFailure {
   background: #a80b0b;
 }
 .sheet-rolltemplate-skilledRoll .sheet-rollSuccess, .sheet-rolltemplate-skilledRoll .sheet-rollFailure,
 .sheet-rolltemplate-skilledCompRoll .sheet-rollSuccess,
-.sheet-rolltemplate-skilledCompRoll .sheet-rollFailure {
+.sheet-rolltemplate-skilledCompRoll .sheet-rollFailure,
+.sheet-rolltemplate-initRoll .sheet-rollSuccess,
+.sheet-rolltemplate-initRoll .sheet-rollFailure {
   padding: 0.5rem;
   margin-bottom: 0.5rem;
   color: #f2f2f2;
@@ -505,7 +524,8 @@ option:focus-within {
   text-transform: uppercase;
 }
 .sheet-rolltemplate-skilledRoll .sheet-rollResult,
-.sheet-rolltemplate-skilledCompRoll .sheet-rollResult {
+.sheet-rolltemplate-skilledCompRoll .sheet-rollResult,
+.sheet-rolltemplate-initRoll .sheet-rollResult {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -516,7 +536,8 @@ option:focus-within {
   font-size: 1.75em;
 }
 .sheet-rolltemplate-skilledRoll .sheet-roll,
-.sheet-rolltemplate-skilledCompRoll .sheet-roll {
+.sheet-rolltemplate-skilledCompRoll .sheet-roll,
+.sheet-rolltemplate-initRoll .sheet-roll {
   padding: 0.5rem;
   font-family: "Lucida Bright", "Cambria", serif;
   font-size: 1.2em;
@@ -524,16 +545,19 @@ option:focus-within {
   font-family: "Lucida Bright", "Cambria", serif;
 }
 .sheet-rolltemplate-skilledRoll .sheet-bonus,
-.sheet-rolltemplate-skilledCompRoll .sheet-bonus {
+.sheet-rolltemplate-skilledCompRoll .sheet-bonus,
+.sheet-rolltemplate-initRoll .sheet-bonus {
   font-family: "Lucida Bright", "Cambria", serif;
 }
 .sheet-rolltemplate-skilledRoll .sheet-vs,
-.sheet-rolltemplate-skilledCompRoll .sheet-vs {
+.sheet-rolltemplate-skilledCompRoll .sheet-vs,
+.sheet-rolltemplate-initRoll .sheet-vs {
   font-family: "Lucida Bright", "Cambria", serif;
   font-size: 0.7em;
 }
 .sheet-rolltemplate-skilledRoll .sheet-rollContainer .inlinerollresult,
-.sheet-rolltemplate-skilledCompRoll .sheet-rollContainer .inlinerollresult {
+.sheet-rolltemplate-skilledCompRoll .sheet-rollContainer .inlinerollresult,
+.sheet-rolltemplate-initRoll .sheet-rollContainer .inlinerollresult {
   padding: 0;
   border: unset;
   background: unset;

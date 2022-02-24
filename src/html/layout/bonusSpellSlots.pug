@@ -1,26 +1,33 @@
-.column.section(style='display: flex; align-items: center')
-  +dropdown('bonus', 'Bonus Modifier', [
-    {value: '-40', text: 'Bonus -40'},
-    {value: '-30', text: 'Bonus -30'},
-    {value: '-20', text: 'Bonus -20'},
-    {value: '-10', text: 'Bonus -10'},
-    {value: '0', text: 'Bonus +0', selected: true},
-    {value: '10', text: 'Bonus +10'},
-    {value: '20', text: 'Bonus +20'},
-    {value: '30', text: 'Bonus +30'},
-    {value: '40', text: 'Bonus +40'},
-  ])(class=['mini-drop'] style='margin-left: 0!important')
-.column.section
-  .flex-row
-    each spellSlot in spellSlots
-      .column
-        +dropdown(`level-${spellSlot.num}-slot`, `${spellSlot.num}`, [
-          {value: 0, text: '0'},
-          {value: 1, text: '1'},
-          {value: 2, text: '2'},
-          {value: 3, text: '3'},
-          {value: 4, text: '4'},
-          {value: 5, text: '5'},
-          {value: 6, text: '6'},
-        ])(class=['mini-drop', 'center-drop'] style='margin-left: 0!important; min-width: 3.6rem !important; width: 3.6rem !important')
-        label.slot-label(style='text-align: center') #{spellSlot.txt}
+.section.flex-row(style='width: 100%; justify-content: space-evenly;')
+  .flex-col(style='display: flex; align-items: center; justify-content: center')
+    +dropdown('bonus', 'Bonus Modifier', [
+      {value: '-40', text: '40% Easier'},
+      {value: '-30', text: '30% Easier'},
+      {value: '-25', text: '25% Easier'},
+      {value: '-20', text: '20% Easier'},
+      {value: '-15', text: '15% Easier'},
+      {value: '-10', text: '10% Easier'},
+      {value: '-5', text: '5% Easier'},
+      {value: '0', text: 'No Bonus / Penalty', selected: true},
+      {value: '5', text: '5% Harder'},
+      {value: '10', text: '10% Harder'},
+      {value: '15', text: '15% Harder'},
+      {value: '20', text: '20% Harder'},
+      {value: '25', text: '25% Harder'},
+      {value: '30', text: '30% Harder'},
+      {value: '40', text: '40% Harder'},
+    ])(class=['mini-drop'] style='margin-left: 0!important')
+  .flex-col(style="min-width: 155px;")
+    .stat-block
+      label.label.flex-col.align-center.clickable-label
+        .flex-row.align-center.justify-center
+          span INIT
+          button.skillButton(type='action' name='act_initRoll' title='Initiative')
+        input.input.mini-number.center-txt(type='number' name=`attr_initiative` value='0')
+  .flex-column.flex(style='justify-content: center;')
+    .stat-block
+      label.label.flex-col.align-center.clickable-label
+        .flex-row.align-center.justify-center
+          span Short Rest
+          button.skillButton(type='roll' value="&{template:default} {{name=Short Rest}} {{Recover=  You heal [[ [[?{How many hit dice do you spend?|1}]]?{What's your Hit dice?|d4|d6|d8|d10|d12|d20} ]] hit points, having spent $[[0]] of your hit dice.}}")
+
