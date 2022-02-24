@@ -45,7 +45,6 @@ input[type=number] {
   }
 }
 
-
 .spellSlotRow {
   margin-bottom: .2rem;
   align-items: center;
@@ -128,6 +127,16 @@ input[type=number] {
   display: grid;
   align-items: stretch;
   margin-bottom: 0.5rem;
+  border-radius: 0 10%;
+  overflow: hidden;
+}
+
+.ruffle-1 {
+  border-radius: 10% 0 15% !important;
+}
+
+.ruffle-2 {
+  border-radius: 0 10% 15% !important;
 }
 
 .skillLabelCol {
@@ -200,7 +209,7 @@ input[type=number] {
 
 .magickTabButton {
   background: transparent;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-family: 'Lora', serif;
   border: none;
   padding: .4rem 0.2rem;

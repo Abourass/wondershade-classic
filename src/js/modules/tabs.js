@@ -7,6 +7,8 @@
 
 const spellCategories = [
   'wonderLvlSpell',
+  'finesseClassLvlSpell',
+  'cantripLvlSpell',
   'firstLvlSpell',
   'secondLvlSpell',
   'thirdLvlSpell',

@@ -6,7 +6,7 @@
   input.sheet-magictabstoggle(type='hidden' name='attr_sheetMagicTab' value='wonder')
   each spellLvl in spellLevels
     div(class=spellLvl.soft)
-      if spellLvl.soft != 'wonderLvlSpell'
+      if (!['wonderLvlSpell', 'cantripLvlSpell', 'finesseClassLvlSpell'].includes(spellLvl.soft))
         .flex-row.spellSlotRow
           .flex-col.flex.spellSlotLabel
             span #{spellLvl.txt} Level Spell Slots
@@ -26,14 +26,28 @@
         .flex-row
           .column.fit-size(style='display: flex')
             button.spell_button(type='action' name='act_magick-roll' title='So anyway I just started blasting')
-          .column.removeSides
+          .flex-col.removeSides(style='width: 100%')
             .label(style="padding-left: 2px")
-              input.input.shaded-input.font-2(type='text' name='attr_spellname' placeholder='Spell Name')
-          if spellLvl.soft == 'wonderLvlSpell'
-            .column.removeSides
+              input.input.shaded-input.font-2(type='text' name='attr_spellname' placeholder='Spell Name' style='width: 100%')
+          if (['wonderLvlSpell', 'finesseClassLvlSpell'].includes(spellLvl.soft))
+            .flex-col.removeSides(style='width: 100%')
               .label(style="padding-left: 2px")
-                input.input.shaded-input.font-2(type='text' name='attr_spellcost' placeholder='Cost')
-          .column.removeSides
-            .label(style="padding-left: 2px")
-              input.input.shaded-input.font-2(type='text' name='attr_spelldamage' placeholder='Damage')
+                input.input.shaded-input.font-2(type='text' name='attr_spellcost' placeholder='Cost' style='width: 100%')
+          .flex-col.removeSides(style='width: 100%')
+            .label(style="padding-left: 2px; margin-right: 2rem")
+              input.input.shaded-input.font-2(type='text' name='attr_spelldamage' placeholder='Damage' style='width: 100%')
+          .column.fit-size.flex
+        div(style='margin-top: -1rem;')
+          label.check-label
+            input.toggle-box.toggle-show(type='checkbox' name='a')
+            span.checkPlus(style='left: 684px; top: -24px;') &amp;
+            span.checkMinus(style='left: 684px; top: -24px;') _
+            .hiddenSection.flex-row(style="margin-top: -1.2rem;")
+              .column.removeSides(style="margin-right: 2.9rem!important;")
+                .label
+                  textarea.input.shaded-input(
+                    name='attr_spellDesc'
+                    style="text-align: left; font-size: 1.8rem; margin-bottom: 0; font-family: fangsong; padding: 4px;"
+                    placeholder='Description'
+                    )
     

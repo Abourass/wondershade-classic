@@ -12,10 +12,23 @@
 }
 
 /*Configure the magick tab buttons*/
-.wonderLvlSpell, .firstLvlSpell, .secondLvlSpell, .thirdLvlSpell, .fourthLvlSpell, .fifthLvlSpell, .sixthLvlSpell, .seventhLvlSpell, .eighthLvlSpell, .ninthLvlSpell { display: none; }
+.wonderLvlSpell,
+.finesseClassLvlSpell,
+.cantripLvlSpell,
+.firstLvlSpell,
+.secondLvlSpell,
+.thirdLvlSpell,
+.fourthLvlSpell,
+.fifthLvlSpell,
+.sixthLvlSpell,
+.seventhLvlSpell,
+.eighthLvlSpell,
+.ninthLvlSpell { display: none; }
 
 .sheet-magictabstoggle {
   &[value="wonderLvlSpell"] ~ div.wonderLvlSpell,
+  &[value="finesseClassLvlSpell"] ~ div.finesseClassLvlSpell,
+  &[value="cantripLvlSpell"] ~ div.cantripLvlSpell,
   &[value="firstLvlSpell"] ~ div.firstLvlSpell,
   &[value="secondLvlSpell"] ~ div.secondLvlSpell,
   &[value="thirdLvlSpell"] ~ div.thirdLvlSpell,

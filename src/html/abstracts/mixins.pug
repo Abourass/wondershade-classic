@@ -31,21 +31,37 @@ mixin force(name, rollAbbreviation = name)
           span.vs /
           input.input.mini-number.center-txt(type='number' name=`attr_Max${name}` value='0')
 
-mixin skill(name, value)
-  .skillDisplay
-    label.checkmark.mb0.flex
-      input(name=`attr_${name.toLowerCase()}_check` type='checkbox')
-      span
-    .skillLabelCol.pr0
-      label.mb0.clickable-label
-        strong.displayTitle #{name}
-        button.skillButton(type='action' name='act_skillRoll' title=`${name.toLowerCase()}`)
-      label.mb0.pr0.full-height
-        input.input.skillInput.lora.full-height(
-          type='number'
-          name=`attr_${name}`
-          value= value
-        )
+mixin skill(name, value, ruffle = null)
+  if ruffle
+    div(class=['skillDisplay', `ruffle-${ruffle}`])
+      label.checkmark.mb0.flex
+        input(name=`attr_${name.toLowerCase()}_check` type='checkbox')
+        span
+      .skillLabelCol.pr0
+        label.mb0.clickable-label
+          strong.displayTitle #{name}
+          button.skillButton(type='action' name='act_skillRoll' title=`${name.toLowerCase()}`)
+        label.mb0.pr0.full-height
+          input.input.skillInput.lora.full-height(
+            type='number'
+            name=`attr_${name}`
+            value= value
+          )
+  else
+    .skillDisplay
+      label.checkmark.mb0.flex
+        input(name=`attr_${name.toLowerCase()}_check` type='checkbox')
+        span
+      .skillLabelCol.pr0
+        label.mb0.clickable-label
+          strong.displayTitle #{name}
+          button.skillButton(type='action' name='act_skillRoll' title=`${name.toLowerCase()}`)
+        label.mb0.pr0.full-height
+          input.input.skillInput.lora.full-height(
+            type='number'
+            name=`attr_${name}`
+            value= value
+          )
 
 mixin stat(shortName, longName)
   .stat-block

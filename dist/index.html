@@ -708,6 +708,8 @@
           <h1 class="skillHeading">Magick</h1>
           <div class="flex-row align-center justify-evenly mt5">
             <button class="magickTabButton" type="action" name="act_wonderLvlSpell">Wonder</button>
+            <button class="magickTabButton" type="action" name="act_finesseClassLvlSpell">Finesse &amp; Class</button>
+            <button class="magickTabButton" type="action" name="act_cantripLvlSpell">Cantrips</button>
             <button class="magickTabButton" type="action" name="act_firstLvlSpell">1st</button>
             <button class="magickTabButton" type="action" name="act_secondLvlSpell">2nd</button>
             <button class="magickTabButton" type="action" name="act_thirdLvlSpell">3rd</button>
@@ -725,21 +727,103 @@
                 <div class="column fit-size" style="display: flex">
                   <button class="spell_button" type="action" name="act_magick-roll" title="So anyway I just started blasting"></button>
                 </div>
-                <div class="column removeSides">
+                <div class="flex-col removeSides" style="width: 100%">
                   <div class="label" style="padding-left: 2px">
-                    <input class="input shaded-input font-2" type="text" name="attr_spellname" placeholder="Spell Name"/>
+                    <input class="input shaded-input font-2" type="text" name="attr_spellname" placeholder="Spell Name" style="width: 100%"/>
                   </div>
                 </div>
-                <div class="column removeSides">
+                <div class="flex-col removeSides" style="width: 100%">
                   <div class="label" style="padding-left: 2px">
-                    <input class="input shaded-input font-2" type="text" name="attr_spellcost" placeholder="Cost"/>
+                    <input class="input shaded-input font-2" type="text" name="attr_spellcost" placeholder="Cost" style="width: 100%"/>
                   </div>
                 </div>
-                <div class="column removeSides">
-                  <div class="label" style="padding-left: 2px">
-                    <input class="input shaded-input font-2" type="text" name="attr_spelldamage" placeholder="Damage"/>
+                <div class="flex-col removeSides" style="width: 100%">
+                  <div class="label" style="padding-left: 2px; margin-right: 2rem">
+                    <input class="input shaded-input font-2" type="text" name="attr_spelldamage" placeholder="Damage" style="width: 100%"/>
                   </div>
                 </div>
+                <div class="column fit-size flex"></div>
+              </div>
+              <div style="margin-top: -1rem;">
+                <label class="check-label">
+                  <input class="toggle-box toggle-show" type="checkbox" name="a"/><span class="checkPlus" style="left: 684px; top: -24px;">&amp;</span><span class="checkMinus" style="left: 684px; top: -24px;">_</span>
+                  <div class="hiddenSection flex-row" style="margin-top: -1.2rem;">
+                    <div class="column removeSides" style="margin-right: 2.9rem!important;">
+                      <div class="label">
+                        <textarea class="input shaded-input" name="attr_spellDesc" style="text-align: left; font-size: 1.8rem; margin-bottom: 0; font-family: fangsong; padding: 4px;" placeholder="Description"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </label>
+              </div>
+            </fieldset>
+          </div>
+          <div class="finesseClassLvlSpell">
+            <fieldset class="repeating_spell-finesseClassLvlSpell">
+              <div class="flex-row">
+                <div class="column fit-size" style="display: flex">
+                  <button class="spell_button" type="action" name="act_magick-roll" title="So anyway I just started blasting"></button>
+                </div>
+                <div class="flex-col removeSides" style="width: 100%">
+                  <div class="label" style="padding-left: 2px">
+                    <input class="input shaded-input font-2" type="text" name="attr_spellname" placeholder="Spell Name" style="width: 100%"/>
+                  </div>
+                </div>
+                <div class="flex-col removeSides" style="width: 100%">
+                  <div class="label" style="padding-left: 2px">
+                    <input class="input shaded-input font-2" type="text" name="attr_spellcost" placeholder="Cost" style="width: 100%"/>
+                  </div>
+                </div>
+                <div class="flex-col removeSides" style="width: 100%">
+                  <div class="label" style="padding-left: 2px; margin-right: 2rem">
+                    <input class="input shaded-input font-2" type="text" name="attr_spelldamage" placeholder="Damage" style="width: 100%"/>
+                  </div>
+                </div>
+                <div class="column fit-size flex"></div>
+              </div>
+              <div style="margin-top: -1rem;">
+                <label class="check-label">
+                  <input class="toggle-box toggle-show" type="checkbox" name="a"/><span class="checkPlus" style="left: 684px; top: -24px;">&amp;</span><span class="checkMinus" style="left: 684px; top: -24px;">_</span>
+                  <div class="hiddenSection flex-row" style="margin-top: -1.2rem;">
+                    <div class="column removeSides" style="margin-right: 2.9rem!important;">
+                      <div class="label">
+                        <textarea class="input shaded-input" name="attr_spellDesc" style="text-align: left; font-size: 1.8rem; margin-bottom: 0; font-family: fangsong; padding: 4px;" placeholder="Description"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </label>
+              </div>
+            </fieldset>
+          </div>
+          <div class="cantripLvlSpell">
+            <fieldset class="repeating_spell-cantripLvlSpell">
+              <div class="flex-row">
+                <div class="column fit-size" style="display: flex">
+                  <button class="spell_button" type="action" name="act_magick-roll" title="So anyway I just started blasting"></button>
+                </div>
+                <div class="flex-col removeSides" style="width: 100%">
+                  <div class="label" style="padding-left: 2px">
+                    <input class="input shaded-input font-2" type="text" name="attr_spellname" placeholder="Spell Name" style="width: 100%"/>
+                  </div>
+                </div>
+                <div class="flex-col removeSides" style="width: 100%">
+                  <div class="label" style="padding-left: 2px; margin-right: 2rem">
+                    <input class="input shaded-input font-2" type="text" name="attr_spelldamage" placeholder="Damage" style="width: 100%"/>
+                  </div>
+                </div>
+                <div class="column fit-size flex"></div>
+              </div>
+              <div style="margin-top: -1rem;">
+                <label class="check-label">
+                  <input class="toggle-box toggle-show" type="checkbox" name="a"/><span class="checkPlus" style="left: 684px; top: -24px;">&amp;</span><span class="checkMinus" style="left: 684px; top: -24px;">_</span>
+                  <div class="hiddenSection flex-row" style="margin-top: -1.2rem;">
+                    <div class="column removeSides" style="margin-right: 2.9rem!important;">
+                      <div class="label">
+                        <textarea class="input shaded-input" name="attr_spellDesc" style="text-align: left; font-size: 1.8rem; margin-bottom: 0; font-family: fangsong; padding: 4px;" placeholder="Description"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </label>
               </div>
             </fieldset>
           </div>
@@ -782,16 +866,29 @@
                 <div class="column fit-size" style="display: flex">
                   <button class="spell_button" type="action" name="act_magick-roll" title="So anyway I just started blasting"></button>
                 </div>
-                <div class="column removeSides">
+                <div class="flex-col removeSides" style="width: 100%">
                   <div class="label" style="padding-left: 2px">
-                    <input class="input shaded-input font-2" type="text" name="attr_spellname" placeholder="Spell Name"/>
+                    <input class="input shaded-input font-2" type="text" name="attr_spellname" placeholder="Spell Name" style="width: 100%"/>
                   </div>
                 </div>
-                <div class="column removeSides">
-                  <div class="label" style="padding-left: 2px">
-                    <input class="input shaded-input font-2" type="text" name="attr_spelldamage" placeholder="Damage"/>
+                <div class="flex-col removeSides" style="width: 100%">
+                  <div class="label" style="padding-left: 2px; margin-right: 2rem">
+                    <input class="input shaded-input font-2" type="text" name="attr_spelldamage" placeholder="Damage" style="width: 100%"/>
                   </div>
                 </div>
+                <div class="column fit-size flex"></div>
+              </div>
+              <div style="margin-top: -1rem;">
+                <label class="check-label">
+                  <input class="toggle-box toggle-show" type="checkbox" name="a"/><span class="checkPlus" style="left: 684px; top: -24px;">&amp;</span><span class="checkMinus" style="left: 684px; top: -24px;">_</span>
+                  <div class="hiddenSection flex-row" style="margin-top: -1.2rem;">
+                    <div class="column removeSides" style="margin-right: 2.9rem!important;">
+                      <div class="label">
+                        <textarea class="input shaded-input" name="attr_spellDesc" style="text-align: left; font-size: 1.8rem; margin-bottom: 0; font-family: fangsong; padding: 4px;" placeholder="Description"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </label>
               </div>
             </fieldset>
           </div>
@@ -834,16 +931,29 @@
                 <div class="column fit-size" style="display: flex">
                   <button class="spell_button" type="action" name="act_magick-roll" title="So anyway I just started blasting"></button>
                 </div>
-                <div class="column removeSides">
+                <div class="flex-col removeSides" style="width: 100%">
                   <div class="label" style="padding-left: 2px">
-                    <input class="input shaded-input font-2" type="text" name="attr_spellname" placeholder="Spell Name"/>
+                    <input class="input shaded-input font-2" type="text" name="attr_spellname" placeholder="Spell Name" style="width: 100%"/>
                   </div>
                 </div>
-                <div class="column removeSides">
-                  <div class="label" style="padding-left: 2px">
-                    <input class="input shaded-input font-2" type="text" name="attr_spelldamage" placeholder="Damage"/>
+                <div class="flex-col removeSides" style="width: 100%">
+                  <div class="label" style="padding-left: 2px; margin-right: 2rem">
+                    <input class="input shaded-input font-2" type="text" name="attr_spelldamage" placeholder="Damage" style="width: 100%"/>
                   </div>
                 </div>
+                <div class="column fit-size flex"></div>
+              </div>
+              <div style="margin-top: -1rem;">
+                <label class="check-label">
+                  <input class="toggle-box toggle-show" type="checkbox" name="a"/><span class="checkPlus" style="left: 684px; top: -24px;">&amp;</span><span class="checkMinus" style="left: 684px; top: -24px;">_</span>
+                  <div class="hiddenSection flex-row" style="margin-top: -1.2rem;">
+                    <div class="column removeSides" style="margin-right: 2.9rem!important;">
+                      <div class="label">
+                        <textarea class="input shaded-input" name="attr_spellDesc" style="text-align: left; font-size: 1.8rem; margin-bottom: 0; font-family: fangsong; padding: 4px;" placeholder="Description"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </label>
               </div>
             </fieldset>
           </div>
@@ -886,16 +996,29 @@
                 <div class="column fit-size" style="display: flex">
                   <button class="spell_button" type="action" name="act_magick-roll" title="So anyway I just started blasting"></button>
                 </div>
-                <div class="column removeSides">
+                <div class="flex-col removeSides" style="width: 100%">
                   <div class="label" style="padding-left: 2px">
-                    <input class="input shaded-input font-2" type="text" name="attr_spellname" placeholder="Spell Name"/>
+                    <input class="input shaded-input font-2" type="text" name="attr_spellname" placeholder="Spell Name" style="width: 100%"/>
                   </div>
                 </div>
-                <div class="column removeSides">
-                  <div class="label" style="padding-left: 2px">
-                    <input class="input shaded-input font-2" type="text" name="attr_spelldamage" placeholder="Damage"/>
+                <div class="flex-col removeSides" style="width: 100%">
+                  <div class="label" style="padding-left: 2px; margin-right: 2rem">
+                    <input class="input shaded-input font-2" type="text" name="attr_spelldamage" placeholder="Damage" style="width: 100%"/>
                   </div>
                 </div>
+                <div class="column fit-size flex"></div>
+              </div>
+              <div style="margin-top: -1rem;">
+                <label class="check-label">
+                  <input class="toggle-box toggle-show" type="checkbox" name="a"/><span class="checkPlus" style="left: 684px; top: -24px;">&amp;</span><span class="checkMinus" style="left: 684px; top: -24px;">_</span>
+                  <div class="hiddenSection flex-row" style="margin-top: -1.2rem;">
+                    <div class="column removeSides" style="margin-right: 2.9rem!important;">
+                      <div class="label">
+                        <textarea class="input shaded-input" name="attr_spellDesc" style="text-align: left; font-size: 1.8rem; margin-bottom: 0; font-family: fangsong; padding: 4px;" placeholder="Description"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </label>
               </div>
             </fieldset>
           </div>
@@ -938,16 +1061,29 @@
                 <div class="column fit-size" style="display: flex">
                   <button class="spell_button" type="action" name="act_magick-roll" title="So anyway I just started blasting"></button>
                 </div>
-                <div class="column removeSides">
+                <div class="flex-col removeSides" style="width: 100%">
                   <div class="label" style="padding-left: 2px">
-                    <input class="input shaded-input font-2" type="text" name="attr_spellname" placeholder="Spell Name"/>
+                    <input class="input shaded-input font-2" type="text" name="attr_spellname" placeholder="Spell Name" style="width: 100%"/>
                   </div>
                 </div>
-                <div class="column removeSides">
-                  <div class="label" style="padding-left: 2px">
-                    <input class="input shaded-input font-2" type="text" name="attr_spelldamage" placeholder="Damage"/>
+                <div class="flex-col removeSides" style="width: 100%">
+                  <div class="label" style="padding-left: 2px; margin-right: 2rem">
+                    <input class="input shaded-input font-2" type="text" name="attr_spelldamage" placeholder="Damage" style="width: 100%"/>
                   </div>
                 </div>
+                <div class="column fit-size flex"></div>
+              </div>
+              <div style="margin-top: -1rem;">
+                <label class="check-label">
+                  <input class="toggle-box toggle-show" type="checkbox" name="a"/><span class="checkPlus" style="left: 684px; top: -24px;">&amp;</span><span class="checkMinus" style="left: 684px; top: -24px;">_</span>
+                  <div class="hiddenSection flex-row" style="margin-top: -1.2rem;">
+                    <div class="column removeSides" style="margin-right: 2.9rem!important;">
+                      <div class="label">
+                        <textarea class="input shaded-input" name="attr_spellDesc" style="text-align: left; font-size: 1.8rem; margin-bottom: 0; font-family: fangsong; padding: 4px;" placeholder="Description"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </label>
               </div>
             </fieldset>
           </div>
@@ -990,16 +1126,29 @@
                 <div class="column fit-size" style="display: flex">
                   <button class="spell_button" type="action" name="act_magick-roll" title="So anyway I just started blasting"></button>
                 </div>
-                <div class="column removeSides">
+                <div class="flex-col removeSides" style="width: 100%">
                   <div class="label" style="padding-left: 2px">
-                    <input class="input shaded-input font-2" type="text" name="attr_spellname" placeholder="Spell Name"/>
+                    <input class="input shaded-input font-2" type="text" name="attr_spellname" placeholder="Spell Name" style="width: 100%"/>
                   </div>
                 </div>
-                <div class="column removeSides">
-                  <div class="label" style="padding-left: 2px">
-                    <input class="input shaded-input font-2" type="text" name="attr_spelldamage" placeholder="Damage"/>
+                <div class="flex-col removeSides" style="width: 100%">
+                  <div class="label" style="padding-left: 2px; margin-right: 2rem">
+                    <input class="input shaded-input font-2" type="text" name="attr_spelldamage" placeholder="Damage" style="width: 100%"/>
                   </div>
                 </div>
+                <div class="column fit-size flex"></div>
+              </div>
+              <div style="margin-top: -1rem;">
+                <label class="check-label">
+                  <input class="toggle-box toggle-show" type="checkbox" name="a"/><span class="checkPlus" style="left: 684px; top: -24px;">&amp;</span><span class="checkMinus" style="left: 684px; top: -24px;">_</span>
+                  <div class="hiddenSection flex-row" style="margin-top: -1.2rem;">
+                    <div class="column removeSides" style="margin-right: 2.9rem!important;">
+                      <div class="label">
+                        <textarea class="input shaded-input" name="attr_spellDesc" style="text-align: left; font-size: 1.8rem; margin-bottom: 0; font-family: fangsong; padding: 4px;" placeholder="Description"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </label>
               </div>
             </fieldset>
           </div>
@@ -1042,16 +1191,29 @@
                 <div class="column fit-size" style="display: flex">
                   <button class="spell_button" type="action" name="act_magick-roll" title="So anyway I just started blasting"></button>
                 </div>
-                <div class="column removeSides">
+                <div class="flex-col removeSides" style="width: 100%">
                   <div class="label" style="padding-left: 2px">
-                    <input class="input shaded-input font-2" type="text" name="attr_spellname" placeholder="Spell Name"/>
+                    <input class="input shaded-input font-2" type="text" name="attr_spellname" placeholder="Spell Name" style="width: 100%"/>
                   </div>
                 </div>
-                <div class="column removeSides">
-                  <div class="label" style="padding-left: 2px">
-                    <input class="input shaded-input font-2" type="text" name="attr_spelldamage" placeholder="Damage"/>
+                <div class="flex-col removeSides" style="width: 100%">
+                  <div class="label" style="padding-left: 2px; margin-right: 2rem">
+                    <input class="input shaded-input font-2" type="text" name="attr_spelldamage" placeholder="Damage" style="width: 100%"/>
                   </div>
                 </div>
+                <div class="column fit-size flex"></div>
+              </div>
+              <div style="margin-top: -1rem;">
+                <label class="check-label">
+                  <input class="toggle-box toggle-show" type="checkbox" name="a"/><span class="checkPlus" style="left: 684px; top: -24px;">&amp;</span><span class="checkMinus" style="left: 684px; top: -24px;">_</span>
+                  <div class="hiddenSection flex-row" style="margin-top: -1.2rem;">
+                    <div class="column removeSides" style="margin-right: 2.9rem!important;">
+                      <div class="label">
+                        <textarea class="input shaded-input" name="attr_spellDesc" style="text-align: left; font-size: 1.8rem; margin-bottom: 0; font-family: fangsong; padding: 4px;" placeholder="Description"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </label>
               </div>
             </fieldset>
           </div>
@@ -1094,16 +1256,29 @@
                 <div class="column fit-size" style="display: flex">
                   <button class="spell_button" type="action" name="act_magick-roll" title="So anyway I just started blasting"></button>
                 </div>
-                <div class="column removeSides">
+                <div class="flex-col removeSides" style="width: 100%">
                   <div class="label" style="padding-left: 2px">
-                    <input class="input shaded-input font-2" type="text" name="attr_spellname" placeholder="Spell Name"/>
+                    <input class="input shaded-input font-2" type="text" name="attr_spellname" placeholder="Spell Name" style="width: 100%"/>
                   </div>
                 </div>
-                <div class="column removeSides">
-                  <div class="label" style="padding-left: 2px">
-                    <input class="input shaded-input font-2" type="text" name="attr_spelldamage" placeholder="Damage"/>
+                <div class="flex-col removeSides" style="width: 100%">
+                  <div class="label" style="padding-left: 2px; margin-right: 2rem">
+                    <input class="input shaded-input font-2" type="text" name="attr_spelldamage" placeholder="Damage" style="width: 100%"/>
                   </div>
                 </div>
+                <div class="column fit-size flex"></div>
+              </div>
+              <div style="margin-top: -1rem;">
+                <label class="check-label">
+                  <input class="toggle-box toggle-show" type="checkbox" name="a"/><span class="checkPlus" style="left: 684px; top: -24px;">&amp;</span><span class="checkMinus" style="left: 684px; top: -24px;">_</span>
+                  <div class="hiddenSection flex-row" style="margin-top: -1.2rem;">
+                    <div class="column removeSides" style="margin-right: 2.9rem!important;">
+                      <div class="label">
+                        <textarea class="input shaded-input" name="attr_spellDesc" style="text-align: left; font-size: 1.8rem; margin-bottom: 0; font-family: fangsong; padding: 4px;" placeholder="Description"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </label>
               </div>
             </fieldset>
           </div>
@@ -1146,16 +1321,29 @@
                 <div class="column fit-size" style="display: flex">
                   <button class="spell_button" type="action" name="act_magick-roll" title="So anyway I just started blasting"></button>
                 </div>
-                <div class="column removeSides">
+                <div class="flex-col removeSides" style="width: 100%">
                   <div class="label" style="padding-left: 2px">
-                    <input class="input shaded-input font-2" type="text" name="attr_spellname" placeholder="Spell Name"/>
+                    <input class="input shaded-input font-2" type="text" name="attr_spellname" placeholder="Spell Name" style="width: 100%"/>
                   </div>
                 </div>
-                <div class="column removeSides">
-                  <div class="label" style="padding-left: 2px">
-                    <input class="input shaded-input font-2" type="text" name="attr_spelldamage" placeholder="Damage"/>
+                <div class="flex-col removeSides" style="width: 100%">
+                  <div class="label" style="padding-left: 2px; margin-right: 2rem">
+                    <input class="input shaded-input font-2" type="text" name="attr_spelldamage" placeholder="Damage" style="width: 100%"/>
                   </div>
                 </div>
+                <div class="column fit-size flex"></div>
+              </div>
+              <div style="margin-top: -1rem;">
+                <label class="check-label">
+                  <input class="toggle-box toggle-show" type="checkbox" name="a"/><span class="checkPlus" style="left: 684px; top: -24px;">&amp;</span><span class="checkMinus" style="left: 684px; top: -24px;">_</span>
+                  <div class="hiddenSection flex-row" style="margin-top: -1.2rem;">
+                    <div class="column removeSides" style="margin-right: 2.9rem!important;">
+                      <div class="label">
+                        <textarea class="input shaded-input" name="attr_spellDesc" style="text-align: left; font-size: 1.8rem; margin-bottom: 0; font-family: fangsong; padding: 4px;" placeholder="Description"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </label>
               </div>
             </fieldset>
           </div>
@@ -1198,16 +1386,29 @@
                 <div class="column fit-size" style="display: flex">
                   <button class="spell_button" type="action" name="act_magick-roll" title="So anyway I just started blasting"></button>
                 </div>
-                <div class="column removeSides">
+                <div class="flex-col removeSides" style="width: 100%">
                   <div class="label" style="padding-left: 2px">
-                    <input class="input shaded-input font-2" type="text" name="attr_spellname" placeholder="Spell Name"/>
+                    <input class="input shaded-input font-2" type="text" name="attr_spellname" placeholder="Spell Name" style="width: 100%"/>
                   </div>
                 </div>
-                <div class="column removeSides">
-                  <div class="label" style="padding-left: 2px">
-                    <input class="input shaded-input font-2" type="text" name="attr_spelldamage" placeholder="Damage"/>
+                <div class="flex-col removeSides" style="width: 100%">
+                  <div class="label" style="padding-left: 2px; margin-right: 2rem">
+                    <input class="input shaded-input font-2" type="text" name="attr_spelldamage" placeholder="Damage" style="width: 100%"/>
                   </div>
                 </div>
+                <div class="column fit-size flex"></div>
+              </div>
+              <div style="margin-top: -1rem;">
+                <label class="check-label">
+                  <input class="toggle-box toggle-show" type="checkbox" name="a"/><span class="checkPlus" style="left: 684px; top: -24px;">&amp;</span><span class="checkMinus" style="left: 684px; top: -24px;">_</span>
+                  <div class="hiddenSection flex-row" style="margin-top: -1.2rem;">
+                    <div class="column removeSides" style="margin-right: 2.9rem!important;">
+                      <div class="label">
+                        <textarea class="input shaded-input" name="attr_spellDesc" style="text-align: left; font-size: 1.8rem; margin-bottom: 0; font-family: fangsong; padding: 4px;" placeholder="Description"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </label>
               </div>
             </fieldset>
           </div>
@@ -1253,10 +1454,10 @@
             <div style="margin-top: -1rem;">
               <label class="check-label">
                 <input class="toggle-box toggle-show" type="checkbox" name="a"/><span class="checkPlus">&amp;</span><span class="checkMinus">_</span>
-                <div class="hiddenSection flex-row">
-                  <div class="column removeSides">
+                <div class="hiddenSection flex-row" style="margin-top: -9px;">
+                  <div class="column removeSides" style="margin-right: 1.6rem!important; margin-left: -5px !important;">
                     <div class="label">
-                      <textarea class="input shaded-input" name="attr_itemDesc" style="text-align: left; font-size: 1.8rem; margin-bottom: 0; font-family: fangsong;" placeholder="Description"></textarea>
+                      <textarea class="input shaded-input" name="attr_itemDesc" style="text-align: left; font-size: 1.8rem; margin-bottom: 0; font-family: fangsong; padding: 4px" placeholder="Description"></textarea>
                     </div>
                   </div>
                 </div>
@@ -1398,20 +1599,22 @@ on('clicked:skillRoll', async(info) => {
 
 </script>
 <script type="text/worker">
-const ids = [
-  {soft: 'wonderLvlSpell', txt: 'Wonder'},
-  {soft: 'firstLvlSpell', txt: '1st'},
-  {soft: 'secondLvlSpell', txt: '2nd'},
-  {soft: 'thirdLvlSpell', txt: '3rd'},
-  {soft: 'fourthLvlSpell', txt: '4th'},
-  {soft: 'fifthLvlSpell', txt: '5th'},
-  {soft: 'sixthLvlSpell', txt: '6th'},
-  {soft: 'seventhLvlSpell', txt: '7th'},
-  {soft: 'eighthLvlSpell', txt: '8th'},
-  {soft: 'ninthLvlSpell', txt: '9th'},
-].map(e => e.soft)
+const spellCategories = [
+  'wonderLvlSpell',
+  'finesseClassLvlSpell',
+  'cantripLvlSpell',
+  'firstLvlSpell',
+  'secondLvlSpell',
+  'thirdLvlSpell',
+  'fourthLvlSpell',
+  'fifthLvlSpell',
+  'sixthLvlSpell',
+  'seventhLvlSpell',
+  'eighthLvlSpell',
+  'ninthLvlSpell',
+]
 
-ids.forEach(id => {
+spellCategories.forEach(id => {
   on(`clicked:repeating_spell-${id}:magick-roll`, async(info) => {
     const rowAttributes = info.sourceAttribute.split('_');
     rowAttributes.pop();
@@ -1497,6 +1700,8 @@ on('clicked:repeating_combat:combat-roll', async(info) => {
 
 const spellCategories = [
   'wonderLvlSpell',
+  'finesseClassLvlSpell',
+  'cantripLvlSpell',
   'firstLvlSpell',
   'secondLvlSpell',
   'thirdLvlSpell',

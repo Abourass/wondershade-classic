@@ -257,25 +257,27 @@ input.toggle-show:not(:checked) ~ .checkMinus {
 }
 
 .checkPlus {
+  font-size: 2.4rem;
   font-family: "Pictos";
-  padding: 2px;
+  padding: 5px;
   background-color: #3AC5C9;
   line-height: 16px;
   border-radius: 4px;
   position: relative;
   left: 4px;
-  top: -23px;
+  top: -19px;
 }
 
 .checkMinus {
+  font-size: 2.4rem;
   font-family: "Pictos";
-  padding: 2px;
-  background-color: #E85764;
+  padding: 4px;
+  background-color: #887389;
   line-height: 16px;
   border-radius: 4px;
   position: relative;
   left: 4px;
-  top: -23px;
+  top: -19px;
 }
 
 .checkmark {
@@ -417,11 +419,22 @@ option:focus-within {
 }
 
 /*Configure the magick tab buttons*/
-.wonderLvlSpell, .firstLvlSpell, .secondLvlSpell, .thirdLvlSpell, .fourthLvlSpell, .fifthLvlSpell, .sixthLvlSpell, .seventhLvlSpell, .eighthLvlSpell, .ninthLvlSpell {
+.wonderLvlSpell,
+.finesseClassLvlSpell,
+.cantripLvlSpell,
+.firstLvlSpell,
+.secondLvlSpell,
+.thirdLvlSpell,
+.fourthLvlSpell,
+.fifthLvlSpell,
+.sixthLvlSpell,
+.seventhLvlSpell,
+.eighthLvlSpell,
+.ninthLvlSpell {
   display: none;
 }
 
-.sheet-magictabstoggle[value=wonderLvlSpell] ~ div.wonderLvlSpell, .sheet-magictabstoggle[value=firstLvlSpell] ~ div.firstLvlSpell, .sheet-magictabstoggle[value=secondLvlSpell] ~ div.secondLvlSpell, .sheet-magictabstoggle[value=thirdLvlSpell] ~ div.thirdLvlSpell, .sheet-magictabstoggle[value=fourthLvlSpell] ~ div.fourthLvlSpell, .sheet-magictabstoggle[value=fifthLvlSpell] ~ div.fifthLvlSpell, .sheet-magictabstoggle[value=sixthLvlSpell] ~ div.sixthLvlSpell, .sheet-magictabstoggle[value=seventhLvlSpell] ~ div.seventhLvlSpell, .sheet-magictabstoggle[value=eighthLvlSpell] ~ div.eighthLvlSpell, .sheet-magictabstoggle[value=ninthLvlSpell] ~ div.ninthLvlSpell {
+.sheet-magictabstoggle[value=wonderLvlSpell] ~ div.wonderLvlSpell, .sheet-magictabstoggle[value=finesseClassLvlSpell] ~ div.finesseClassLvlSpell, .sheet-magictabstoggle[value=cantripLvlSpell] ~ div.cantripLvlSpell, .sheet-magictabstoggle[value=firstLvlSpell] ~ div.firstLvlSpell, .sheet-magictabstoggle[value=secondLvlSpell] ~ div.secondLvlSpell, .sheet-magictabstoggle[value=thirdLvlSpell] ~ div.thirdLvlSpell, .sheet-magictabstoggle[value=fourthLvlSpell] ~ div.fourthLvlSpell, .sheet-magictabstoggle[value=fifthLvlSpell] ~ div.fifthLvlSpell, .sheet-magictabstoggle[value=sixthLvlSpell] ~ div.sixthLvlSpell, .sheet-magictabstoggle[value=seventhLvlSpell] ~ div.seventhLvlSpell, .sheet-magictabstoggle[value=eighthLvlSpell] ~ div.eighthLvlSpell, .sheet-magictabstoggle[value=ninthLvlSpell] ~ div.ninthLvlSpell {
   display: block;
 }
 
@@ -669,6 +682,16 @@ input[type=number] {
   display: grid;
   align-items: stretch;
   margin-bottom: 0.5rem;
+  border-radius: 0 10%;
+  overflow: hidden;
+}
+
+.ruffle-1 {
+  border-radius: 10% 0 15% !important;
+}
+
+.ruffle-2 {
+  border-radius: 0 10% 15% !important;
 }
 
 .skillLabelCol {
@@ -741,7 +764,7 @@ input[type=number] {
 
 .magickTabButton {
   background: transparent;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-family: "Lora", serif;
   border: none;
   padding: 0.4rem 0.2rem;
