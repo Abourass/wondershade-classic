@@ -32,3 +32,11 @@ spellCategories.forEach(button => {
     })
   });
 });
+
+// Add the neon glow to active magick category when the spell sheet is opened
+on('sheet:opened', function(){
+  getAttrs(['sheetMagicTab'], ({sheetMagicTab}) => {
+    // Add Border and Neon to the Active Category
+    $20(`[name="act_${sheetMagicTab}"]`).addClass('neon');
+  });
+})
